@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- mobile browser-chrome colour — mirrors --bg (keep in sync if --bg changes) -->
+<meta name="theme-color" content="#0A0A0B" />
 <title>Digital Spectre | Agentic AI Systems</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,9 +40,11 @@
     font-size:clamp(15px,1.05vw,16.5px);
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
+    -webkit-text-size-adjust:100%; text-size-adjust:100%;  /* stop iOS auto-inflating the clamp() type scale */
     overflow-x:hidden;
   }
   a{color:inherit;text-decoration:none}
+  a,button,.btn{-webkit-tap-highlight-color:transparent}   /* kill grey mobile tap flash; focus rings unaffected */
   ::selection{background:var(--accent);color:#0a0a0b}
 
   .wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
@@ -76,14 +80,15 @@
     color:var(--text);transition:border-color .25s,background .25s,color .25s;white-space:nowrap;
   }
   .btn:hover{background:var(--accent);color:var(--bg);border-color:var(--accent)}
-  .menu-toggle{display:none;background:none;border:0;color:var(--text);font-size:1.4rem;cursor:pointer}
+  .menu-toggle{display:none;background:none;border:0;color:var(--text);font-size:1.4rem;cursor:pointer;width:44px;height:44px;align-items:center;justify-content:center}
+  .mobile-menu{display:none}   /* dropdown panel — shown only <=900px (see responsive block) */
 
   /* ----------------------------- hero ----------------------------- */
   .hero{padding-top:clamp(150px,22vh,230px);padding-bottom:clamp(60px,9vh,110px);position:relative;overflow:hidden}
   .hero > :not(.hero-net){position:relative;z-index:1}
   .hero-net{position:absolute;inset:0;z-index:0;pointer-events:none;width:100%;height:100%}
   .hero .eyebrow{margin-bottom:28px}
-  .hero h1{font-size:clamp(2.9rem,8.2vw,7rem);max-width:14ch}
+  .hero h1{font-size:clamp(2.9rem,8.2vw,7rem);max-width:14ch;overflow-wrap:break-word}
   .hero p.lead{
     margin-top:34px;max-width:54ch;font-size:clamp(1.02rem,1.5vw,1.2rem);
     color:var(--muted);line-height:1.65;
@@ -99,7 +104,7 @@
   .track{display:flex;gap:0;width:max-content;animation:scroll 120s linear infinite}
   .track.rev{animation-direction:reverse;animation-duration:120s}
   .track span{font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2.2rem);font-weight:500;color:var(--text);padding:0 34px;display:inline-flex;align-items:center;white-space:nowrap}
-  .track span::after{content:"✳";color:var(--accent);font-size:.7em;margin-left:48px;opacity:.7}
+  .track span::after{content:"\2733\FE0E";color:var(--accent);font-size:.7em;margin-left:48px;opacity:.7;font-variant-emoji:text}  /* VS-15 forces flat mint glyph, not colour emoji, on mobile */
   @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
   /* ---------------------------- stats ---------------------------- */
@@ -173,7 +178,13 @@
   /* ------------------------- responsive -------------------------- */
   @media(max-width:900px){
     .navlinks,.nav .btn{display:none}
-    .menu-toggle{display:block}
+    .menu-toggle{display:flex}
+    .mobile-menu{display:flex;flex-direction:column;gap:4px;padding:14px var(--pad) 22px;background:linear-gradient(to bottom, rgba(10,10,11,.97), rgba(10,10,11,.92));backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .mobile-menu[hidden]{display:none}
+    .mobile-menu a{color:var(--muted);font-size:1.05rem;padding:12px 2px;transition:color .2s}
+    .mobile-menu a:hover,.mobile-menu a:focus-visible{color:var(--text)}
+    .mobile-menu .mm-cta{align-self:flex-start;margin-top:10px;color:var(--text)}
+    .menu-toggle[aria-expanded="true"]{color:var(--accent)}
     .statgrid{grid-template-columns:repeat(2,1fr)}
     .svc-grid{grid-template-columns:1fr 1fr}
     .about .cols{grid-template-columns:1fr;gap:36px}
@@ -184,6 +195,11 @@
   @media(max-width:560px){
     .statgrid,.svc-grid{grid-template-columns:1fr}
     .foot-top{grid-template-columns:1fr}
+    .hero h1{font-size:clamp(2.5rem,9vw,7rem)}                 /* fits 'Autonomous' on 320px screens */
+    .foot-col a{padding:8px 0;margin-bottom:4px}              /* ~44px tap rows */
+    .sec-head{margin-bottom:36px}
+    .track span{padding:0 20px}
+    .track span::after{margin-left:28px}                      /* tighter marquee on narrow phones */
   }
   @media(prefers-reduced-motion:reduce){
     .track,.scrollcue .bar::after{animation:none}
@@ -206,8 +222,15 @@
       <a href="#contact">Contact</a>
     </nav>
     <a href="#contact" class="btn">Get In Touch</a>
-    <button class="menu-toggle" aria-label="Menu">≡</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu"><span aria-hidden="true">≡</span></button>
   </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile" hidden>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="btn mm-cta">Get In Touch</a>
+  </nav>
 </header>
 
 <!-- ============================ HERO ============================ -->
@@ -369,14 +392,31 @@
         <a href="mailto:contact@digitalspectre.com">contact@digitalspectre.com</a>
       </div>
     </div>
-    <div class="foot-bottom">© 2026 Digital Spectre. All Rights Reserved.</div>
+    <div class="foot-bottom">&#xA9;&#xFE0E; 2026 Digital Spectre. All Rights Reserved.</div>
   </div>
 </footer>
 
 <script>
   // header border on scroll
   const head = document.getElementById('top');
-  addEventListener('scroll', () => head.classList.toggle('scrolled', scrollY > 20));
+  addEventListener('scroll', () => head.classList.toggle('scrolled', scrollY > 20), {passive:true});
+
+  // mobile menu — toggle the dropdown panel; sync aria; close on link tap / Escape / resize-to-desktop
+  const mToggle = document.getElementById('menuToggle');
+  const mMenu = document.getElementById('mobileMenu');
+  if (mToggle && mMenu) {
+    const setMenu = open => {
+      mMenu.hidden = !open;
+      mToggle.setAttribute('aria-expanded', String(open));
+      mToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+    };
+    mToggle.addEventListener('click', () => setMenu(mToggle.getAttribute('aria-expanded') !== 'true'));
+    mMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    addEventListener('keydown', e => {
+      if (e.key === 'Escape' && mToggle.getAttribute('aria-expanded') === 'true') { setMenu(false); mToggle.focus(); }
+    });
+    matchMedia('(min-width:901px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
+  }
 
   // count-up stats
   const animateCount = el => {
@@ -417,6 +457,9 @@
     let w=0, h=0, dpr=Math.min(devicePixelRatio||1, 2);
     let nodes=[], DIST=150;          // DIST = max link distance (set in build)
     let mx=0, my=0, mouseTarget=0, mouseAmt=0;   // cursor pos + eased presence (0…1)
+    let prevT=0, rafId=0, running=false;         // delta-time clock + loop state
+    let prevW=0, prevH=0, rzTimer=0;             // debounced, no-teleport resize
+    let onScreen=true, pageVisible=true;         // pause when hero offscreen / tab hidden
 
     function build(){
       const area=w*h;
@@ -433,14 +476,15 @@
       }
     }
 
-    function step(){
-      mouseAmt += (mouseTarget-mouseAmt)*0.08;                         // ease cursor links in/out
+    function step(dt){                                                 // dt = frames elapsed, ~1 at 60fps
+      mouseAmt += (mouseTarget-mouseAmt)*(1-Math.pow(1-0.08,dt));       // ease cursor links (fps-correct)
       nodes.forEach(n=>{
-        n.x+=n.vx; n.y+=n.vy;
+        n.x+=n.vx*dt; n.y+=n.vy*dt;
         if(n.x<-20)n.x=w+20; else if(n.x>w+20)n.x=-20;                 // wrap around edges
         if(n.y<-20)n.y=h+20; else if(n.y>h+20)n.y=-20;
-        n.fire*=0.95;
-        if(--n.fireT<=0){ n.fire=1; n.fireT=Math.random()*500+300; }   // occasional flare
+        n.fire*=Math.pow(0.95,dt);
+        n.fireT-=dt;
+        if(n.fireT<=0){ n.fire=1; n.fireT=Math.random()*500+300; }     // occasional flare
       });
     }
 
@@ -490,18 +534,36 @@
       });
     }
 
-    function loop(){ step(); draw(); requestAnimationFrame(loop); }
+    function loop(now){
+      const dt = prevT ? Math.min((now-prevT)/16.67, 4) : 1;          // normalise to 60fps; cap at 4 frames so a
+      prevT = now;                                                     // pause/resume can't fling nodes across
+      step(dt); draw();
+      if(running) rafId = requestAnimationFrame(loop);
+    }
+    function start(){ if(running||reduce) return; running=true; prevT=0; rafId=requestAnimationFrame(loop); }
+    function stop(){ running=false; cancelAnimationFrame(rafId); }
+    function sync(){ (onScreen && pageVisible) ? start() : stop(); }   // run only while visible + onscreen
 
     function resize(){
       const r=canvas.getBoundingClientRect();
-      w=r.width; h=r.height;
-      canvas.width=Math.max(1,w*dpr); canvas.height=Math.max(1,h*dpr);
+      const nw=r.width, nh=r.height;
+      canvas.width=Math.max(1,nw*dpr); canvas.height=Math.max(1,nh*dpr);
       ctx.setTransform(dpr,0,0,dpr,0,0);
-      build();
+      if(nodes.length && prevW===nw && prevH){                         // height-only change (mobile URL bar):
+        const sy=nh/prevH; nodes.forEach(n=>{ n.y*=sy; });             // rescale, don't reseed → no teleport
+        w=nw; h=nh; DIST=Math.max(100,Math.min(170,Math.sqrt(w*h)/7.5));
+      } else {                                                         // first run or real width change → rebuild
+        w=nw; h=nh; build();
+      }
+      prevW=nw; prevH=nh;
     }
     resize();
-    addEventListener('resize', ()=>{ resize(); if(reduce) draw(); });
-    if(!reduce){                                                       // cursor interactivity (motion only)
+    addEventListener('resize', ()=>{                                   // debounce: settle after URL-bar/scroll
+      clearTimeout(rzTimer);
+      rzTimer=setTimeout(()=>{ resize(); if(reduce) draw(); else prevT=0; }, 150);
+    }, {passive:true});
+    // cursor interactivity — motion + real (hover/fine) pointers only (no stuck node after a touch tap)
+    if(!reduce && matchMedia('(hover:hover) and (pointer:fine)').matches){
       const host=canvas.parentElement;
       host.addEventListener('mousemove', e=>{
         const r=canvas.getBoundingClientRect();
@@ -509,7 +571,11 @@
       });
       host.addEventListener('mouseleave', ()=>{ mouseTarget=0; });
     }
-    reduce ? draw() : loop();                      // static frame if motion is reduced
+    if(!reduce){                                                       // pause when hero offscreen / tab hidden
+      new IntersectionObserver(es=>{ onScreen=es[0].isIntersecting; sync(); }, {threshold:0}).observe(canvas);
+      document.addEventListener('visibilitychange', ()=>{ pageVisible=!document.hidden; sync(); });
+    }
+    reduce ? draw() : start();                     // static frame if motion is reduced
   })();
 </script>
 </body>
