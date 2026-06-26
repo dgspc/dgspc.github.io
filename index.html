@@ -62,7 +62,7 @@
   /* ----------------------------- nav ----------------------------- */
   header{
     position:fixed;top:0;left:0;right:0;z-index:100;
-    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);  /* -webkit- for iOS Safari <18 (else header blur no-ops, content bleeds through) */
     background:linear-gradient(to bottom, rgba(10,10,11,.85), rgba(10,10,11,.4));
     border-bottom:1px solid transparent;transition:border-color .3s;
   }
@@ -179,7 +179,7 @@
   @media(max-width:900px){
     .navlinks,.nav .btn{display:none}
     .menu-toggle{display:flex}
-    .mobile-menu{display:flex;flex-direction:column;gap:4px;padding:14px var(--pad) 22px;background:linear-gradient(to bottom, rgba(10,10,11,.97), rgba(10,10,11,.92));backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .mobile-menu{display:flex;flex-direction:column;gap:4px;padding:14px var(--pad) 22px;background:linear-gradient(to bottom, rgba(10,10,11,.97), rgba(10,10,11,.92));-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);max-height:calc(100vh - 74px);max-height:calc(100dvh - 74px);overflow-y:auto;-webkit-overflow-scrolling:touch}  /* cap height + scroll so the CTA stays reachable on short landscape phones */
     .mobile-menu[hidden]{display:none}
     .mobile-menu a{color:var(--muted);font-size:1.05rem;padding:12px 2px;transition:color .2s}
     .mobile-menu a:hover,.mobile-menu a:focus-visible{color:var(--text)}
@@ -196,7 +196,7 @@
     .statgrid,.svc-grid{grid-template-columns:1fr}
     .foot-top{grid-template-columns:1fr}
     .hero h1{font-size:clamp(2.5rem,9vw,7rem)}                 /* fits 'Autonomous' on 320px screens */
-    .foot-col a{padding:8px 0;margin-bottom:4px}              /* ~44px tap rows */
+    .foot-col a{padding:11px 0;margin-bottom:2px}             /* ~46px tap rows (>=44px min) */
     .sec-head{margin-bottom:36px}
     .track span{padding:0 20px}
     .track span::after{margin-left:28px}                      /* tighter marquee on narrow phones */
@@ -215,7 +215,7 @@
 <header id="top">
   <div class="wrap nav">
     <a href="#top" class="brand">Digital Spectre<span class="dot">.</span></a>
-    <nav class="navlinks">
+    <nav class="navlinks" aria-label="Primary">
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#process">Process</a>
@@ -224,7 +224,7 @@
     <a href="#contact" class="btn">Get In Touch</a>
     <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu"><span aria-hidden="true">≡</span></button>
   </div>
-  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile" hidden>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Primary mobile" hidden>
     <a href="#services">Services</a>
     <a href="#about">About</a>
     <a href="#process">Process</a>
@@ -415,13 +415,18 @@
     addEventListener('keydown', e => {
       if (e.key === 'Escape' && mToggle.getAttribute('aria-expanded') === 'true') { setMenu(false); mToggle.focus(); }
     });
-    matchMedia('(min-width:901px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
+    const deskMQ = matchMedia('(min-width:901px)');
+    // close the open menu when we cross up to desktop width; no mToggle.focus() — it's display:none at >=901px (would drop focus to <body>); the visible navlinks return instead
+    const onDesk = e => { if (e.matches && mToggle.getAttribute('aria-expanded') === 'true') setMenu(false); };
+    deskMQ.addEventListener ? deskMQ.addEventListener('change', onDesk) : deskMQ.addListener(onDesk);   // addListener fallback for iOS Safari <14
   }
 
-  // count-up stats
+  // count-up stats (honors reduced motion: render the final value instantly, no tween)
+  const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const animateCount = el => {
     const target = +el.dataset.target;
     const suffix = el.dataset.suffix || '';
+    if (RM) { el.innerHTML = target + (suffix ? '<span class="suf">' + suffix + '</span>' : ''); return; }
     const dur = 1400, start = performance.now();
     const tick = now => {
       const p = Math.min((now - start) / dur, 1);
@@ -558,6 +563,9 @@
       prevW=nw; prevH=nh;
     }
     resize();
+    if(document.fonts && document.fonts.ready){                        // webfont swap reflows the hero height but fires no resize event → re-sync the
+      document.fonts.ready.then(()=>{ resize(); if(reduce) draw(); else prevT=0; });  // canvas once Inter Tight lands (else it stays vertically stretched all session on iOS)
+    }
     addEventListener('resize', ()=>{                                   // debounce: settle after URL-bar/scroll
       clearTimeout(rzTimer);
       rzTimer=setTimeout(()=>{ resize(); if(reduce) draw(); else prevT=0; }, 150);
