@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-jk9klwkgA/+69vtf7FefoTY+FB/IHK/DvoZublVQqeQ='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08090A">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+<title>About — Digital Spectre</title>
+  <link rel="canonical" href="https://www.digitalspectre.com/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Digital Spectre">
+  <meta property="og:title" content="About — Digital Spectre">
+  <meta property="og:description" content="Why Digital Spectre exists, the positions we hold, and what each one costs us to keep holding.">
+  <meta property="og:url" content="https://www.digitalspectre.com/about.html">
+  <meta property="og:image" content="https://www.digitalspectre.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About — Digital Spectre">
+  <meta name="twitter:description" content="Why Digital Spectre exists, the positions we hold, and what each one costs us to keep holding.">
+  <meta name="twitter:image" content="https://www.digitalspectre.com/og-image.png">
+<meta name="description" content="Why Digital Spectre exists, the positions we hold, and what each one costs us to keep holding.">
+<link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+<style>
+
+.phead h1{font-size:clamp(36px,6.2vw,70px);max-width:15ch;margin:0 0 24px}
+
+@keyframes grain{0%{transform:translate(0,0)}17%{transform:translate(-3%,-2%)}
+  34%{transform:translate(2%,-4%)}51%{transform:translate(-2%,3%)}
+  68%{transform:translate(3%,1%)}85%{transform:translate(-1%,-3%)}100%{transform:translate(0,0)}}
+.nav-links a:hover::after{width:100%}
+@media(min-width:900px){.head{grid-template-columns:1.15fr .85fr;align-items:end;gap:48px}}
+.origin{display:grid;gap:clamp(28px,3.4vw,48px)}
+@media(min-width:900px){.origin{grid-template-columns:1fr 1fr;gap:56px}}
+.origin p{font-size:15.5px;max-width:52ch}
+.origin p:last-child{margin:0}
+.pull{border-left:1px solid var(--phosphor);padding:4px 0 4px 24px;margin:0}
+.pull p{font-family:var(--font-display);font-weight:600;font-size:clamp(18px,2.3vw,26px);
+  line-height:1.28;letter-spacing:-.025em;color:var(--phosphor);margin:0}
+.pos{display:grid;gap:1px;background:var(--ash);margin-left:calc(-1 * var(--rowpad));
+  margin-right:calc(-1 * var(--rowpad));border-top:1px solid var(--ash);border-bottom:1px solid var(--ash)}
+.p-hd{background:var(--slate);display:grid;padding:11px var(--rowpad);
+  font-family:var(--font-mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--smoke)}
+@media(min-width:900px){.p-hd{grid-template-columns:44px 1.15fr .85fr;gap:32px}}
+.p-hd span:first-child{display:none}
+@media(min-width:900px){.p-hd span:first-child{display:block}}
+.p-row{background:var(--void);display:grid;gap:16px;padding:clamp(24px,2.9vw,38px) var(--rowpad);
+  transition:background .4s}
+@media(min-width:900px){.p-row{grid-template-columns:44px 1.15fr .85fr;gap:32px;align-items:start}}
+.p-row:hover{background:var(--carbon)}
+.p-row .px{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;color:var(--smoke);padding-top:5px}
+.p-row h3{margin-bottom:10px;max-width:20ch}
+.p-row .what{font-size:14.5px;color:var(--vapor);margin:0;max-width:46ch}
+.cost{border-left:1px solid var(--w28);padding:2px 0 2px 18px}
+.cost .cl{font-family:var(--font-mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--smoke);display:block;margin-bottom:8px}
+.cost p{font-size:13.5px;color:var(--smoke);margin:0;line-height:1.6}
+.cost p b{color:var(--vapor);font-weight:500}
+.built{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+@media(min-width:640px){.built{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.built{grid-template-columns:repeat(4,1fr)}}
+.bt{background:var(--carbon);padding:24px 22px}
+.bt b{font-family:var(--font-display);font-weight:800;font-size:16.5px;letter-spacing:-.025em;
+  color:var(--phosphor);display:block;margin-bottom:10px}
+.bt span{font-size:13.5px;color:var(--smoke);line-height:1.55;display:block}
+.nots{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+@media(min-width:760px){.nots{grid-template-columns:1fr 1fr}}
+.not{background:var(--carbon);padding:24px clamp(20px,2.6vw,28px)}
+.not b{font-family:var(--font-display);font-weight:800;font-size:16.5px;letter-spacing:-.02em;
+  color:var(--phosphor);display:block;margin-bottom:9px}
+.not span{font-size:13.5px;color:var(--smoke);line-height:1.55}
+.cta>*{position:relative}
+@media(min-width:820px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr 1fr}}
+@media(max-width:960px){ .nav-links{display:none} .burger{display:flex} }
+@media(max-width:560px){ .nav-cta .btn{padding:9px 14px;font-size:12.5px} }
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .field::after{display:none}
+}
+</style>
+</head>
+<body>
+<div class="field" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="index.html" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+    <nav class="nav-links">
+      <a href="platform.html">Platform</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="how-we-work.html">How we work</a>
+      <a href="trust.html">Trust</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+      <button class="burger" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="phead">
+  <div class="wrap">
+    <span class="crumb"><a href="index.html">Home</a> / About</span>
+    <h1>No mission statement. Just positions.</h1>
+    <p class="lede">You're considering software that will sit in the path of every action your agents take. That's a reasonable moment to want to know what we think and where we won't bend — so this page is a list of positions, each one shown beside what it costs us to keep holding it.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Where this came from</span>
+        <h2>We built the agents first.</h2>
+      </div>
+      <div><p class="lede">Which is how we found the gap. You don't notice it from the outside.</p></div>
+    </div>
+
+    <div class="origin rv">
+      <div>
+        <p>Digital Spectre started as a team shipping agentic systems for other people's businesses. Workflow automation, retrieval, orchestration, integration — the work went well and the agents did what they were built to do.</p>
+        <p>The uncomfortable part came later, in the handover conversations. Clients would ask a version of the same question — <em>so how do we know what it's doing now?</em> — and the honest answer was that they'd see the output and very little else.</p>
+      </div>
+      <div>
+        <div class="pull"><p>We were handing over software with standing production access and no supervision, and calling it delivery.</p></div>
+        <p style="margin-top:26px">Nothing on the market treated an agent the way an organisation treats a person with the same access: baselined, scored, held when something looked wrong, and on the record afterwards. So we built that, and it turned out to be the more important half of the work.</p>
+        <p>We still build agents. We just no longer ship one that nobody can watch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec" id="positions">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">What we hold</span>
+        <h2>Seven positions, and their price.</h2>
+      </div>
+      <div>
+        <p class="lede">A belief with nothing attached to it is marketing. Each of these costs us something real — revenue, speed, or an easier product to build.</p>
+        <p class="lede dim">If we ever quietly drop one, this page is where you'll be able to tell.</p>
+      </div>
+    </div>
+
+    <div class="pos rv">
+      <div class="p-hd"><span></span><span>The position</span><span>What it costs us</span></div>
+
+      <article class="p-row">
+        <span class="px">01</span>
+        <div>
+          <h3>Observe before you enforce</h3>
+          <p class="what">Nothing blocks on day one. An agent runs traced and unrestricted until you've seen enough of its behaviour to write rules that reflect it.</p>
+        </div>
+        <div class="cost">
+          <span class="cl">The price</span>
+          <p>A slower path to the paid tier. We're deliberately telling people to spend a quarter <b>not paying us</b>, and some of them never move past it.</p>
+        </div>
+      </article>
+
+      <article class="p-row">
+        <span class="px">02</span>
+        <div>
+          <h3>It runs in your cloud, not ours</h3>
+          <p class="what">The enforcement layer deploys into your own account. Your traces stream to your own bucket. We hold no production credentials at any point.</p>
+        </div>
+        <div class="cost">
+          <span class="cl">The price</span>
+          <p>Harder operations, slower debugging, and <b>no data moat</b>. The usual argument for a single-tenant SaaS is that it's easier for the vendor. It is.</p>
+        </div>
+      </article>
+
+      <article class="p-row">
+        <span class="px">03</span>
+        <div>
+          <h3>Your data trains nothing</h3>
+          <p class="what">Not our models, not a third party's, not aggregated, not anonymised. It isn't a setting and it isn't negotiable at any price.</p>
+        </div>
+        <div class="cost">
+          <span class="cl">The price</span>
+          <p>We give up the <b>flywheel</b> every AI company is told it needs. Our product improves because we build it, not because you use it.</p>
+        </div>
+      </article>
+
+      <article class="p-row">
+        <span class="px">04</span>
+        <div>
+          <h3>Console seats are unlimited</h3>
+          <p class="what">On every tier, including free. Security, operations and compliance reading one record is the entire argument — charging per reader would contradict it.</p>
+        </div>
+        <div class="cost">
+          <span class="cl">The price</span>
+          <p>We hand back the <b>easiest pricing lever in software</b>. Per-seat expansion is how most platforms grow revenue without shipping anything.</p>
+        </div>
+      </article>
+
+      <article class="p-row">
+        <span class="px">05</span>
+        <div>
+          <h3>Leaving should be a decision, not a project</h3>
+          <p class="what">Ninety days of access after termination, a full export, and a hash chain anyone can verify without us. Agents keep running even when enforcement stops.</p>
+        </div>
+        <div class="cost">
+          <span class="cl">The price</span>
+          <p>We remove our own <b>switching costs</b>. Every renewal has to be won on whether the product is still worth it.</p>
+        </div>
+      </article>
+
+      <article class="p-row">
+        <span class="px">06</span>
+        <div>
+          <h3>We turn down work that doesn't fit</h3>
+          <p class="what">Low volume with catastrophic failure, outcomes nobody can define, teams who haven't been told. We say so in the first fortnight rather than the fourth month.</p>
+        </div>
+        <div class="cost">
+          <span class="cl">The price</span>
+          <p><b>Signed deals we don't take.</b> It's the most expensive position here and the one we're most often asked to bend.</p>
+        </div>
+      </article>
+
+      <article class="p-row">
+        <span class="px">07</span>
+        <div>
+          <h3>It's a control, not a guarantee</h3>
+          <p class="what">Spectre reduces the chance of a bad agent action landing. It does not promise to catch every one, and we won't let a sales conversation imply otherwise.</p>
+        </div>
+        <div class="cost">
+          <span class="cl">The price</span>
+          <p>A weaker pitch than competitors willing to say <b>"never"</b>. We'd rather lose that deal than be quoted back this sentence after an incident.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">How we're built</span>
+        <h2>Small, and intending to stay useful.</h2>
+      </div>
+      <div><p class="lede">The fair question about a company in our critical path is whether it'll still be here. Here's what we can tell you about that.</p></div>
+    </div>
+
+    <div class="built rv">
+      <div class="bt"><b>Engineers, mostly</b><span>The people who'd run your engagement are the people who built the platform. There is no separate solutions team to hand you to.</span></div>
+      <div class="bt"><b>We were the agency first</b><span>Which is why the platform is opinionated. Every guardrail exists because a client asked a question we couldn't answer.</span></div>
+      <div class="bt"><b>Revenue before scale</b><span>We'd rather have fewer customers who renew than a chart that goes up for four quarters and then doesn't.</span></div>
+      <div class="bt"><b>Your exit is prepaid</b><span>If we did disappear, your agents keep running and your trail stays verifiable. That shouldn't be reassuring, but it's true.</span></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Roadmap discipline</span>
+        <h2>Things we keep being asked for and keep not building.</h2>
+      </div>
+      <div><p class="lede">Each of these would sell. Each would also make the product worse at the thing it's for.</p></div>
+    </div>
+
+    <div class="nots rv">
+      <div class="not"><b>A model of our own</b><span>Every conversation about building one is a conversation about not improving supervision. Bring whichever model you like.</span></div>
+      <div class="not"><b>Employee monitoring</b><span>We're asked roughly monthly. Spectre watches software acting on your behalf, and pointing it at people would be a different company.</span></div>
+      <div class="not"><b>An agent marketplace</b><span>We'd be selling you agents and supervising them. You should not buy the referee from the team.</span></div>
+      <div class="not"><b>A risk score you can show a regulator</b><span>Our number is useful internally. Presenting it as an external compliance grade would be inventing an authority we don't have.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="cta rv" id="cta">
+      <span class="eyebrow" style="justify-content:center">Get started</span>
+      <h2>Disagree with one of these?</h2>
+      <p class="lede">Tell us which. The positions on this page have been argued into shape by customers, and the ones that survived did so because someone pushed hard on them first.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+        <a href="how-we-work.html" class="btn btn--ghost">See how we work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="index.html" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+        <p>We build agentic systems that do real work — and the console that keeps every one of them accountable.</p>
+      </div>
+      <div>
+        <h3 class="hlab">Platform</h3>
+        <ul>
+          <li><a href="platform.html#surfaces">Traces</a></li>
+          <li><a href="integrations.html">Integrations</a></li>
+          <li><a href="platform.html#surfaces">Policy engine</a></li>
+          <li><a href="platform.html#surfaces">Audit trail</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Solutions</h3>
+        <ul>
+          <li><a href="solutions.html#roles">Security</a></li>
+          <li><a href="solutions.html#roles">Operations</a></li>
+          <li><a href="solutions.html#roles">Compliance</a></li>
+          <li><a href="sectors.html">By sector</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Company</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="how-we-work.html">How we work</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="trust.html">Trust and security</a></li>
+          <li><a href="contact.html">Book a walkthrough</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Digital Spectre</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="trust.html">Security</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+(function(){
+"use strict";
+var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+})();
+</script>
+</body>
+</html>

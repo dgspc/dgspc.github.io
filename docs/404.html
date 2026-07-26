@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-8dokMQYCxMvAf7jBVvo+L7McFNlQ0JAgczva2ntwJT0='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08090A">
+<meta name="robots" content="noindex">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+<title>No record of that page — Digital Spectre</title>
+  <link rel="canonical" href="https://www.digitalspectre.com/404.html">
+
+<link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+<style>
+
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:2px; font-size:14px;font-weight:600;transition:transform .35s var(--ease),background .3s,border-color .3s}
+.foot{border-top:1px solid var(--ash);padding:26px 0;position:relative;z-index:1}
+.foot-base{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap; font-family:var(--font-mono);font-size:9.5px;letter-spacing:.08em;color:var(--smoke);text-transform:uppercase}
+.lede{font-size:clamp(15px,1.5vw,18px);color:var(--vapor);max-width:52ch;line-height:1.66}
+.nav{border-bottom:1px solid var(--ash);position:relative;z-index:50}
+:root{--void:#08090A; --carbon:#0E1012; --slate:#15181B; --ash:#24282C; --smoke:#878F96; --vapor:#B4BABF; --phosphor:#F4F6F7; --w04:rgba(244,246,247,.04); --w08:rgba(244,246,247,.08); --w14:rgba(244,246,247,.14); --w28:rgba(244,246,247,.28); --w55:rgba(244,246,247,.55); --font-display:'Bricolage Grotesque','Archivo',ui-sans-serif,system-ui,sans-serif; --font-body:'Inter Tight','Inter',ui-sans-serif,system-ui,-apple-system,sans-serif; --font-mono:'Martian Mono',ui-monospace,'SF Mono',Menlo,monospace; --gut:clamp(20px,5vw,48px); --ease:cubic-bezier(.22,.61,.36,1);}
+body{margin:0;background:var(--void);color:var(--vapor);font-family:var(--font-body); font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden; display:flex;flex-direction:column;min-height:100vh}
+html{-webkit-text-size-adjust:100%}
+
+@keyframes grain{0%{transform:translate(0,0)}17%{transform:translate(-3%,-2%)}
+  34%{transform:translate(2%,-4%)}51%{transform:translate(-2%,3%)}
+  68%{transform:translate(3%,1%)}85%{transform:translate(-1%,-3%)}100%{transform:translate(0,0)}}
+h1,h2,h3{font-family:var(--font-display);color:var(--phosphor);margin:0;font-weight:800;
+  letter-spacing:-.035em;line-height:1.02}
+.nav-links a:hover::after{width:100%}
+.main{flex:1;display:flex;align-items:center;padding:clamp(48px,7vw,88px) 0}
+.grid{display:grid;gap:clamp(36px,5vw,64px);width:100%}
+@media(min-width:980px){.grid{grid-template-columns:.95fr 1.05fr;align-items:center}}
+h1{font-size:clamp(34px,5.4vw,60px);max-width:13ch;margin:0 0 20px}
+.con{border:1px solid var(--ash);background:var(--carbon);border-radius:3px;overflow:hidden;
+  box-shadow:0 40px 90px -50px #000}
+.con-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 14px;
+  border-bottom:1px solid var(--ash);background:var(--slate);font-family:var(--font-mono);
+  font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--smoke)}
+.con-bar b{color:var(--phosphor);font-weight:500}
+.rows{padding:12px 14px}
+.rh,.r{display:grid;grid-template-columns:60px 1fr 74px;gap:16px;align-items:center}
+.rh{font-family:var(--font-mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--smoke);padding-bottom:8px;border-bottom:1px solid var(--ash)}
+.r{padding:9px 0;border-bottom:1px solid var(--w04);font-family:var(--font-mono);font-size:10px;
+  color:var(--vapor);animation:rowin .5s var(--ease) both}
+@keyframes rowin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.r .t{color:var(--smoke);font-size:9px}
+.r .a{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.r .a b{color:var(--phosphor);font-weight:500}
+.r.miss{background:var(--w04)}
+.sev{font-family:var(--font-mono);font-size:8.5px;letter-spacing:.09em;text-transform:uppercase;
+  font-style:normal;padding:2.5px 6px;display:inline-block;white-space:nowrap;border:1px solid var(--w14)}
+.sev--1{color:var(--smoke)}
+.sev--3{color:var(--void);background:var(--phosphor);border-color:var(--phosphor);font-weight:500}
+.con-foot{padding:13px 14px;border-top:1px solid var(--ash);font-family:var(--font-mono);
+  font-size:9px;letter-spacing:.06em;color:var(--smoke);line-height:1.7}
+.con-foot b{color:var(--vapor);font-weight:500}
+.con-foot a{color:var(--phosphor);border-bottom:1px solid var(--w28)}
+.con-foot a:hover{border-color:var(--phosphor)}
+.routes{border-top:1px solid var(--ash);padding:clamp(38px,5vw,64px) 0 clamp(30px,4vw,48px);
+  position:relative;z-index:1}
+.routes h2{font-size:clamp(19px,2.2vw,25px);margin-bottom:24px}
+.rgrid{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+@media(min-width:640px){.rgrid{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.rgrid{grid-template-columns:repeat(3,1fr)}}
+.route{background:var(--carbon);padding:20px 19px;display:block;position:relative;overflow:hidden;
+  transition:background .35s}
+.route:hover{background:var(--slate)}
+.route::after{content:"";position:absolute;top:0;left:-100%;width:100%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--phosphor),transparent);transition:left .8s var(--ease)}
+.route:hover::after{left:100%}
+.route b{font-family:var(--font-display);font-weight:800;font-size:16px;letter-spacing:-.025em;
+  color:var(--phosphor);display:block;margin-bottom:8px}
+.route span{font-size:13px;color:var(--smoke);line-height:1.5;display:block}
+@media(max-width:960px){ .nav-links{display:none} }
+@media(max-width:560px){
+  .nav-cta .btn{padding:9px 14px;font-size:12.5px}
+  .rh,.r{grid-template-columns:52px 1fr 68px;gap:10px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important}
+  .field::after{display:none}
+}
+</style>
+</head>
+<body>
+<div class="field" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="index.html" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+    <nav class="nav-links">
+      <a href="platform.html">Platform</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="how-we-work.html">How we work</a>
+      <a href="trust.html">Trust</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <div class="wrap grid">
+
+    <div>
+      <span class="eyebrow">Error 404</span>
+      <h1>No record of that page.</h1>
+      <p class="lede">Every request gets logged, including this one. What we don't have is anything to serve at that address.</p>
+      <p class="lede dim">It was either moved, mistyped, or never existed — and unlike most of what we watch, this one is entirely our problem rather than yours.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px">
+        <a href="index.html" class="btn btn--solid">Back to the homepage <span class="arw">→</span></a>
+        <a href="contact.html" class="btn btn--ghost">Tell us what broke</a>
+      </div>
+    </div>
+
+    <div class="con">
+      <div class="con-bar">
+        <span>Route resolver <b>/ this request</b></span>
+        <span><i class="sev sev--3">404</i></span>
+      </div>
+      <div class="rows">
+        <div class="rh"><span>Time</span><span>Action</span><span>State</span></div>
+        <div class="r"><span class="t" id="t1"></span><span class="a"><b>client</b> request received</span><span><i class="sev sev--1">ok</i></span></div>
+        <div class="r"><span class="t" id="t2"></span><span class="a"><b>resolver</b> match route</span><span><i class="sev sev--1">ok</i></span></div>
+        <div class="r miss"><span class="t" id="t3"></span><span class="a" id="path"><b>lookup</b> —</span><span><i class="sev sev--3">no record</i></span></div>
+      </div>
+      <p class="con-foot" id="hint">Trail intact. Nothing was lost — there was never anything there.</p>
+    </div>
+
+  </div>
+</main>
+
+<section class="routes">
+  <div class="wrap">
+    <h2>Where you were probably going</h2>
+    <div class="rgrid">
+      <a class="route" href="platform.html"><b>Platform</b><span>Traces, risk scoring, policy enforcement and the audit trail.</span></a>
+      <a class="route" href="solutions.html"><b>Solutions</b><span>One record, read three ways — security, operations, compliance.</span></a>
+      <a class="route" href="pricing.html"><b>Pricing</b><span>Per agent under enforcement. Free while you're only observing.</span></a>
+      <a class="route" href="trust.html"><b>Trust</b><span>What we store, where it runs, and what happens when we fail.</span></a>
+      <a class="route" href="integrations.html"><b>Integrations</b><span>Most of the list needs no setup at all. Here's which does.</span></a>
+      <a class="route" href="contact.html"><b>Book a walkthrough</b><span>You'll know what the call covers before you book it.</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-base">
+    <span>© 2026 Digital Spectre</span>
+    <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="trust.html">Security</a></span>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+(function(){
+"use strict";
+
+function clock(offsetMs){
+  var d = new Date(Date.now() + (offsetMs || 0));
+  return String(d.getHours()).padStart(2,'0') + ':' +
+         String(d.getMinutes()).padStart(2,'0') + ':' +
+         String(d.getSeconds()).padStart(2,'0');
+}
+['t1','t2','t3'].forEach(function(id, i){
+  var el = document.getElementById(id);
+  if(el) el.textContent = clock(i * 40);
+});
+
+var raw = (window.location.pathname || '') + (window.location.search || '');
+var asked = raw.replace(/^\/+/, '') || 'unknown';
+
+var segment = (window.location.pathname || '').split('/').filter(Boolean).pop() || '';
+if(asked.length > 48) asked = asked.slice(0, 45) + '…';
+var pathEl = document.getElementById('path');
+if(pathEl){
+  pathEl.textContent = '';
+  var b = document.createElement('b'); b.textContent = 'lookup';
+  pathEl.appendChild(b);
+  pathEl.appendChild(document.createTextNode(' /' + asked));
+}
+
+var PAGES = [
+  ['index.html','home'], ['platform.html','platform'], ['solutions.html','solutions'],
+  ['sectors.html','sectors'], ['pricing.html','pricing'], ['how-we-work.html','how we work'],
+  ['trust.html','trust'], ['integrations.html','integrations'], ['contact.html','contact'],
+  ['about.html','about'], ['privacy.html','privacy'], ['terms.html','terms']
+];
+
+function distance(a, b){
+  var m = a.length, n = b.length, prev = [], cur = [], i, j;
+  for(j = 0; j <= n; j++) prev[j] = j;
+  for(i = 1; i <= m; i++){
+    cur[0] = i;
+    for(j = 1; j <= n; j++){
+      cur[j] = Math.min(prev[j] + 1, cur[j-1] + 1,
+                        prev[j-1] + (a.charAt(i-1) === b.charAt(j-1) ? 0 : 1));
+    }
+    prev = cur.slice();
+  }
+  return prev[n];
+}
+
+var probe = segment.toLowerCase().replace(/\.html?$/,'').replace(/[^a-z]/g,'');
+if(probe){
+  var best = null, bestD = Infinity;
+  PAGES.forEach(function(p){
+    var key = p[0].replace(/\.html$/,'').replace(/[^a-z]/g,'');
+    var d = distance(probe, key);
+    if(d < bestD){ bestD = d; best = p; }
+  });
+  
+  if(best && bestD <= Math.max(3, Math.floor(probe.length * 0.4))){
+    var hint = document.getElementById('hint');
+    hint.innerHTML = '';
+    hint.appendChild(document.createTextNode('Closest match in the trail — did you want '));
+    var a = document.createElement('a');
+    a.href = best[0]; a.textContent = best[1];
+    hint.appendChild(a);
+    hint.appendChild(document.createTextNode('?'));
+  }
+}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-eVIOEjtqA9VH1NCIYpLcqWwOQ6jL5VSQF7S27DQBucY='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08090A">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+<title>Solutions — Digital Spectre</title>
+  <link rel="canonical" href="https://www.digitalspectre.com/solutions.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Digital Spectre">
+  <meta property="og:title" content="Solutions — Digital Spectre">
+  <meta property="og:description" content="Security wants to know what got touched. Operations wants to know what got done. Compliance wants to know who said yes. One trail, three views.">
+  <meta property="og:url" content="https://www.digitalspectre.com/solutions.html">
+  <meta property="og:image" content="https://www.digitalspectre.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Solutions — Digital Spectre">
+  <meta name="twitter:description" content="Security wants to know what got touched. Operations wants to know what got done. Compliance wants to know who said yes. One trail, three views.">
+  <meta name="twitter:image" content="https://www.digitalspectre.com/og-image.png">
+<meta name="description" content="Security wants to know what got touched. Operations wants to know what got done. Compliance wants to know who said yes. One trail, three views.">
+<link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+<style>
+
+.phead .lede{max-width:56ch}
+
+@keyframes grain{0%{transform:translate(0,0)}17%{transform:translate(-3%,-2%)}
+  34%{transform:translate(2%,-4%)}51%{transform:translate(-2%,3%)}
+  68%{transform:translate(3%,1%)}85%{transform:translate(-1%,-3%)}100%{transform:translate(0,0)}}
+.nav-links a:hover::after,.nav-links a.here::after{width:100%}
+.nav-links a.here{color:var(--phosphor)}
+@media(min-width:900px){.head{grid-template-columns:1.15fr .85fr;align-items:end;gap:48px}}
+.lens{border:1px solid var(--ash);background:var(--carbon);border-radius:3px;overflow:hidden}
+.lens-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 14px;
+  border-bottom:1px solid var(--ash);background:var(--slate);font-family:var(--font-mono);
+  font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--smoke)}
+.lens-bar b{color:var(--phosphor);font-weight:500}
+.lens-tabs{display:flex;border-bottom:1px solid var(--ash);position:relative}
+.lens-tab{flex:1;padding:15px 10px;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--smoke);border-right:1px solid var(--ash);
+  transition:color .35s,background .35s;position:relative}
+.lens-tab:last-child{border-right:0}
+.lens-tab:hover{color:var(--vapor)}
+.lens-tab.on{color:var(--phosphor);background:var(--w04)}
+.lens-tab i{position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--phosphor);font-style:normal}
+.lens-tab.on i{animation:tabfill 7s linear forwards}
+@keyframes tabfill{from{width:0}to{width:100%}}
+.lens-body{padding:clamp(18px,2.4vw,26px);min-height:330px}
+.lens-q{font-family:var(--font-display);font-weight:800;font-size:clamp(19px,2.4vw,27px);
+  letter-spacing:-.028em;color:var(--phosphor);margin:0 0 6px;line-height:1.12}
+.lens-who{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--smoke);display:block;margin-bottom:20px}
+.lens-view{display:none}
+.lens-view.on{display:block}
+.rows{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+.row{background:var(--carbon);display:grid;grid-template-columns:1fr;gap:3px;
+  padding:11px 13px;font-family:var(--font-mono);font-size:10px;
+  animation:rowin .5s var(--ease) both}
+@media(min-width:560px){.row{grid-template-columns:150px 1fr;gap:14px;align-items:baseline}}
+@keyframes rowin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.row .k{color:var(--smoke);font-size:9px;letter-spacing:.09em;text-transform:uppercase}
+.row .v{color:var(--vapor);line-height:1.45}
+.row .v b{color:var(--phosphor);font-weight:500}
+.row--key{background:var(--slate)}
+.row--key .v b{text-decoration:underline;text-underline-offset:3px}
+.lens-foot{margin-top:16px;font-family:var(--font-mono);font-size:9px;letter-spacing:.07em;
+  color:var(--smoke);line-height:1.7}
+.sev{font-family:var(--font-mono);font-size:8.5px;letter-spacing:.09em;text-transform:uppercase;
+  font-style:normal;padding:2.5px 6px;display:inline-block;white-space:nowrap;border:1px solid var(--w14)}
+.sev--2{color:var(--phosphor);border-color:var(--w28);
+  background-image:repeating-linear-gradient(45deg,var(--w08) 0 2px,transparent 2px 5px)}
+.sev--3{color:var(--void);background:var(--phosphor);border-color:var(--phosphor);font-weight:500}
+.roles{display:grid;gap:1px;background:var(--ash);margin-left:calc(-1 * var(--rowpad));margin-right:calc(-1 * var(--rowpad));border-top:1px solid var(--ash);
+  border-bottom:1px solid var(--ash)}
+.role{background:var(--void);display:grid;gap:26px;padding:clamp(32px,3.8vw,54px) var(--rowpad);
+  transition:background .4s}
+@media(min-width:940px){
+  .role{grid-template-columns:56px 1.02fr 1fr;gap:36px;align-items:start}
+}
+.role:hover{background:var(--carbon)}
+.role .rx{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;color:var(--smoke);padding-top:6px}
+.role h3{margin-bottom:14px;max-width:16ch}
+.role .ask{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--smoke);display:block;margin-bottom:14px}
+.role p{font-size:14.5px;margin:0 0 18px;max-width:48ch}
+.cols{display:grid;gap:22px}
+@media(min-width:620px){.cols{grid-template-columns:1fr 1fr}}
+.cols .hlab{line-height:1.02;max-width:none;font-family:var(--font-mono);font-size:9px;font-weight:500;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--smoke);margin:0 0 12px}
+.cols ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.cols li{font-size:13px;color:var(--vapor);display:flex;gap:10px;align-items:flex-start;line-height:1.5}
+.cols li::before{content:"";width:5px;height:5px;background:var(--w28);flex:0 0 auto;
+  margin-top:7px;transform:rotate(45deg)}
+.cols--out li{color:var(--smoke)}
+.cols--out li::before{background:var(--w14)}
+.sectors{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+@media(min-width:640px){.sectors{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.sectors{grid-template-columns:repeat(4,1fr)}}
+.sector{background:var(--carbon);padding:22px 20px 24px;position:relative;overflow:hidden;display:block;
+  transition:background .4s}
+.sector:hover{background:var(--slate)}
+.sector::after{content:"";position:absolute;top:0;left:-100%;width:100%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--phosphor),transparent);transition:left .8s var(--ease)}
+.sector:hover::after{left:100%}
+.sector b{font-family:var(--font-display);font-weight:800;font-size:17px;letter-spacing:-.025em;
+  color:var(--phosphor);display:block;margin-bottom:10px}
+.sector span{font-size:13px;color:var(--smoke);line-height:1.5;display:block}
+.cta>*{position:relative}
+@media(min-width:820px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr 1fr}}
+@media(max-width:960px){
+  .nav-links{display:none}
+  .burger{display:flex}
+}
+@media(max-width:560px){
+  .nav-cta .btn{padding:9px 14px;font-size:12.5px}
+  .lens-tab{font-size:8.5px;letter-spacing:.08em;padding:13px 6px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .field::after{display:none}
+}
+@media (pointer:coarse),(max-width:960px){.lens-tab{min-height:44px}}
+</style>
+</head>
+<body>
+<div class="field" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="index.html" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+    <nav class="nav-links">
+      <a href="platform.html">Platform</a>
+      <a href="solutions.html" class="here">Solutions</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="how-we-work.html">How we work</a>
+      <a href="trust.html">Trust</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+      <button class="burger" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="phead">
+  <div class="wrap">
+    <span class="crumb"><a href="index.html">Home</a> / Solutions</span>
+    <h1>One record. Three very different questions.</h1>
+    <p class="lede">Security wants to know what got touched. Operations wants to know whether the work got done. Compliance wants to know who said yes. Most organisations answer those from three systems that disagree. Spectre answers all three from one.</p>
+  </div>
+</section>
+
+<section class="sec" id="lenses">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">The same event, three ways</span>
+        <h2>Nothing is duplicated. Only the reading changes.</h2>
+      </div>
+      <div><p class="lede">Below is a single held action — one agent, one moment, 03:14 on a Tuesday. Switch reader and watch which facts come forward. The record underneath never moves.</p></div>
+    </div>
+
+    <div class="lens rv" id="lens">
+      <div class="lens-bar">
+        <span>Event <b>8843-f</b> · AGT-207 · 03:14:22</span>
+        <span><i class="sev sev--3">held</i></span>
+      </div>
+
+      <div class="lens-tabs" role="tablist">
+        <button class="lens-tab on" role="tab" aria-selected="true" data-view="sec">Security<i></i></button>
+        <button class="lens-tab" role="tab" aria-selected="false" data-view="ops">Operations<i></i></button>
+        <button class="lens-tab" role="tab" aria-selected="false" data-view="comp">Compliance<i></i></button>
+      </div>
+
+      <div class="lens-body">
+
+        <div class="lens-view on" id="v-sec">
+          <p class="lens-q">What did it touch?</p>
+          <span class="lens-who">Read by security · blast radius, destination, precedent</span>
+          <div class="rows">
+            <div class="row"><span class="k">Source</span><span class="v">warehouse.customers — <b>1,204 rows</b></span></div>
+            <div class="row row--key"><span class="k">Fields</span><span class="v">email, billing_address, <b>card_last4</b> — classified PII</span></div>
+            <div class="row row--key"><span class="k">Destination</span><span class="v"><b>s3://vendor-share-eu</b> — outside your account boundary</span></div>
+            <div class="row"><span class="k">Risk score</span><span class="v">34 → <b>97</b> in one run <i class="sev sev--3">critical</i></span></div>
+            <div class="row"><span class="k">Precedent</span><span class="v">This agent has never written outside the account before</span></div>
+            <div class="row"><span class="k">Blast radius</span><span class="v">Contained — call blocked pre-egress, nothing left the boundary</span></div>
+          </div>
+          <p class="lens-foot">Pushed to your SIEM at 03:14:22. Session replay attached.</p>
+        </div>
+
+        <div class="lens-view" id="v-ops">
+          <p class="lens-q">Did the work still get done?</p>
+          <span class="lens-who">Read by operations · throughput, cost, downstream effect</span>
+          <div class="rows">
+            <div class="row"><span class="k">Workflow</span><span class="v">renewal-ops — nightly customer export</span></div>
+            <div class="row"><span class="k">Run time</span><span class="v">2.4s to the block, <b>4.1s</b> including the fallback</span></div>
+            <div class="row"><span class="k">Cost</span><span class="v">$0.031 — no rerun charged</span></div>
+            <div class="row row--key"><span class="k">Outcome</span><span class="v">Step 8 blocked. Agent <b>rerouted to internal.reports</b> and finished</span></div>
+            <div class="row"><span class="k">Queue impact</span><span class="v">None — 0 downstream jobs delayed</span></div>
+            <div class="row"><span class="k">Pattern</span><span class="v">3rd block this month on the same destination rule</span></div>
+          </div>
+          <p class="lens-foot">A repeated block usually means a broken workflow, not a bad agent. Worth a look.</p>
+        </div>
+
+        <div class="lens-view" id="v-comp">
+          <p class="lens-q">Who approved this?</p>
+          <span class="lens-who">Read by compliance · policy, approver, evidence</span>
+          <div class="rows">
+            <div class="row row--key"><span class="k">Policy invoked</span><span class="v"><b>PII → external destination</b> — enforcement: never</span></div>
+            <div class="row"><span class="k">Decision</span><span class="v">Denied automatically. No human override requested</span></div>
+            <div class="row"><span class="k">Accountable owner</span><span class="v">Renewal-ops agent owner on record at time of run</span></div>
+            <div class="row"><span class="k">Evidence</span><span class="v">sha256 <b>9f2c1ba7e4d0…8831</b> — append-only, verifiable</span></div>
+            <div class="row"><span class="k">Retention</span><span class="v">7 years, eu-west — set at workspace level</span></div>
+            <div class="row"><span class="k">Maps to</span><span class="v">Access control and audit-logging obligations in your framework</span></div>
+          </div>
+          <p class="lens-foot">Exportable as a single-event evidence pack in CSV, JSON or PDF.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec" id="roles">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">By role</span>
+        <h2>What each team actually gets.</h2>
+      </div>
+      <div><p class="lede">Same deployment, same trail, three sets of defaults. Nobody has to learn another team's tooling to answer their own question.</p></div>
+    </div>
+
+    <div class="roles rv">
+
+      <article class="role">
+        <span class="rx">01</span>
+        <div>
+          <span class="ask">Security</span>
+          <h3>Treat every agent as an identity with standing access</h3>
+          <p>Because that is what it is. An agent holds credentials, reaches into production, and acts continuously without anyone approving each move. Spectre gives it the same scrutiny you would give a contractor with a permanent badge.</p>
+        </div>
+        <div class="cols">
+          <div>
+            <h3 class="hlab">What you get</h3>
+            <ul>
+              <li>Risk score per agent, recalculated each run</li>
+              <li>Data-movement rules enforced before egress</li>
+              <li>Session replay on anything held or blocked</li>
+              <li>Alerts into your existing SIEM and on-call rota</li>
+            </ul>
+          </div>
+          <div class="cols--out">
+            <h3 class="hlab">What it replaces</h3>
+            <ul>
+              <li>Log-scraping to reconstruct what an agent did</li>
+              <li>Quarterly access reviews that miss machine identities</li>
+              <li>Trusting a framework's own telemetry to police itself</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="role">
+        <span class="rx">02</span>
+        <div>
+          <span class="ask">Operations</span>
+          <h3>Find out whether the handover actually worked</h3>
+          <p>You gave a workflow to an agent to get time back. Spectre tells you whether you did — completion rate, cost per finished task, where runs stall or hand back to a human, measured against the manual baseline you started from.</p>
+        </div>
+        <div class="cols">
+          <div>
+            <h3 class="hlab">What you get</h3>
+            <ul>
+              <li>Success rate and cost per completed task</li>
+              <li>Where runs stall, retry or bounce back to a person</li>
+              <li>Queue depth and time-to-finish by workflow</li>
+              <li>Side-by-side against the pre-agent baseline</li>
+            </ul>
+          </div>
+          <div class="cols--out">
+            <h3 class="hlab">What it replaces</h3>
+            <ul>
+              <li>Guessing at ROI from token spend alone</li>
+              <li>Dashboards that show model latency but not business outcome</li>
+              <li>Finding out a workflow broke when a customer complains</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="role">
+        <span class="rx">03</span>
+        <div>
+          <span class="ask">Compliance and legal</span>
+          <h3>Answer the question months after anyone remembers</h3>
+          <p>The hard part of an agent incident is never the day it happens. It is the review eleven months later, when the engineer has left and the logs have rotated. Spectre keeps the answer where an auditor can reach it without a forensic project.</p>
+        </div>
+        <div class="cols">
+          <div>
+            <h3 class="hlab">What you get</h3>
+            <ul>
+              <li>Append-only trail with the approver on record</li>
+              <li>Evidence packs by date, agent or single decision</li>
+              <li>Retention and residency you set per workspace</li>
+              <li>Reviewer sign-off built into the flow, not bolted on</li>
+            </ul>
+          </div>
+          <div class="cols--out">
+            <h3 class="hlab">What it replaces</h3>
+            <ul>
+              <li>Screenshot folders and a shared spreadsheet</li>
+              <li>Asking engineering to reconstruct a decision from memory</li>
+              <li>Discovering your retention policy never covered agent logs</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec" id="sectors">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">By sector</span>
+        <h2>Where the stakes make this urgent.</h2>
+      </div>
+      <div><p class="lede">The platform is the same everywhere. What changes is which obligation your auditor opens with, and how much an unlogged action costs you.</p></div>
+    </div>
+
+    <div class="sectors rv">
+      <a class="sector" href="sectors.html#financial"><b>Financial services</b><span>Agents touching customer records, payments and trade data, under regimes that assume a human decision-maker.</span></a>
+      <a class="sector" href="sectors.html#healthcare"><b>Healthcare</b><span>Patient data with the highest breach cost of any sector, and agents increasingly reading it to draft and triage.</span></a>
+      <a class="sector" href="sectors.html#public"><b>Public sector</b><span>Procurement and records obligations that predate autonomous software and still apply to it.</span></a>
+      <a class="sector" href="sectors.html#technology"><b>Technology</b><span>The fastest agent adoption, the most production access, and usually the least governance around either.</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="cta rv" id="cta">
+      <span class="eyebrow" style="justify-content:center">Get started</span>
+      <h2>Bring the team that has the question.</h2>
+      <p class="lede">Whichever of the three you are, the walkthrough runs on your own traffic — and the other two teams get their view of it for free.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+        <a href="platform.html" class="btn btn--ghost">See the platform</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="index.html" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+        <p>We build agentic systems that do real work — and the console that keeps every one of them accountable.</p>
+      </div>
+      <div>
+        <h3 class="hlab">Platform</h3>
+        <ul>
+          <li><a href="platform.html#surfaces">Traces</a></li>
+          <li><a href="integrations.html">Integrations</a></li>
+          <li><a href="platform.html#surfaces">Policy engine</a></li>
+          <li><a href="platform.html#surfaces">Audit trail</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Solutions</h3>
+        <ul>
+          <li><a href="solutions.html#roles">Security</a></li>
+          <li><a href="solutions.html#roles">Operations</a></li>
+          <li><a href="solutions.html#roles">Compliance</a></li>
+          <li><a href="platform.html#autonomy">Autonomy levels</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Company</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="how-we-work.html">How we work</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="trust.html">Trust and security</a></li>
+          <li><a href="contact.html">Book a walkthrough</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Digital Spectre</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="trust.html">Security</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+(function(){
+"use strict";
+var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+var tabs = Array.prototype.slice.call(document.querySelectorAll('.lens-tab'));
+var views = { sec: document.getElementById('v-sec'),
+              ops: document.getElementById('v-ops'),
+              comp: document.getElementById('v-comp') };
+var idx = 0, timer = null, taken = false;
+
+function show(i){
+  idx = i;
+  tabs.forEach(function(t, k){
+    var on = k === i;
+    t.classList.toggle('on', on);
+    t.setAttribute('aria-selected', on ? 'true' : 'false');
+    var fill = t.querySelector('i');
+    fill.style.animation = 'none'; void fill.offsetWidth; fill.style.animation = '';
+  });
+  var key = tabs[i].getAttribute('data-view');
+  Object.keys(views).forEach(function(k){ views[k].classList.toggle('on', k === key); });
+}
+
+function rotate(){
+  if(reduce || taken) return;
+  clearInterval(timer);
+  timer = setInterval(function(){ show((idx + 1) % tabs.length); }, 7000);
+}
+
+tabs.forEach(function(t, i){
+  t.addEventListener('click', function(){
+    taken = true; clearInterval(timer);
+    tabs.forEach(function(x){ x.querySelector('i').style.animation = 'none'; });
+    show(i);
+  });
+});
+
+var lens = document.getElementById('lens');
+if(!('IntersectionObserver' in window) || reduce){
+  rotate();
+} else {
+  new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting) rotate();
+      else clearInterval(timer);
+    });
+  }, {threshold:.25}).observe(lens);
+}
+})();
+</script>
+</body>
+</html>

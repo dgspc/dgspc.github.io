@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-WrmNjD6u7kgae6arR82TwH053A4v2n7/IQask4e1uHg='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08090A">
+<meta name="robots" content="noindex">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+<title>Privacy — Digital Spectre</title>
+  <link rel="canonical" href="https://www.digitalspectre.com/privacy.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Digital Spectre">
+  <meta property="og:title" content="Privacy — Digital Spectre">
+  <meta property="og:description" content="What Digital Spectre collects, why, how long it is kept and what you can ask us to do about it.">
+  <meta property="og:url" content="https://www.digitalspectre.com/privacy.html">
+  <meta property="og:image" content="https://www.digitalspectre.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Privacy — Digital Spectre">
+  <meta name="twitter:description" content="What Digital Spectre collects, why, how long it is kept and what you can ask us to do about it.">
+  <meta name="twitter:image" content="https://www.digitalspectre.com/og-image.png">
+<meta name="description" content="What Digital Spectre collects, why, how long it is kept and what you can ask us to do about it.">
+<link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+<style>
+
+.field::after{content:none}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:2px; font-size:14px;font-weight:600;transition:transform .35s var(--ease),background .3s,border-color .3s}
+.crumb{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase; color:var(--smoke);margin-bottom:18px;display:block}
+.eyebrow{font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:.16em; text-transform:uppercase;color:var(--smoke);display:inline-flex;align-items:center;gap:10px;margin:0 0 20px}
+.foot{border-top:1px solid var(--ash);padding:clamp(40px,5vw,64px) 0 30px;position:relative;z-index:1}
+.foot-grid{display:grid;gap:36px;margin-bottom:42px}
+.lede{font-size:clamp(15px,1.5vw,18px);color:var(--vapor);max-width:58ch}
+:root{--void:#08090A; --carbon:#0E1012; --slate:#15181B; --ash:#24282C; --smoke:#878F96; --vapor:#B4BABF; --phosphor:#F4F6F7; --w04:rgba(244,246,247,.04); --w08:rgba(244,246,247,.08); --w14:rgba(244,246,247,.14); --w28:rgba(244,246,247,.28); --w55:rgba(244,246,247,.55); --font-display:'Bricolage Grotesque','Archivo',ui-sans-serif,system-ui,sans-serif; --font-body:'Inter Tight','Inter',ui-sans-serif,system-ui,-apple-system,sans-serif; --font-mono:'Martian Mono',ui-monospace,'SF Mono',Menlo,monospace; --gut:clamp(20px,5vw,48px); --ease:cubic-bezier(.22,.61,.36,1);}
+body{margin:0;background:var(--void);color:var(--vapor);font-family:var(--font-body); font-size:16px;line-height:1.66;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+p{margin:0 0 16px}
+
+h1,h2,h3{font-family:var(--font-display);color:var(--phosphor);margin:0;font-weight:800;letter-spacing:-.035em;line-height:1.04}
+.nav-links a:hover::after{width:100%}
+.dhead{padding:clamp(50px,7vw,84px) 0 clamp(30px,4vw,44px);border-bottom:1px solid var(--ash)}
+.dhead h1{font-size:clamp(36px,5.6vw,60px);max-width:14ch;margin:0 0 20px}
+.meta{font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--smoke);margin-top:24px;display:flex;gap:22px;flex-wrap:wrap}
+.meta b{color:var(--vapor);font-weight:500}
+.draft{border:1px solid var(--phosphor);background:var(--w08);padding:15px 17px;
+  font-family:var(--font-mono);font-size:9.5px;letter-spacing:.07em;line-height:1.8;
+  color:var(--vapor);margin:28px 0 0;max-width:78ch}
+.draft b{color:var(--phosphor);font-weight:500}
+.doc{display:grid;gap:clamp(34px,4vw,60px);padding:clamp(44px,6vw,80px) 0 clamp(56px,7vw,96px)}
+@media(min-width:940px){.doc{grid-template-columns:212px 1fr;gap:64px;align-items:start}}
+.toc{display:none}
+@media(min-width:940px){
+  .toc{display:block;position:sticky;top:96px}
+}
+.toc .toc-h{line-height:1.04;font-family:var(--font-mono);font-size:9px;font-weight:500;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--smoke);margin:0 0 16px}
+.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:1px;counter-reset:t}
+.toc a{display:flex;gap:10px;font-size:12.5px;color:var(--smoke);padding:6px 0;line-height:1.4;
+  transition:color .3s;counter-increment:t}
+.toc a::before{content:counter(t,decimal-leading-zero);font-family:var(--font-mono);font-size:8.5px;
+  color:var(--w28);flex:0 0 auto;padding-top:3px}
+.toc a:hover{color:var(--vapor)}
+.toc a.on{color:var(--phosphor)}
+.toc a.on::before{color:var(--w55)}
+.body{max-width:74ch}
+.clause{padding:0 0 clamp(30px,3.4vw,42px);scroll-margin-top:96px}
+.clause + .clause{padding-top:clamp(30px,3.4vw,42px);border-top:1px solid var(--ash)}
+.clause h2{font-size:clamp(19px,2.2vw,25px);letter-spacing:-.025em;margin-bottom:8px;line-height:1.15}
+.clause .cn{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;color:var(--smoke);
+  display:block;margin-bottom:12px}
+.clause p{font-size:14.5px;color:var(--vapor)}
+.clause p:last-child{margin-bottom:0}
+.clause ul{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:9px}
+.clause li{font-size:14px;color:var(--vapor);display:flex;gap:11px;align-items:flex-start;line-height:1.55}
+.clause li::before{content:"";width:5px;height:5px;background:var(--w28);flex:0 0 auto;margin-top:8px;transform:rotate(45deg)}
+.clause li b{color:var(--phosphor);font-weight:500}
+.clause a{color:var(--phosphor);border-bottom:1px solid var(--w28);transition:border-color .3s}
+.clause a:hover{border-color:var(--phosphor)}
+.plain{border-left:1px solid var(--w28);padding:2px 0 2px 16px;margin:0 0 18px}
+.plain span{font-family:var(--font-mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--smoke);display:block;margin-bottom:6px}
+.plain p{font-size:13.5px;color:var(--smoke);margin:0;line-height:1.6}
+@media(min-width:820px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr 1fr}}
+@media(max-width:960px){ .nav-links{display:none} .burger{display:flex} }
+@media(max-width:560px){ .nav-cta .btn{padding:9px 14px;font-size:12.5px} }
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<div class="field" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="index.html" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+    <nav class="nav-links">
+      <a href="platform.html">Platform</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="how-we-work.html">How we work</a>
+      <a href="trust.html">Trust</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+      <button class="burger" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="dhead">
+  <div class="wrap">
+    <span class="crumb"><a href="index.html">Home</a> / Privacy</span>
+    <h1>Privacy</h1>
+    <p class="lede">What we collect, why we collect it, how long we keep it, and what you can tell us to do with it. Each clause has a plain-English line beside it — where the two ever disagree, treat the plain-English one as what we meant.</p>
+    <div class="meta">
+      <span>Last updated <b>26 July 2026</b></span>
+      <span>Version <b>0.1 draft</b></span>
+    </div>
+
+    <p class="draft"><b>Digital Spectre is not a real company.</b> This site is a design and engineering showcase. There is no product, no service and no customers — the company, the people quoted, the metrics and the customer figures throughout the site are invented for demonstration. Nothing here is an offer, no data is collected from you, and the notice below describes how a company of this kind would handle your data rather than how anyone actually does.</p>
+    <p class="draft"><b>This page is illustrative and is not in force.</b> It is published so you can see the shape the notice would take. It is not a binding privacy notice — if something on it matters to you, <a href="contact.html" style="color:var(--phosphor);border-bottom:1px solid var(--w28)">ask us</a> and we will answer directly.</p>
+  </div>
+</section>
+
+<div class="wrap doc">
+
+  <nav class="toc" aria-label="Contents">
+    <h2 class="toc-h">Contents</h2>
+    <ol id="toc"></ol>
+  </nav>
+
+  <div class="body" id="body">
+
+    <section class="clause" id="who">
+      <span class="cn">01</span>
+      <h2>Who we are</h2>
+      <div class="plain"><span>In plain terms</span><p>We're the company you'd complain to.</p></div>
+      <p>Digital Spectre is the data controller for information collected through this website and for account data held about our customers. Where we process data on a customer's behalf inside their own environment, we act as a processor under their instructions and our data processing agreement governs instead.</p>
+      <p>Registered address and company number to be inserted. Questions go to <a href="contact.html">our contact page</a>.</p>
+    </section>
+
+    <section class="clause" id="collect">
+      <span class="cn">02</span>
+      <h2>What we collect</h2>
+      <div class="plain"><span>In plain terms</span><p>What you type into a form, plus basic analytics. Not your agents' data.</p></div>
+      <ul>
+        <li><b>Information you give us.</b> Name, work email, company, role and anything you write in a message when you request a walkthrough or contact us.</li>
+        <li><b>Account information.</b> For customers: users, workspace settings, billing contacts and subscription details.</li>
+        <li><b>Technical information.</b> Our host records standard server logs, including IP address and browser type, to serve the site and protect it from abuse. We run no analytics on top of them.</li>
+        <li><b>Support correspondence.</b> Emails and tickets, kept so we don't ask you the same question twice.</li>
+      </ul>
+      <p>We do not collect special category data through this website, and we ask that you don't include any in free-text fields.</p>
+    </section>
+
+    <section class="clause" id="agentdata">
+      <span class="cn">03</span>
+      <h2>Your agents' data is not ours</h2>
+      <div class="plain"><span>In plain terms</span><p>The traces stay in your cloud. We're a processor there, not a controller.</p></div>
+      <p>The enforcement layer runs inside your own cloud account. Trace data, policy decisions and audit records generated by your agents are yours, held in your infrastructure, and processed by us only where you have asked us to and only under the terms of a data processing agreement.</p>
+      <p>None of it is used to train models, improve our product, benchmark other customers, or for any purpose you have not agreed to in writing. See <a href="trust.html">our trust page</a> for what is and isn't stored.</p>
+    </section>
+
+    <section class="clause" id="why">
+      <span class="cn">04</span>
+      <h2>Why we process it</h2>
+      <div class="plain"><span>In plain terms</span><p>To reply to you, run your account, keep the service working, and meet our own legal duties.</p></div>
+      <ul>
+        <li>To respond to enquiries and arrange the walkthrough you asked for</li>
+        <li>To provide, bill for and support the service under our contract with you</li>
+        <li>To keep the site and service secure, and to investigate misuse</li>
+        <li>To understand how the site is used so we can improve it</li>
+        <li>To meet accounting, tax and other legal obligations</li>
+      </ul>
+      <p>Where the law requires a lawful basis, we rely on contract for account and billing data, legitimate interests for security and site analytics, and consent for any marketing you have opted into. You can withdraw consent at any time without affecting anything done before you did.</p>
+    </section>
+
+    <section class="clause" id="share">
+      <span class="cn">05</span>
+      <h2>Who we share it with</h2>
+      <div class="plain"><span>In plain terms</span><p>A short list of suppliers who need it to do their job. Nobody who wants it to sell you something.</p></div>
+      <p>We share personal data with a small number of service providers acting on our instructions: cloud infrastructure for our control plane, transactional email, and error and performance monitoring. Each is bound by contract to process data only as we direct.</p>
+      <p>We do not sell personal data, and we do not share it with advertising networks or data brokers. We may disclose information where we are legally required to, and will tell you unless we are prohibited from doing so.</p>
+      <p>Our current sub-processor list is available on request, and we give thirty days' written notice before adding a new one.</p>
+      <p><b>Typefaces.</b> The fonts are served from this domain, not from Google Fonts or any other font service. Loading a page on this site makes no request to a third party at all.</p>
+    </section>
+
+    <section class="clause" id="transfers">
+      <span class="cn">06</span>
+      <h2>International transfers</h2>
+      <div class="plain"><span>In plain terms</span><p>If data crosses a border, there's a legal mechanism behind it.</p></div>
+      <p>Where personal data is transferred outside the region it was collected in, we rely on an approved transfer mechanism — an adequacy decision where one exists, or standard contractual clauses with supplementary measures where it does not. Customer trace data does not move regions at all: it stays in the region of your workspace.</p>
+    </section>
+
+    <section class="clause" id="retention">
+      <span class="cn">07</span>
+      <h2>How long we keep it</h2>
+      <div class="plain"><span>In plain terms</span><p>Enquiries for two years, account data for the contract plus seven, analytics for fourteen months.</p></div>
+      <ul>
+        <li><b>Enquiry and marketing data</b> — 24 months from your last interaction, then deleted</li>
+        <li><b>Account and billing records</b> — the life of the contract plus seven years, to meet accounting requirements</li>
+        <li><b>Support correspondence</b> — 36 months</li>
+        <li><b>Server logs</b> — retained by our host under their own schedule</li>
+        <li><b>Customer trace data</b> — whatever retention you set on your workspace, from 30 days to 10 years</li>
+      </ul>
+      <p>Deletion is propagated to backups within 35 days.</p>
+    </section>
+
+    <section class="clause" id="rights">
+      <span class="cn">08</span>
+      <h2>Your rights</h2>
+      <div class="plain"><span>In plain terms</span><p>Ask us for it, ask us to fix it, ask us to delete it. We won't make it difficult.</p></div>
+      <p>Depending on where you are, you may have the right to access the personal data we hold about you, correct it, delete it, restrict or object to how we use it, receive it in a portable format, and withdraw consent. You also have the right to complain to your data protection authority.</p>
+      <p>Write to us via <a href="contact.html">the contact page</a>. We respond within one month and won't charge you for it. We may ask you to confirm your identity first, which is a protection for you rather than an obstacle.</p>
+    </section>
+
+    <section class="clause" id="cookies">
+      <span class="cn">09</span>
+      <h2>Cookies</h2>
+      <div class="plain"><span>In plain terms</span><p>There aren’t any. No cookies, no analytics, no tracking.</p></div>
+      <p>This site sets <b>no cookies at all</b>. There is no analytics package, no tracking pixel and no advertising technology anywhere on it, which is why you have not been asked to dismiss a consent banner.</p>
+      <p>If that ever changes we will say so on this page before it does, and ask you first wherever the law requires consent.</p>
+    </section>
+
+    <section class="clause" id="security">
+      <span class="cn">10</span>
+      <h2>Security</h2>
+      <div class="plain"><span>In plain terms</span><p>Encrypted in transit and at rest, access on a need-to-have basis, tested by outsiders.</p></div>
+      <p>We apply technical and organisational measures appropriate to the risk, including encryption in transit and at rest, least-privilege access control, logging of internal access, and annual independent penetration testing. Internal access to customer environments is off by default, time-boxed when granted, and written to the customer's own audit trail.</p>
+      <p>Detail is on <a href="trust.html">our trust page</a>. To report a vulnerability, see the disclosure section there.</p>
+    </section>
+
+    <section class="clause" id="children">
+      <span class="cn">11</span>
+      <h2>Children</h2>
+      <div class="plain"><span>In plain terms</span><p>This is a business product. It isn't for children and we don't market to them.</p></div>
+      <p>Our service is intended for organisations and is not directed at anyone under 16. We do not knowingly collect personal data from children. If you believe we have, tell us and we will delete it.</p>
+    </section>
+
+    <section class="clause" id="changes">
+      <span class="cn">12</span>
+      <h2>Changes to this notice</h2>
+      <div class="plain"><span>In plain terms</span><p>If we change something material, we'll tell you rather than quietly update the date.</p></div>
+      <p>We will post any changes on this page and update the date above. Where a change materially affects how we handle your personal data, we will notify account holders by email at least thirty days before it takes effect.</p>
+    </section>
+
+  </div>
+</div>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="index.html" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+        <p>We build agentic systems that do real work — and the console that keeps every one of them accountable.</p>
+      </div>
+      <div>
+        <h3 class="hlab">Platform</h3>
+        <ul>
+          <li><a href="platform.html#surfaces">Traces</a></li>
+          <li><a href="integrations.html">Integrations</a></li>
+          <li><a href="platform.html#surfaces">Policy engine</a></li>
+          <li><a href="platform.html#surfaces">Audit trail</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Solutions</h3>
+        <ul>
+          <li><a href="solutions.html#roles">Security</a></li>
+          <li><a href="solutions.html#roles">Operations</a></li>
+          <li><a href="solutions.html#roles">Compliance</a></li>
+          <li><a href="sectors.html">By sector</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Company</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="how-we-work.html">How we work</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="trust.html">Trust and security</a></li>
+          <li><a href="contact.html">Book a walkthrough</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Digital Spectre</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="trust.html">Security</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+(function(){
+"use strict";
+
+var clauses = Array.prototype.slice.call(document.querySelectorAll('.clause'));
+var toc = document.getElementById('toc');
+clauses.forEach(function(c){
+  var li = document.createElement('li');
+  var a = document.createElement('a');
+  a.href = '#' + c.id;
+  a.textContent = c.querySelector('h2').textContent;
+  li.appendChild(a);
+  toc.appendChild(li);
+});
+
+var links = Array.prototype.slice.call(toc.querySelectorAll('a'));
+if('IntersectionObserver' in window){
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var i = clauses.indexOf(e.target);
+      links.forEach(function(l, k){ l.classList.toggle('on', k === i); });
+    });
+  }, { rootMargin:'-96px 0px -70% 0px', threshold:0 });
+  clauses.forEach(function(c){ io.observe(c); });
+}
+})();
+</script>
+</body>
+</html>

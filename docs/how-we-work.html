@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-1xueXuJbe70jNzK0fK/5Dt1AF4fN5cIOI2zBiWPYgvA='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08090A">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+<title>How we work — Digital Spectre</title>
+  <link rel="canonical" href="https://www.digitalspectre.com/how-we-work.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Digital Spectre">
+  <meta property="og:title" content="How we work — Digital Spectre">
+  <meta property="og:description" content="Four steps, the artefacts each one produces, and an honest chart of who is doing the work at every stage — including the point where we stop.">
+  <meta property="og:url" content="https://www.digitalspectre.com/how-we-work.html">
+  <meta property="og:image" content="https://www.digitalspectre.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How we work — Digital Spectre">
+  <meta name="twitter:description" content="Four steps, the artefacts each one produces, and an honest chart of who is doing the work at every stage — including the point where we stop.">
+  <meta name="twitter:image" content="https://www.digitalspectre.com/og-image.png">
+<meta name="description" content="Four steps, the artefacts each one produces, and an honest chart of who is doing the work at every stage — including the point where we stop.">
+<link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+<style>
+
+@keyframes grain{0%{transform:translate(0,0)}17%{transform:translate(-3%,-2%)}
+  34%{transform:translate(2%,-4%)}51%{transform:translate(-2%,3%)}
+  68%{transform:translate(3%,1%)}85%{transform:translate(-1%,-3%)}100%{transform:translate(0,0)}}
+.nav-links a:hover::after,.nav-links a.here::after{width:100%}
+.nav-links a.here{color:var(--phosphor)}
+@media(min-width:900px){.head{grid-template-columns:1.15fr .85fr;align-items:end;gap:48px}}
+.ho{border:1px solid var(--ash);background:var(--carbon);border-radius:3px;overflow:hidden}
+.ho-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  padding:12px 14px;border-bottom:1px solid var(--ash);background:var(--slate);
+  font-family:var(--font-mono);font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--smoke)}
+.ho-bar b{color:var(--phosphor);font-weight:500}
+.ho-key{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.ho-key span{display:flex;align-items:center;gap:6px}
+.ho-key i{width:16px;height:8px;display:block;border:1px solid var(--w28)}
+.lv0{background:transparent}
+.lv1{background:var(--w28)}
+.lv2{background-color:var(--w55);background-image:repeating-linear-gradient(45deg,var(--void) 0 1px,transparent 1px 4px)}
+.lv3{background:var(--phosphor);border-color:var(--phosphor)}
+.ho-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ash);
+  border-bottom:1px solid var(--ash)}
+@media(min-width:760px){.ho-grid{grid-template-columns:168px repeat(4,1fr)}}
+.ho-cell{background:var(--carbon);padding:12px 13px}
+.ho-cell.hd{background:var(--slate);font-family:var(--font-mono);font-size:8.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--smoke);line-height:1.4}
+.ho-cell.who{background:var(--slate);font-family:var(--font-mono);font-size:9.5px;color:var(--phosphor);
+  grid-column:1/-1}
+@media(min-width:760px){.ho-cell.who{grid-column:auto;display:flex;align-items:center}}
+.ho-cell.corner{display:none}
+@media(min-width:760px){.ho-cell.corner{display:block}}
+.ho-load{height:10px;border:1px solid var(--w14);width:0;
+  transition:width .7s var(--ease),background .5s}
+.ho-lab{font-family:var(--font-mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--smoke);display:block;margin-top:7px}
+.ho-sm{font-family:var(--font-mono);font-size:8px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--smoke);display:block;margin-bottom:6px}
+@media(min-width:760px){.ho-sm{display:none}}
+.ho-note{padding:14px;font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;
+  color:var(--smoke);line-height:1.75}
+.ho-note b{color:var(--vapor);font-weight:500}
+.steps{display:grid;gap:1px;background:var(--ash);margin-left:calc(-1 * var(--rowpad));
+  margin-right:calc(-1 * var(--rowpad));border-top:1px solid var(--ash);border-bottom:1px solid var(--ash)}
+.step{background:var(--void);display:grid;gap:24px;padding:clamp(30px,3.6vw,50px) var(--rowpad);
+  transition:background .4s}
+@media(min-width:940px){.step{grid-template-columns:60px 1.02fr 1fr;gap:36px;align-items:start}}
+.step:hover{background:var(--carbon)}
+.step .sn{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;color:var(--smoke);padding-top:6px}
+.step h3{margin-bottom:14px;max-width:16ch}
+.step p{font-size:14.5px;margin:0 0 16px;max-width:48ch}
+.step p:last-child{margin:0}
+.arte{border:1px solid var(--ash);background:var(--carbon);padding:16px 17px}
+.arte .hlab{line-height:1.02;max-width:none;font-family:var(--font-mono);font-size:9px;font-weight:500;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--smoke);margin:0 0 14px}
+.arte ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.arte li{font-family:var(--font-mono);font-size:10px;color:var(--vapor);display:flex;gap:10px;
+  align-items:flex-start;line-height:1.5}
+.arte li::before{content:"";width:5px;height:5px;background:var(--w55);flex:0 0 auto;
+  margin-top:6px;transform:rotate(45deg)}
+.arte li b{color:var(--phosphor);font-weight:500}
+.nos{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+@media(min-width:760px){.nos{grid-template-columns:1fr 1fr}}
+.no{background:var(--carbon);padding:24px clamp(20px,2.6vw,28px)}
+.no b{font-family:var(--font-display);font-weight:800;font-size:16.5px;letter-spacing:-.02em;
+  color:var(--phosphor);display:block;margin-bottom:9px}
+.no span{font-size:13.5px;color:var(--smoke);line-height:1.55}
+.owns{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+@media(min-width:640px){.owns{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.owns{grid-template-columns:repeat(4,1fr)}}
+.own{background:var(--carbon);padding:22px 20px}
+.own b{font-family:var(--font-display);font-weight:800;font-size:16px;letter-spacing:-.025em;
+  color:var(--phosphor);display:block;margin-bottom:9px}
+.own span{font-size:13px;color:var(--smoke);line-height:1.5;display:block}
+.cta>*{position:relative}
+@media(min-width:820px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr 1fr}}
+@media(max-width:960px){
+  .nav-links{display:none}
+  .burger{display:flex}
+}
+@media(max-width:560px){
+  .nav-cta .btn{padding:9px 14px;font-size:12.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .field::after{display:none}
+}
+</style>
+</head>
+<body>
+<div class="field" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="index.html" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+    <nav class="nav-links">
+      <a href="platform.html">Platform</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="how-we-work.html" class="here">How we work</a>
+      <a href="trust.html">Trust</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+      <button class="burger" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="phead">
+  <div class="wrap">
+    <span class="crumb"><a href="index.html">Home</a> / How we work</span>
+    <h1>We build it, then we get out of the way.</h1>
+    <p class="lede">Four steps, each producing something you keep. The measure of a good engagement is that by the end your team could run it without us — so this page is mostly about how the work moves off our desk and onto yours.</p>
+  </div>
+</section>
+
+<section class="sec" id="handover">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Who does the work</span>
+        <h2>The load has to move, or we've failed.</h2>
+      </div>
+      <div>
+        <p class="lede">Agencies rarely publish this, because the honest version shows them becoming unnecessary. That's the point.</p>
+        <p class="lede dim">Your security team is heaviest at step two, when the rules get written. That's deliberate — rules written without them get switched off within a month.</p>
+      </div>
+    </div>
+
+    <div class="ho rv" id="ho">
+      <div class="ho-bar">
+        <span>Effort by stage <b>/ indicative</b></span>
+        <div class="ho-key">
+          <span><i class="lv0"></i> None</span>
+          <span><i class="lv1"></i> Light</span>
+          <span><i class="lv2"></i> Shared</span>
+          <span><i class="lv3"></i> Leading</span>
+        </div>
+      </div>
+
+      <div class="ho-grid" id="hoGrid"></div>
+
+      <p class="ho-note">By step four we're in a <b>weekly review</b>, not a workstream. Plenty of clients drop that to monthly and then to nothing, which is the outcome we're aiming at — the platform stays, the engagement doesn't have to.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec" id="steps">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">The four steps</span>
+        <h2>Each one leaves something behind.</h2>
+      </div>
+      <div><p class="lede">No discovery theatre and no deck at the end. Every step produces an artefact you'd still have value from if we walked away that afternoon.</p></div>
+    </div>
+
+    <div class="steps rv">
+
+      <article class="step">
+        <span class="sn">Step 01</span>
+        <div>
+          <h3>Find the work worth handing over</h3>
+          <p>We sit with the team actually doing the job — not their manager — and map the workflow as it really runs, including the bits nobody documented. Then we pick the one with the clearest before-and-after.</p>
+          <p class="dim">If nothing clears the bar, we say so and you've spent a fortnight learning your own process better than you knew it. That happens more often than you'd expect and we'd rather it happened here than in month five.</p>
+        </div>
+        <div class="arte">
+          <h3 class="hlab">What you keep</h3>
+          <ul>
+            <li>A <b>workflow map</b> of how the job runs today, with the undocumented steps</li>
+            <li>A <b>baseline</b>: volume, time per task, current error rate</li>
+            <li>A ranked shortlist, with the ones we'd <b>decline</b> and why</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="step">
+        <span class="sn">Step 02</span>
+        <div>
+          <h3>Design the agent and its limits together</h3>
+          <p>Prompts, tools, memory and retrieval — plus the rules it runs under. What it can reach, what it can spend, and what it must ask a human about first, all decided before anything ships.</p>
+          <p class="dim">Your security team is in this room. Rules written for a team rather than with one get quietly disabled the first time they block something urgent.</p>
+        </div>
+        <div class="arte">
+          <h3 class="hlab">What you keep</h3>
+          <ul>
+            <li>An <b>agent spec</b>: tools, scopes, data reach, failure behaviour</li>
+            <li>A <b>rule set</b> in version control, reviewed and signed off</li>
+            <li>An <b>eval suite</b> defining what correct looks like</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="step">
+        <span class="sn">Step 03</span>
+        <div>
+          <h3>Ship it where you can watch it</h3>
+          <p>Version-tracked in your repo, deployed into your own AWS, Azure or GCP account, wired into the console before the first real run. It starts at observe — full traces, nothing blocking — until you're ready to let a rule act.</p>
+          <p class="dim">No agent runs dark, not even in staging.</p>
+        </div>
+        <div class="arte">
+          <h3 class="hlab">What you keep</h3>
+          <ul>
+            <li>The <b>agent code</b>, in your repository, under your licence</li>
+            <li>Infrastructure as code for <b>your own cloud account</b></li>
+            <li>A live console on <b>your</b> traffic, from run one</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="step">
+        <span class="sn">Step 04</span>
+        <div>
+          <h3>Keep it honest as it grows</h3>
+          <p>Evals on every change, guardrails tuned against real traffic, and a standing review of what got held and why. Repeated holds usually mean a broken workflow rather than a bad agent, and that distinction is most of the work.</p>
+          <p class="dim">Your team takes the console whenever they're ready. We don't hold the keys as a retention strategy.</p>
+        </div>
+        <div class="arte">
+          <h3 class="hlab">What you keep</h3>
+          <ul>
+            <li>A <b>tuned rule set</b> that has survived contact with production</li>
+            <li>A <b>hold log</b> — what was stopped, why, and what changed after</li>
+            <li>A runbook your on-call can act on <b>without calling us</b></li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec" id="no">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Before you ask</span>
+        <h2>Work we turn down.</h2>
+      </div>
+      <div><p class="lede">Every one of these has been a real conversation. Saying no early costs a deal; saying it in month four costs a reference.</p></div>
+    </div>
+
+    <div class="nos rv">
+      <div class="no"><b>Low volume, high blast radius</b><span>If the job runs eleven times a year and a mistake is catastrophic, a person is both cheaper and better. Automation earns its keep on repetition.</span></div>
+      <div class="no"><b>Nobody can define correct</b><span>If two people on your team disagree about what a good outcome looks like, no eval suite will settle it and the agent will just automate the argument.</span></div>
+      <div class="no"><b>Replacing a team quietly</b><span>We won't build something whose users haven't been told. Aside from the ethics, they're the only people who know how the process actually works.</span></div>
+      <div class="no"><b>Locked to one model, forever</b><span>If a constraint means you can never change model provider, we'll flag it as the strategic risk it is rather than quietly building on it.</span></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec" id="own">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Ownership</span>
+        <h2>What's yours at the end.</h2>
+      </div>
+      <div><p class="lede">All of it, and from the first commit rather than on final payment. Leaving should be a decision, not a project.</p></div>
+    </div>
+
+    <div class="owns rv">
+      <div class="own"><b>The code</b><span>In your repository from day one, under a licence that doesn't depend on us still being here.</span></div>
+      <div class="own"><b>The traces</b><span>Streaming to your own bucket as they're written, verifiable without a Spectre account.</span></div>
+      <div class="own"><b>The keys</b><span>Deployed in your cloud account. We never hold production credentials.</span></div>
+      <div class="own"><b>The rules</b><span>Plain YAML in version control. Readable, diffable and portable by anyone you hire next.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="cta rv" id="cta">
+      <span class="eyebrow" style="justify-content:center">Get started</span>
+      <h2>Bring the workflow you've been avoiding.</h2>
+      <p class="lede">The one everybody agrees is a mess and nobody wants to touch. That conversation is free, and it's usually the most useful hour either of us spends.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+        <a href="pricing.html" class="btn btn--ghost">See pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="index.html" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+        <p>We build agentic systems that do real work — and the console that keeps every one of them accountable.</p>
+      </div>
+      <div>
+        <h3 class="hlab">Platform</h3>
+        <ul>
+          <li><a href="platform.html#surfaces">Traces</a></li>
+          <li><a href="integrations.html">Integrations</a></li>
+          <li><a href="platform.html#surfaces">Policy engine</a></li>
+          <li><a href="platform.html#surfaces">Audit trail</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Solutions</h3>
+        <ul>
+          <li><a href="solutions.html#roles">Security</a></li>
+          <li><a href="solutions.html#roles">Operations</a></li>
+          <li><a href="solutions.html#roles">Compliance</a></li>
+          <li><a href="platform.html#autonomy">Autonomy levels</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Company</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="how-we-work.html">How we work</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="trust.html">Trust and security</a></li>
+          <li><a href="contact.html">Book a walkthrough</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Digital Spectre</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="trust.html">Security</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+(function(){
+"use strict";
+var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+var STAGES = ['01 Find', '02 Design', '03 Ship', '04 Keep honest'];
+var ROWS = [
+  { who: 'Digital Spectre',  load: [3, 3, 2, 1] },
+  { who: 'Your engineers',   load: [1, 2, 3, 3] },
+  { who: 'Your security team', load: [1, 3, 2, 2] }
+];
+var WORDS = ['Not involved', 'Light', 'Shared', 'Leading'];
+
+var grid = document.getElementById('hoGrid');
+var cells = [];
+
+function build(){
+  var html = '<div class="ho-cell hd corner"></div>';
+  STAGES.forEach(function(s){ html += '<div class="ho-cell hd">' + s + '</div>'; });
+  ROWS.forEach(function(r){
+    html += '<div class="ho-cell who">' + r.who + '</div>';
+    r.load.forEach(function(v, i){
+      html += '<div class="ho-cell">' +
+                '<span class="ho-sm">' + STAGES[i] + '</span>' +
+                '<span class="ho-load lv' + v + '" data-v="' + v + '"></span>' +
+                '<span class="ho-lab">' + WORDS[v] + '</span>' +
+              '</div>';
+    });
+  });
+  grid.innerHTML = html;
+  cells = Array.prototype.slice.call(grid.querySelectorAll('.ho-load'));
+}
+
+function fill(){
+  cells.forEach(function(c, i){
+    var v = parseInt(c.getAttribute('data-v'), 10);
+    var w = [8, 38, 68, 100][v];
+    if(reduce){ c.style.width = w + '%'; return; }
+    setTimeout(function(){ c.style.width = w + '%'; }, 60 * i);
+  });
+}
+
+build();
+if(!('IntersectionObserver' in window) || reduce){
+  fill();
+} else {
+  var hio = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ fill(); hio.unobserve(e.target); } });
+  }, {threshold:.25});
+  hio.observe(document.getElementById('ho'));
+}
+})();
+</script>
+</body>
+</html>

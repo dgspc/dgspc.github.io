@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-nvUefmWETUy719z3az/FAhN6scB7UxWrOsUV7xIGWgw='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08090A">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+<title>Pricing — Digital Spectre</title>
+  <link rel="canonical" href="https://www.digitalspectre.com/pricing.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Digital Spectre">
+  <meta property="og:title" content="Pricing — Digital Spectre">
+  <meta property="og:description" content="Free to observe, unlimited agents. You pay per agent once a rule can stop an action. Unlimited console seats on every tier.">
+  <meta property="og:url" content="https://www.digitalspectre.com/pricing.html">
+  <meta property="og:image" content="https://www.digitalspectre.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pricing — Digital Spectre">
+  <meta name="twitter:description" content="Free to observe, unlimited agents. You pay per agent once a rule can stop an action. Unlimited console seats on every tier.">
+  <meta name="twitter:image" content="https://www.digitalspectre.com/og-image.png">
+<meta name="description" content="Free to observe, unlimited agents. You pay per agent once a rule can stop an action. Unlimited console seats on every tier.">
+<link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+<style>
+
+@keyframes grain{0%{transform:translate(0,0)}17%{transform:translate(-3%,-2%)}
+  34%{transform:translate(2%,-4%)}51%{transform:translate(-2%,3%)}
+  68%{transform:translate(3%,1%)}85%{transform:translate(-1%,-3%)}100%{transform:translate(0,0)}}
+.nav-links a:hover::after,.nav-links a.here::after{width:100%}
+.nav-links a.here{color:var(--phosphor)}
+@media(min-width:900px){.head{grid-template-columns:1.15fr .85fr;align-items:end;gap:48px}}
+.tiers{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+@media(min-width:900px){.tiers{grid-template-columns:repeat(3,1fr)}}
+.tier{background:var(--carbon);padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;
+  position:relative;overflow:hidden}
+.tier--mid{background:var(--slate)}
+.tier--mid::before{content:"Most deployed";position:absolute;top:0;right:0;
+  font-family:var(--font-mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--phosphor);color:var(--void);padding:5px 10px;font-weight:500}
+.tier .tn{font-family:var(--font-display);font-weight:800;font-size:21px;letter-spacing:-.03em;
+  color:var(--phosphor);display:block;margin-bottom:7px}
+.tier .td{font-size:13px;color:var(--smoke);display:block;margin-bottom:22px;line-height:1.5;min-height:3em}
+.tier .amt{font-family:var(--font-display);font-weight:800;letter-spacing:-.045em;color:var(--phosphor);
+  font-size:clamp(32px,4vw,44px);line-height:1;display:block}
+.tier .per{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.09em;color:var(--smoke);
+  display:block;margin-top:10px;margin-bottom:24px;line-height:1.6;min-height:3.2em}
+.tier ul{list-style:none;margin:0 0 26px;padding:0;display:grid;gap:10px;flex:1}
+.tier li{font-size:13.5px;color:var(--vapor);display:flex;gap:10px;align-items:flex-start;line-height:1.45}
+.tier li::before{content:"";width:5px;height:5px;background:var(--w55);flex:0 0 auto;margin-top:7px;transform:rotate(45deg)}
+.tier li.off{color:var(--smoke)}
+.tier li.off::before{background:transparent;border:1px solid var(--w28)}
+.tier .btn{width:100%;justify-content:center}
+.tier-why{font-family:var(--font-mono);font-size:8.5px;letter-spacing:.07em;color:var(--smoke);
+  line-height:1.75;display:block;margin-top:13px}
+.tier-why b{color:var(--vapor);font-weight:500}
+.calc{border:1px solid var(--ash);background:var(--carbon);border-radius:3px;overflow:hidden}
+.calc-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 14px;
+  border-bottom:1px solid var(--ash);background:var(--slate);font-family:var(--font-mono);
+  font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--smoke)}
+.calc-bar b{color:var(--phosphor);font-weight:500}
+.calc-in{padding:clamp(22px,3vw,34px)}
+.calc-q{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--smoke);display:block;margin-bottom:16px}
+.calc-n{font-family:var(--font-display);font-weight:800;letter-spacing:-.04em;color:var(--phosphor);
+  font-size:clamp(38px,6vw,62px);line-height:1;display:block;margin-bottom:4px;
+  font-variant-numeric:tabular-nums;font-feature-settings:'tnum' 1}
+.calc-nl{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.09em;color:var(--smoke);
+  display:block;margin-bottom:26px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;background:transparent;margin:0 0 8px;display:block}
+input[type=range]::-webkit-slider-runnable-track{height:2px;background:var(--w14)}
+input[type=range]::-moz-range-track{height:2px;background:var(--w14)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:14px;height:14px;
+  background:var(--phosphor);margin-top:-6px;border:0;cursor:pointer;transition:transform .2s var(--ease)}
+input[type=range]::-moz-range-thumb{width:14px;height:14px;background:var(--phosphor);border:0;
+  border-radius:0;cursor:pointer}
+input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.25)}
+.ticks{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:8.5px;
+  letter-spacing:.09em;color:var(--smoke);margin-bottom:30px}
+.calc-out{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+@media(min-width:660px){.calc-out{grid-template-columns:repeat(3,1fr)}}
+.out{background:var(--carbon);padding:16px 17px}
+.out .k{font-family:var(--font-mono);font-size:8.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--smoke);display:block;margin-bottom:7px}
+.out .v{font-family:var(--font-display);font-weight:800;font-size:clamp(19px,2.4vw,25px);
+  letter-spacing:-.03em;color:var(--phosphor);font-variant-numeric:tabular-nums;
+  font-feature-settings:'tnum' 1;display:block}
+.out .s{font-family:var(--font-mono);font-size:8.5px;letter-spacing:.07em;color:var(--smoke);
+  display:block;margin-top:6px;line-height:1.5}
+.calc-foot{padding:14px;border-top:1px solid var(--ash);font-family:var(--font-mono);font-size:9px;
+  letter-spacing:.06em;color:var(--smoke);line-height:1.75}
+.calc-foot b{color:var(--vapor);font-weight:500}
+.ladder{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash);margin-top:28px}
+@media(min-width:700px){.ladder{grid-template-columns:repeat(4,1fr)}}
+.step{background:var(--carbon);padding:15px 16px;transition:background .35s}
+.step.on{background:var(--phosphor)}
+.step .r{font-family:var(--font-mono);font-size:8.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--smoke);display:block;margin-bottom:6px}
+.step .p{font-family:var(--font-display);font-weight:800;font-size:19px;letter-spacing:-.03em;
+  color:var(--phosphor);display:block}
+.step.on .r{color:rgba(8,9,10,.6)}
+.step.on .p{color:var(--void)}
+.free{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+@media(min-width:640px){.free{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.free{grid-template-columns:repeat(4,1fr)}}
+.fitem{background:var(--carbon);padding:22px 20px}
+.fitem b{font-family:var(--font-display);font-weight:800;font-size:16px;letter-spacing:-.025em;
+  color:var(--phosphor);display:block;margin-bottom:9px}
+.fitem span{font-size:13px;color:var(--smoke);line-height:1.5;display:block}
+.qa{display:grid;gap:1px;background:var(--ash);margin-left:calc(-1 * var(--rowpad));margin-right:calc(-1 * var(--rowpad));border-top:1px solid var(--ash);border-bottom:1px solid var(--ash)}
+.q{background:var(--void);display:grid;gap:12px;padding:clamp(22px,2.6vw,32px) var(--rowpad);transition:background .4s}
+@media(min-width:860px){.q{grid-template-columns:300px 1fr;gap:36px;align-items:start}}
+.q:hover{background:var(--carbon)}
+.q h3{font-size:17px;max-width:22ch}
+.q p{font-size:14px;margin:0;max-width:62ch}
+.q p + p{margin-top:11px}
+.q b{color:var(--phosphor);font-weight:500}
+.cta>*{position:relative}
+@media(min-width:820px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr 1fr}}
+@media(max-width:960px){
+  .nav-links{display:none}
+  .burger{display:flex}
+}
+@media(max-width:560px){
+  .nav-cta .btn{padding:9px 14px;font-size:12.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .field::after{display:none}
+}
+@media (pointer:coarse),(max-width:960px){.tier .btn{min-height:44px}}
+</style>
+</head>
+<body>
+<div class="field" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="index.html" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+    <nav class="nav-links">
+      <a href="platform.html">Platform</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="pricing.html" class="here">Pricing</a>
+      <a href="how-we-work.html">How we work</a>
+      <a href="trust.html">Trust</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+      <button class="burger" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="phead">
+  <div class="wrap">
+    <span class="crumb"><a href="index.html">Home</a> / Pricing</span>
+    <h1>Priced per agent, not per person.</h1>
+    <p class="lede">You pay for the software doing the work, the same way you'd pay for a seat if a person were doing it. Console access is unlimited and always has been — the whole point is that three teams read the same record.</p>
+  </div>
+</section>
+
+<section class="sec" id="tiers">
+  <div class="wrap">
+    <div class="tiers rv">
+
+      <div class="tier">
+        <span class="tn">Observe</span>
+        <span class="td">Trace every agent you run. Nothing blocks, so nothing is billed.</span>
+        <span class="amt">Free</span>
+        <span class="per">Unlimited agents, fair use on volume<br>Free for as long as you're only watching</span>
+        <ul>
+          <li>Step-level traces on every run</li>
+          <li>30 days full replay, then 12 months of metadata</li>
+          <li>Cost and token accounting</li>
+          <li>Unlimited agents and console seats</li>
+          <li class="off">No baselines or risk scoring</li>
+          <li class="off">Alerts in console only — no SIEM or on-call</li>
+        </ul>
+        <a href="contact.html" class="btn btn--ghost">Book the setup call</a>
+        <span class="tier-why">There is nothing to sign up to: the enforcement layer deploys into <b>your own cloud account</b>, so it takes one call to stand up. After that it is yours and we are not in the loop.</span>
+      </div>
+
+      <div class="tier tier--mid">
+        <span class="tn">Supervise</span>
+        <span class="td">The moment a rule can stop an action, the agent becomes billable.</span>
+        <span class="amt">$59</span>
+        <span class="per">Per agent under enforcement, per month<br>Billed annually · volume rates below</span>
+        <ul>
+          <li>Everything in Observe, unmetered</li>
+          <li>Per-agent baselines and drift scoring</li>
+          <li>Inline policy enforcement at 4 ms median</li>
+          <li>Approval queues and human-in-the-loop holds</li>
+          <li>250k actions per agent, per month</li>
+          <li>24-month full retention, SIEM and on-call routing</li>
+        </ul>
+        <a href="contact.html" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+      </div>
+
+      <div class="tier">
+        <span class="tn">Govern</span>
+        <span class="td">For regulated estates, and anyone whose auditor has opinions.</span>
+        <span class="amt">Custom</span>
+        <span class="per">Annual agreement<br>From 251 agents</span>
+        <ul>
+          <li>Everything in Supervise</li>
+          <li>Evidence packs and framework mapping</li>
+          <li>Residency and retention per workspace</li>
+          <li>Self-hosted enforcement layer</li>
+          <li>SSO, SCIM and scoped admin roles</li>
+          <li>Named engineer, contractual SLA</li>
+        </ul>
+        <a href="contact.html" class="btn btn--ghost">Talk to us</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec" id="calculator">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Work out your number</span>
+        <h2>No quote required to do the maths.</h2>
+      </div>
+      <div><p class="lede">Count only the agents you'd let a rule act on. Traced-only agents are free and unlimited, so most teams land far lower than they expect.</p></div>
+    </div>
+
+    <div class="calc rv" id="calc">
+      <div class="calc-bar">
+        <span>Estimate <b>/ annual billing</b></span>
+        <span id="tierName">Supervise</span>
+      </div>
+
+      <div class="calc-in">
+        <span class="calc-q">Agents under enforcement</span>
+        <span class="calc-n" id="nAgents">40</span>
+        <span class="calc-nl" id="nNote">traced-only agents stay free</span>
+
+        <input type="range" id="slider" min="1" max="300" value="40" step="1"
+               aria-label="Number of agents under enforcement">
+        <div class="ticks"><span>1</span><span>75</span><span>150</span><span>225</span><span>300+</span></div>
+
+        <div class="calc-out">
+          <div class="out">
+            <span class="k">Per month</span>
+            <span class="v" id="permonth">$1,880</span>
+            <span class="s" id="rateNote">at $47 per agent</span>
+          </div>
+          <div class="out">
+            <span class="k">Per year</span>
+            <span class="v" id="peryear">$22,560</span>
+            <span class="s">billed annually</span>
+          </div>
+          <div class="out">
+            <span class="k">Actions included</span>
+            <span class="v" id="actions">10.0M</span>
+            <span class="s">per month, pooled across agents</span>
+          </div>
+        </div>
+
+        <div class="ladder" id="ladderEl">
+          <div class="step" data-lo="1" data-hi="25"><span class="r">1 – 25 agents</span><span class="p">$59</span></div>
+          <div class="step" data-lo="26" data-hi="100"><span class="r">26 – 100</span><span class="p">$47</span></div>
+          <div class="step" data-lo="101" data-hi="250"><span class="r">101 – 250</span><span class="p">$38</span></div>
+          <div class="step" data-lo="251" data-hi="99999"><span class="r">251 and up</span><span class="p">Custom</span></div>
+        </div>
+      </div>
+
+      <p class="calc-foot">Actions pool across your whole estate, so a busy agent borrows from a quiet one rather than triggering an overage. Beyond the pool it's <b>$0.60 per 10k actions</b>, and we'll tell you before you get there, not after.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Never metered</span>
+        <h2>What we refuse to charge for.</h2>
+      </div>
+      <div><p class="lede">Every one of these is billable somewhere in this market. Charging for them would undercut the reason the product exists.</p></div>
+    </div>
+
+    <div class="free rv">
+      <div class="fitem"><b>Console seats</b><span>Unlimited, on every tier. Three teams reading one record is the entire thesis — metering it would be self-defeating.</span></div>
+      <div class="fitem"><b>Held actions</b><span>A hold is the product working. Charging per intervention would pay us to tune the rules badly.</span></div>
+      <div class="fitem"><b>Staging and dev agents</b><span>Only agents touching production count. Test freely.</span></div>
+      <div class="fitem"><b>Storage and retention</b><span>24 months included on paid plans, 12 months of metadata even on free. Audit trails shouldn't cost more the longer you keep them.</span></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec" id="questions">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">The awkward ones</span>
+        <h2>Questions we'd rather answer here.</h2>
+      </div>
+      <div><p class="lede">Including the one about whether this model quietly punishes you for building well.</p></div>
+    </div>
+
+    <div class="qa rv">
+
+      <article class="q">
+        <h3>Can we run every agent on Observe and never pay?</h3>
+        <div>
+          <p>Yes, and the agent count is unlimited while you do. You'd have full traces, replay and cost accounting across the whole estate for nothing.</p>
+          <p>What you wouldn't have is anything that <b>stops</b> an action, any risk scoring, or alerts reaching your on-call. Teams usually run that way for a quarter, then find one thing they wish had been blocked.</p>
+        </div>
+      </article>
+
+      <article class="q">
+        <h3>What happens to traces older than 30 days on the free tier?</h3>
+        <div>
+          <p>Nothing disappears. Full step-level replay covers 30 days; after that you keep <b>12 months of metadata</b> — what ran, when, which tools, which systems, what it cost.</p>
+          <p>So you can still find the day an agent touched something it shouldn't have. Opening that run and watching it back is what needs a paid plan. We'd rather you hit a locked door than an empty shelf.</p>
+        </div>
+      </article>
+
+      <article class="q">
+        <h3>Is there a limit on Observe volume?</h3>
+        <div>
+          <p>A fair-use ceiling rather than a wall. Past it we sample the repetitive traffic — repeated reads, unchanged queries — and <b>never</b> sample anything above baseline or touching a policy-relevant path.</p>
+          <p class="dim">A supervision tool that stops recording mid-incident is worthless, so the ceiling degrades rather than cuts off, and it starts a conversation instead of a bill.</p>
+        </div>
+      </article>
+
+      <article class="q">
+        <h3>What exactly counts as one billable agent?</h3>
+        <div>
+          <p>A distinct identity, holding its own credentials, with <b>at least one enforcement rule pointed at it</b>. Ten instances of the same agent behind a queue is one agent. Two agents sharing a codebase but holding different access is two.</p>
+          <p class="dim">Traced-only agents never count, however many there are. We count what your security team would count, because they're the ones who have to review it.</p>
+        </div>
+      </article>
+
+      <article class="q">
+        <h3>Doesn't per-agent pricing push us to build fewer, bigger agents?</h3>
+        <div>
+          <p>It would, and that's the honest weakness of the model. Cramming six jobs into one agent to save $59 a month is a bad architecture decision that our pricing would have caused.</p>
+          <p>So two things. Agents under <b>10,000 actions a month</b> don't count toward your total, which covers most of the small specialised ones. And past 100 agents the per-agent rate falls faster than the count rises. If you still find the model bending your design, tell us — that's a pricing bug on our side.</p>
+        </div>
+      </article>
+
+      <article class="q">
+        <h3>What happens if we stop paying?</h3>
+        <div>
+          <p>Enforcement stops. Your agents keep running — we won't hold your production hostage over an invoice. You get <b>90 days</b> of full console access, then a final export of the complete trail.</p>
+          <p class="dim">The hash chain stays independently verifiable afterwards, with or without us.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="cta rv" id="cta">
+      <span class="eyebrow" style="justify-content:center">Get started</span>
+      <h2>Watch first. Pay when something blocks.</h2>
+      <p class="lede">Observe costs nothing and stays that way. If you never move past it, you'll still know more about your agents than you do today.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+        <a href="trust.html" class="btn btn--ghost">Read the trust page</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="index.html" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+        <p>We build agentic systems that do real work — and the console that keeps every one of them accountable.</p>
+      </div>
+      <div>
+        <h3 class="hlab">Platform</h3>
+        <ul>
+          <li><a href="platform.html#surfaces">Traces</a></li>
+          <li><a href="integrations.html">Integrations</a></li>
+          <li><a href="platform.html#surfaces">Policy engine</a></li>
+          <li><a href="platform.html#surfaces">Audit trail</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Solutions</h3>
+        <ul>
+          <li><a href="solutions.html#roles">Security</a></li>
+          <li><a href="solutions.html#roles">Operations</a></li>
+          <li><a href="solutions.html#roles">Compliance</a></li>
+          <li><a href="platform.html#autonomy">Autonomy levels</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Company</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="how-we-work.html">How we work</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="trust.html">Trust and security</a></li>
+          <li><a href="contact.html">Book a walkthrough</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Digital Spectre</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="trust.html">Security</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+(function(){
+"use strict";
+var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+var BANDS = [
+  { lo:1,   hi:25,    rate:59 },
+  { lo:26,  hi:100,   rate:47 },
+  { lo:101, hi:250,   rate:38 },
+  { lo:251, hi:99999, rate:null }   
+];
+var ACTIONS_PER_AGENT = 250000;
+
+var slider = document.getElementById('slider');
+var nAgents = document.getElementById('nAgents');
+var nNote = document.getElementById('nNote');
+var permonth = document.getElementById('permonth');
+var peryear = document.getElementById('peryear');
+var rateNote = document.getElementById('rateNote');
+var actionsEl = document.getElementById('actions');
+var tierName = document.getElementById('tierName');
+var steps = Array.prototype.slice.call(document.querySelectorAll('.step'));
+
+function bandFor(n){
+  for(var i=0;i<BANDS.length;i++){ if(n >= BANDS[i].lo && n <= BANDS[i].hi) return BANDS[i]; }
+  return BANDS[BANDS.length-1];
+}
+
+function priceFor(n){
+  var band = bandFor(n);
+  if(band.rate === null) return null;
+  var p = n * band.rate;
+  BANDS.forEach(function(b){
+    if(b.rate !== null && b.lo > n) p = Math.min(p, b.lo * b.rate);
+  });
+  return p;
+}
+function money(v){ return '$' + Math.round(v).toLocaleString(); }
+function actions(n){
+  var total = n * ACTIONS_PER_AGENT;
+  return total >= 1e6 ? (total/1e6).toFixed(1) + 'M' : Math.round(total/1000) + 'k';
+}
+
+function update(){
+  var n = parseInt(slider.value, 10);
+  var band = bandFor(n);
+  var atMax = n >= parseInt(slider.max, 10);
+
+  nAgents.textContent = atMax ? n + '+' : n;
+  nNote.textContent = 'traced-only agents stay free';
+
+  steps.forEach(function(s){
+    var lo = parseInt(s.getAttribute('data-lo'),10), hi = parseInt(s.getAttribute('data-hi'),10);
+    s.classList.toggle('on', n >= lo && n <= hi);
+  });
+
+  if(band.rate === null){
+    tierName.textContent = 'Govern';
+    permonth.textContent = 'Custom';
+    peryear.textContent = 'Custom';
+    rateNote.textContent = 'annual agreement';
+    actionsEl.textContent = 'Pooled';
+    return;
+  }
+
+  tierName.textContent = 'Supervise';
+  var m = priceFor(n);
+  var capped = m < n * band.rate;
+  permonth.textContent = money(m);
+  peryear.textContent = money(m * 12);
+  rateNote.textContent = capped
+    ? 'capped — $' + (m / n).toFixed(2) + ' effective'
+    : 'at $' + band.rate + ' per agent';
+  actionsEl.textContent = actions(n);
+}
+
+slider.addEventListener('input', update);
+update();
+})();
+</script>
+</body>
+</html>

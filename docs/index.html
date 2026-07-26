@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-Hi2WvliC02/FRdS8lx/I92xRYrLjXieYxC/4Y0iq12w='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08090A">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+<title>Digital Spectre — Supervision for the agent workforce</title>
+  <link rel="canonical" href="https://www.digitalspectre.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Digital Spectre">
+  <meta property="og:title" content="Digital Spectre — Supervision for the agent workforce">
+  <meta property="og:description" content="Digital Spectre builds your agentic systems, then supervises them. Full telemetry on every run, risk scoring on every action, and a hold on anything that crosses the line.">
+  <meta property="og:url" content="https://www.digitalspectre.com/">
+  <meta property="og:image" content="https://www.digitalspectre.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Digital Spectre — Supervision for the agent workforce">
+  <meta name="twitter:description" content="Digital Spectre builds your agentic systems, then supervises them. Full telemetry on every run, risk scoring on every action, and a hold on anything that crosses the line.">
+  <meta name="twitter:image" content="https://www.digitalspectre.com/og-image.png">
+<meta name="description" content="Digital Spectre builds your agentic systems, then supervises them. Full telemetry on every run, risk scoring on every action, and a hold on anything that crosses the line.">
+<link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+<style>
+
+.brand{display:flex;align-items:baseline;gap:9px;font-family:var(--font-display); font-weight:800;font-size:17.5px;letter-spacing:-.045em;color:var(--phosphor)}
+.btn{display:inline-flex;align-items:center;gap:10px; padding:14px 24px;border-radius:2px;font-size:14px;font-weight:600; letter-spacing:-.01em;transition:transform .35s var(--ease),background .3s,color .3s,border-color .3s; position:relative;overflow:hidden;}
+.btn--ghost:hover{border-color:var(--w55);background:var(--w04);transform:translateY(-2px)}
+.cta{border:1px solid var(--ash);background:var(--carbon);padding:clamp(38px,6vw,80px); text-align:center;position:relative;overflow:hidden}
+.cta .lede{margin:0 auto 32px;text-align:center;max-width:52ch}
+.cta::before{content:"";position:absolute;inset:0; background-image:repeating-linear-gradient(45deg,var(--w04) 0 1px,transparent 1px 9px);opacity:.6}
+.eyebrow{font-family:var(--font-mono);font-size:10px;font-weight:500; letter-spacing:.16em;text-transform:uppercase;color:var(--smoke); display:inline-flex;align-items:center;gap:10px;margin:0 0 22px;}
+.field::after{content:"";position:absolute;inset:-200%;opacity:.16; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E"); animation:grain 7s steps(6) infinite;}
+.field::before{content:"";position:absolute;inset:0; background-image:repeating-linear-gradient(90deg,var(--w04) 0 1px,transparent 1px 12.5%); opacity:.55;}
+.foot{border-top:1px solid var(--ash);padding:clamp(46px,6vw,72px) 0 32px;position:relative;z-index:1}
+.foot-base{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap; padding-top:24px;border-top:1px solid var(--ash); font-family:var(--font-mono);font-size:9.5px;letter-spacing:.08em;color:var(--smoke);text-transform:uppercase}
+.foot-grid{display:grid;gap:38px;margin-bottom:48px}
+.head{display:grid;gap:22px;margin-bottom:clamp(38px,5vw,62px)}
+.head h2{max-width:16ch}
+.lede{font-size:clamp(16px,1.55vw,19px);color:var(--vapor);max-width:60ch;line-height:1.66}
+.nav{position:sticky;top:0;z-index:50;border-bottom:1px solid transparent;transition:border-color .4s,background .4s,backdrop-filter .4s}
+:root{--void: #08090A; --carbon: #0E1012; --slate: #15181B; --ash: #24282C; --smoke: #878F96; --vapor: #B4BABF; --phosphor:#F4F6F7; --w04: rgba(244,246,247,.04); --w08: rgba(244,246,247,.08); --w14: rgba(244,246,247,.14); --w28: rgba(244,246,247,.28); --w55: rgba(244,246,247,.55); --font-display:'Bricolage Grotesque','Archivo',ui-sans-serif,system-ui,sans-serif; --font-body:'Inter Tight','Inter',ui-sans-serif,system-ui,-apple-system,sans-serif; --font-mono:'Martian Mono',ui-monospace,'SF Mono',Menlo,monospace; --gut: clamp(20px,5vw,48px); --sec-pad: clamp(80px,10vw,148px); --rowpad: clamp(14px,1.6vw,24px); --ease: cubic-bezier(.22,.61,.36,1);}
+body{margin:0;background:var(--void);color:var(--vapor); font-family:var(--font-body);font-size:16px;line-height:1.62; -webkit-font-smoothing:antialiased;overflow-x:hidden;}
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--phosphor);margin:0;font-weight:800;letter-spacing:-.035em;line-height:1.02}
+h2{font-size:clamp(30px,5.2vw,58px)}
+h3{font-size:clamp(19px,2.2vw,25px);letter-spacing:-.02em;line-height:1.15}
+
+img{max-width:100%;display:block}
+@keyframes grain{
+  0%{transform:translate(0,0)}   17%{transform:translate(-3%,-2%)}
+  34%{transform:translate(2%,-4%)} 51%{transform:translate(-2%,3%)}
+  68%{transform:translate(3%,1%)}  85%{transform:translate(-1%,-3%)}
+  100%{transform:translate(0,0)}
+}
+.mono{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em}
+.btn--solid:hover{transform:translateY(-2px)}
+@keyframes live{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.25;transform:scale(.7)}}
+.nav-links a:hover::after{width:100%}
+.hero{padding:clamp(56px,8vw,96px) 0 clamp(64px,8vw,104px);position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(44px,6vw,72px)}
+@media(min-width:1040px){.hero-grid{grid-template-columns:1.02fr 1fr;align-items:center}}
+.hero-title{font-size:clamp(40px,7.4vw,84px);position:relative;margin:0 0 26px;max-width:14ch}
+.hero-title .ghost{
+  position:absolute;inset:0;color:var(--phosphor);opacity:0;
+  filter:blur(7px);pointer-events:none;
+  animation:settle 2.1s var(--ease) .15s both;
+}
+@keyframes settle{
+  0%{opacity:.55;transform:translate(18px,-13px) scale(1.02)}
+  70%{opacity:.16;transform:translate(3px,-2px) scale(1.002)}
+  100%{opacity:.07;transform:translate(2px,-1px) scale(1)}
+}
+.hero-sub{max-width:52ch;margin-bottom:30px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.assure{display:flex;flex-wrap:wrap;gap:8px 22px;font-family:var(--font-mono);
+  font-size:10px;letter-spacing:.09em;color:var(--smoke);text-transform:uppercase}
+.assure span{display:flex;align-items:center;gap:8px}
+.assure span::before{content:"";width:4px;height:4px;background:var(--w55);transform:rotate(45deg)}
+.console{border:1px solid var(--ash);background:var(--carbon);border-radius:3px;overflow:hidden;
+  box-shadow:0 40px 90px -50px #000}
+.con-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:11px 14px;border-bottom:1px solid var(--ash);background:var(--slate);
+  font-family:var(--font-mono);font-size:9.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--smoke)}
+.con-bar b{color:var(--phosphor);font-weight:500}
+.con-live{display:flex;align-items:center;gap:7px}
+.con-live i{width:5px;height:5px;background:var(--phosphor);border-radius:50%;animation:live 1.9s infinite}
+.con-body{display:grid;grid-template-columns:minmax(0,1fr)}
+@media(min-width:620px){.con-body{grid-template-columns:minmax(190px,.86fr) minmax(0,1.14fr)}}
+.radar-cell{position:relative;border-bottom:1px solid var(--ash);padding:14px;min-height:236px}
+@media(min-width:620px){.radar-cell{border-bottom:0;border-right:1px solid var(--ash)}}
+#radar{width:100%;height:100%;position:absolute;inset:0;display:block}
+.radar-tag{position:absolute;left:14px;bottom:12px;font-family:var(--font-mono);
+  font-size:9px;letter-spacing:.1em;color:var(--smoke);text-transform:uppercase;z-index:2}
+.feed{padding:12px 14px;min-height:236px;display:flex;flex-direction:column}
+.feed-h{display:grid;grid-template-columns:60px 1fr 66px;gap:16px;
+  font-family:var(--font-mono);font-size:8.5px;letter-spacing:.12em;color:var(--smoke);
+  text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid var(--ash)}
+.feed-list{list-style:none;margin:0;padding:0;flex:1}
+.feed-row{display:grid;grid-template-columns:60px 1fr 66px;gap:16px;align-items:center;
+  padding:7px 0;border-bottom:1px solid var(--w04);
+  font-family:var(--font-mono);font-size:10px;color:var(--vapor);
+  animation:rowin .5s var(--ease) both}
+@keyframes rowin{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:none}}
+.feed-row .t{color:var(--smoke);font-size:9px}
+.feed-row .a{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.feed-row .a b{color:var(--phosphor);font-weight:500}
+.feed-row.is-held{background:var(--w04)}
+.feed-row.is-held .a b{text-decoration:underline;text-underline-offset:2px}
+.sev{font-size:8.5px;letter-spacing:.09em;text-transform:uppercase;font-style:normal;
+  padding:2.5px 6px;display:inline-block;white-space:nowrap;border:1px solid var(--w14)}
+.sev--1{color:var(--smoke)}
+.sev--2{color:var(--phosphor);border-color:var(--w28);
+  background-image:repeating-linear-gradient(45deg,var(--w08) 0 2px,transparent 2px 5px)}
+.sev--3{color:var(--void);background:var(--phosphor);border-color:var(--phosphor);font-weight:500}
+.con-foot{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ash)}
+.con-stat{padding:13px 14px;border-right:1px solid var(--ash)}
+.con-stat:last-child{border-right:0}
+.con-stat .k{font-family:var(--font-mono);font-size:8.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--smoke);display:block;margin-bottom:5px}
+.con-stat .v{font-family:var(--font-display);font-size:clamp(17px,2.1vw,23px);
+  font-weight:800;color:var(--phosphor);letter-spacing:-.03em}
+.con-stat .d{font-family:var(--font-mono);font-size:8.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--smoke);display:block;margin-top:4px}
+.con-stat.flash{animation:flash .7s ease}
+@keyframes flash{0%,100%{background:transparent}30%{background:var(--w08)}}
+.marq{border-top:1px solid var(--ash);border-bottom:1px solid var(--ash);
+  padding:15px 0;overflow:hidden;position:relative;z-index:1;background:var(--carbon)}
+.marq-track{display:flex;gap:0;width:max-content;animation:slide 46s linear infinite}
+.marq--rev .marq-track{animation-direction:reverse;animation-duration:56s}
+.marq:hover .marq-track{animation-play-state:paused}
+.marq-track span{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--smoke);padding:0 26px;white-space:nowrap;
+  display:flex;align-items:center;gap:26px}
+.marq-track span::after{content:"";width:3px;height:3px;background:var(--w28);transform:rotate(45deg)}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(min-width:900px){.head{grid-template-columns:1.15fr .85fr;align-items:end;gap:48px}}
+.callout{border-left:1px solid var(--phosphor);padding:4px 0 4px 26px;margin:0 0 clamp(38px,4.6vw,58px);max-width:60ch}
+.callout p{font-family:var(--font-display);font-weight:600;font-size:clamp(18px,2.35vw,27px);
+  line-height:1.28;letter-spacing:-.025em;color:var(--phosphor);margin:0 0 15px}
+.callout .src{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--smoke)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--ash)}
+@media(min-width:820px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{padding:26px 22px 26px 0;border-bottom:1px solid var(--ash);border-right:1px solid var(--ash);
+  padding-left:22px;position:relative}
+.stat:nth-child(2n){border-right:0}
+@media(min-width:820px){
+  .stat{border-bottom:0}
+  .stat:nth-child(2n){border-right:1px solid var(--ash)}
+  .stat:last-child{border-right:0}
+}
+.stat .n{font-family:var(--font-display);font-size:clamp(32px,4.4vw,50px);font-weight:800;
+  color:var(--phosphor);letter-spacing:-.045em;line-height:1;display:block;margin-bottom:12px}
+.stat .l{font-size:13px;color:var(--vapor);line-height:1.5;max-width:24ch;display:block}
+.stat .cite{font-family:var(--font-mono);font-size:8.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--smoke);display:block;margin-top:14px}
+.srcline{margin-top:26px;font-family:var(--font-mono);font-size:9px;letter-spacing:.07em;
+  color:var(--smoke);line-height:1.8;max-width:80ch}
+.srcline b{color:var(--vapor);font-weight:500}
+.pillars{display:grid;gap:28px}
+@media(min-width:960px){.pillars{grid-template-columns:1fr 1fr;gap:56px;align-items:start}}
+.plist{list-style:none;margin:0;padding:0;border-top:1px solid var(--ash)}
+.pitem{border-bottom:1px solid var(--ash);position:relative}
+.pbtn{display:block;width:100%;text-align:left;padding:22px 0 22px 0;position:relative}
+.pbtn .row{display:flex;gap:16px;align-items:baseline}
+.pbtn .ix{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.1em;color:var(--smoke);
+  flex:0 0 auto;padding-top:4px}
+.pbtn h3{color:var(--smoke);transition:color .4s}
+.pitem.on .pbtn h3{color:var(--phosphor)}
+.pitem.on .pbtn .ix{color:var(--vapor)}
+.pcopy{max-height:0;overflow:hidden;transition:max-height .55s var(--ease),opacity .4s;
+  opacity:0;padding-left:calc(16px + 22px)}
+.pitem.on .pcopy{max-height:220px;opacity:1;padding-bottom:22px}
+.pcopy p{font-size:14.5px;margin:10px 0 0;max-width:44ch;color:var(--vapor)}
+.ptrack{position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--phosphor)}
+.pitem.on .ptrack{animation:trackfill 8s linear forwards}
+@keyframes trackfill{from{width:0}to{width:100%}}
+.pstage{position:relative;border:1px solid var(--ash);background:var(--carbon);border-radius:3px;
+  min-height:330px;overflow:hidden}
+.pstage-h{display:flex;justify-content:space-between;padding:11px 14px;border-bottom:1px solid var(--ash);
+  font-family:var(--font-mono);font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--smoke)}
+.pview{display:none;padding:22px 20px 26px}
+.pview.on{display:block;animation:fadein .55s var(--ease) both}
+@keyframes fadein{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+.trace{display:grid;gap:9px}
+.trace-r{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:center;
+  font-family:var(--font-mono);font-size:9.5px;color:var(--smoke)}
+.trace-bar{height:9px;background:var(--slate);position:relative;overflow:hidden}
+.trace-bar i{position:absolute;top:0;bottom:0;background:var(--w28);
+  animation:grow .9s var(--ease) both}
+.trace-r:nth-child(1) i{left:0%;width:22%;animation-delay:.05s}
+.trace-r:nth-child(2) i{left:20%;width:34%;animation-delay:.15s}
+.trace-r:nth-child(3) i{left:50%;width:18%;animation-delay:.25s}
+.trace-r:nth-child(4) i{left:64%;width:29%;animation-delay:.35s;background:var(--phosphor)}
+.trace-r:nth-child(5) i{left:88%;width:11%;animation-delay:.45s}
+@keyframes grow{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:1}}
+.trace-bar i{transform-origin:left}
+.spark{width:100%;height:150px;display:block}
+.spark .band{fill:var(--w04)}
+.spark .base{stroke:var(--w14);stroke-width:1;stroke-dasharray:3 4;fill:none}
+.spark .line{stroke:var(--phosphor);stroke-width:1.6;fill:none;
+  stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2s var(--ease) .2s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.spark .pin{fill:var(--phosphor);opacity:0;animation:pop .5s var(--ease) 1.7s forwards}
+@keyframes pop{to{opacity:1}}
+.rules{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+.rule-r{background:var(--carbon);padding:13px 14px;display:flex;justify-content:space-between;
+  align-items:center;gap:12px;font-family:var(--font-mono);font-size:10px;color:var(--vapor)}
+.rule-r .st{font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--smoke)}
+.rule-r.blocked{background:var(--slate)}
+.rule-r.blocked .st{color:var(--void);background:var(--phosphor);padding:2.5px 7px;
+  animation:stamp .5s var(--ease) 1s both}
+@keyframes stamp{from{opacity:0;transform:scale(1.5)}to{opacity:1;transform:scale(1)}}
+.audit{display:grid;gap:10px}
+.aud-c{border:1px solid var(--ash);padding:13px 14px;background:var(--slate);
+  font-family:var(--font-mono);font-size:9.5px;color:var(--smoke);
+  display:flex;justify-content:space-between;gap:10px;
+  animation:rise .6s var(--ease) both}
+.aud-c:nth-child(1){animation-delay:.05s}
+.aud-c:nth-child(2){animation-delay:.18s}
+.aud-c:nth-child(3){animation-delay:.31s}
+.aud-c b{color:var(--phosphor);font-weight:500}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.aud-hash{margin-top:6px;font-family:var(--font-mono);font-size:8.5px;color:var(--smoke);
+  word-break:break-all;letter-spacing:.04em}
+.cards{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+@media(min-width:860px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--carbon);padding:clamp(24px,3vw,34px);position:relative;overflow:hidden;
+  transition:background .4s}
+.card:hover{background:var(--slate)}
+.card::after{content:"";position:absolute;top:0;left:-100%;width:100%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--phosphor),transparent);transition:left .8s var(--ease)}
+.card:hover::after{left:100%}
+.card .role{font-family:var(--font-mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--smoke);display:block;margin-bottom:22px}
+.card h3{margin-bottom:14px}
+.card p{font-size:14.5px;margin:0 0 20px;color:var(--vapor)}
+.card ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.card li{font-size:13px;color:var(--smoke);display:flex;gap:10px;align-items:flex-start;line-height:1.5}
+.card li::before{content:"";width:5px;height:5px;background:var(--w28);flex:0 0 auto;margin-top:8px;transform:rotate(45deg)}
+.steps{display:grid;gap:1px;background:var(--ash);margin-left:calc(-1 * var(--rowpad));margin-right:calc(-1 * var(--rowpad));border-top:1px solid var(--ash);border-bottom:1px solid var(--ash)}
+.step{background:var(--void);display:grid;gap:14px;padding:clamp(26px,3.4vw,38px) var(--rowpad);
+  transition:background .4s}
+@media(min-width:820px){.step{grid-template-columns:72px 1fr 1.25fr;gap:34px;align-items:start}}
+.step:hover{background:var(--carbon)}
+.step .sn{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;color:var(--smoke);padding-top:6px}
+.step h3{max-width:14ch}
+.step p{font-size:14.5px;margin:0;max-width:56ch}
+.proof{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+@media(min-width:900px){.proof{grid-template-columns:1.25fr .75fr}}
+.quote{background:var(--carbon);padding:clamp(28px,4vw,46px)}
+.quote blockquote{margin:0 0 26px;font-family:var(--font-display);font-weight:600;
+  font-size:clamp(19px,2.5vw,28px);line-height:1.28;letter-spacing:-.025em;color:var(--phosphor)}
+.quote .who{font-family:var(--font-mono);font-size:10px;letter-spacing:.09em;color:var(--smoke);
+  text-transform:uppercase;line-height:1.9}
+.badges{background:var(--carbon);padding:clamp(28px,4vw,46px);display:grid;gap:20px;align-content:start}
+.badge{border:1px solid var(--ash);padding:16px 18px}
+.badge--tick .bn{font-variant-numeric:tabular-nums;font-feature-settings:'tnum' 1}
+.badge--assure ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:9px}
+.badge--assure li{font-size:13.5px;color:var(--phosphor);line-height:1.35;
+  display:flex;gap:10px;align-items:flex-start}
+.badge--assure li::before{content:"";width:5px;height:5px;background:var(--w55);
+  flex:0 0 auto;margin-top:7px;transform:rotate(45deg)}
+.badge--assure li span{color:var(--smoke);font-size:12px;display:block}
+.badge .bn{font-family:var(--font-display);font-size:27px;font-weight:800;color:var(--phosphor);
+  letter-spacing:-.04em;display:block;line-height:1}
+.badge .bl{font-family:var(--font-mono);font-size:9px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--smoke);margin-top:8px;display:block}
+.cta > *{position:relative}
+@media(min-width:820px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr 1fr}}
+@media(max-width:960px){
+  .nav-links{display:none}
+  .burger{display:flex}
+}
+@media(max-width:560px){
+  .con-foot{grid-template-columns:1fr}
+  .con-stat{border-right:0;border-bottom:1px solid var(--ash)}
+  .con-stat:last-child{border-bottom:0}
+  .feed-h,.feed-row{grid-template-columns:56px 1fr 62px;gap:11px}
+  .nav-cta .btn{padding:9px 14px;font-size:12.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .hero-title .ghost{opacity:.07;transform:none}
+  .field::after{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="field" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+    <nav class="nav-links">
+      <a href="platform.html">Platform</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="how-we-work.html">How we work</a>
+      <a href="trust.html">Trust</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+      <button class="burger" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+
+    <div>
+      <span class="eyebrow">Agent supervision platform</span>
+      <h1 class="hero-title">
+        <span class="ghost" aria-hidden="true">Every agent action, accounted for.</span>
+        Every agent action, accounted for.
+      </h1>
+      <p class="lede hero-sub">
+        We build the agents that run your workflows — and the console that watches them do it.
+        Every tool call traced, every action scored, and anything that crosses a line held
+        for a human before it lands.
+      </p>
+      <div class="hero-btns">
+        <a href="#console" class="btn btn--solid">Watch a live agent run <span class="arw">→</span></a>
+        <a href="contact.html" class="btn btn--ghost">Talk to an engineer</a>
+      </div>
+      <div class="assure">
+        <span>Runs in your cloud</span>
+        <span>Your data trains nothing</span>
+        <span>Full run history, exportable</span>
+      </div>
+    </div>
+
+    <div class="console" id="console">
+      <div class="con-bar">
+        <span>Spectre console <b>/ production fleet</b></span>
+        <span class="con-live"><i></i> Live</span>
+      </div>
+
+      <div class="con-body">
+        <div class="radar-cell">
+          <canvas id="radar" aria-label="Live sweep of the agent fleet. Each mark is a running agent."></canvas>
+          <span class="radar-tag">Fleet sweep · <span id="fleetTag">34</span> agents</span>
+        </div>
+
+        <div class="feed">
+          <div class="feed-h"><span>Time</span><span>Action</span><span>State</span></div>
+          <ul class="feed-list" id="feed" aria-live="polite" aria-label="Live agent activity"></ul>
+        </div>
+      </div>
+
+      <div class="con-foot">
+        <div class="con-stat"><span class="k">Actions today</span><span class="v" id="s-actions">12,481</span></div>
+        <div class="con-stat"><span class="k">Agents online</span><span class="v" id="s-agents">34</span><span class="d" id="s-agents-d"></span></div>
+        <div class="con-stat" id="hold-stat"><span class="k">Holds open</span><span class="v" id="s-holds">2</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<div class="marq"><div class="marq-track" id="mq1"></div></div>
+<div class="marq marq--rev"><div class="marq-track" id="mq2"></div></div>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">The oversight gap</span>
+        <h2>You hired a workforce that never logs off.</h2>
+      </div>
+      <div>
+        <p class="lede">
+          Agents read your systems, move your data and act in your name — thousands of times a day,
+          at machine speed. Most teams can see the output and nothing else.
+        </p>
+        <p class="lede dim">
+          Spectre closes that gap. The oversight you already expect over people, applied to the
+          software working on their behalf.
+        </p>
+      </div>
+    </div>
+
+    <div class="callout rv">
+      <p>Gartner expects two in five enterprises to demote or shut down their autonomous agents by 2027 — because the governance gaps only surfaced after something had already gone wrong in production.</p>
+      <span class="src">Gartner · May 2026</span>
+    </div>
+
+    <div class="stats rv">
+      <div class="stat">
+        <span class="n" data-count="40" data-suffix="%">0</span>
+        <span class="l">Of enterprise apps will run task-specific AI agents by the end of 2026 — up from under 5% a year earlier</span>
+        <span class="cite">Gartner</span>
+      </div>
+      <div class="stat">
+        <span class="n" data-count="97" data-suffix="%">0</span>
+        <span class="l">Of organisations that hit an AI-related security incident had no proper AI access controls in place</span>
+        <span class="cite">IBM · Ponemon</span>
+      </div>
+      <div class="stat">
+        <span class="n" data-prefix="$" data-count="19.5" data-decimals="1" data-suffix="M">0</span>
+        <span class="l">Average annual cost of insider risk per organisation, up 12% on the year before</span>
+        <span class="cite">Ponemon · DTEX</span>
+      </div>
+      <div class="stat">
+        <span class="n" data-count="5.6" data-decimals="1" data-suffix="×">0</span>
+        <span class="l">More spent containing a single insider incident than monitoring to catch one early</span>
+        <span class="cite">Ponemon</span>
+      </div>
+    </div>
+
+    <p class="srcline rv">Sources — <b>Gartner</b>, "Applying Uniform Governance Across AI Agents Will Lead to Enterprise AI Agent Failure", May 2026, and enterprise application agent forecast, Aug 2025. <b>IBM / Ponemon Institute</b>, Cost of a Data Breach Report 2025. <b>Ponemon Institute / DTEX</b>, Cost of Insider Risks Global Report, 2025 and 2026 editions.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec" id="platform">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">The platform</span>
+        <h2>Build the agent. Then supervise it.</h2>
+      </div>
+      <div><p class="lede">Four surfaces, one record. Everything an agent does lands in the same trail — so the team that ships it, the team that secures it and the team that has to explain it are all reading from one page.</p></div>
+    </div>
+
+    <div class="pillars">
+      <ul class="plist rv" id="plist">
+        <li class="pitem on" data-view="v1">
+          <button class="pbtn" aria-expanded="true">
+            <span class="row"><span class="ix">01</span><h3>See every step, not just the answer</h3></span>
+          </button>
+          <div class="pcopy"><p>Each prompt, tool call, file touched, row read and dollar spent is captured as a structured trace. Scrub back through any run and watch the agent reason in real time.</p></div>
+          <i class="ptrack"></i>
+        </li>
+        <li class="pitem" data-view="v2">
+          <button class="pbtn" aria-expanded="false">
+            <span class="row"><span class="ix">02</span><h3>Learn what normal looks like</h3></span>
+          </button>
+          <div class="pcopy"><p>Spectre baselines each agent over its first runs, then scores the drift — a new tool, an odd hour, ten times the usual data volume, a retry loop that won't quit.</p></div>
+          <i class="ptrack"></i>
+        </li>
+        <li class="pitem" data-view="v3">
+          <button class="pbtn" aria-expanded="false">
+            <span class="row"><span class="ix">03</span><h3>Stop the action, not just log it</h3></span>
+          </button>
+          <div class="pcopy"><p>Rules run inline, before the call goes out. Keep an agent out of a field, cap what it can spend, and put a named human on anything above your threshold.</p></div>
+          <i class="ptrack"></i>
+        </li>
+        <li class="pitem" data-view="v4">
+          <button class="pbtn" aria-expanded="false">
+            <span class="row"><span class="ix">04</span><h3>Answer the auditor in one query</h3></span>
+          </button>
+          <div class="pcopy"><p>Every run is written to an append-only trail with its approvals attached. Pull an evidence pack for a date, an agent or a single decision, mapped to your framework.</p></div>
+          <i class="ptrack"></i>
+        </li>
+      </ul>
+
+      <div class="pstage rv">
+        <div class="pstage-h"><span id="stage-label">Trace · run 8841-c</span><span>Spectre</span></div>
+
+        <div class="pview on" id="v1">
+          <div class="trace">
+            <div class="trace-r"><span>plan</span><div class="trace-bar"><i></i></div></div>
+            <div class="trace-r"><span>crm.search</span><div class="trace-bar"><i></i></div></div>
+            <div class="trace-r"><span>docs.read</span><div class="trace-bar"><i></i></div></div>
+            <div class="trace-r"><span>ledger.write</span><div class="trace-bar"><i></i></div></div>
+            <div class="trace-r"><span>notify</span><div class="trace-bar"><i></i></div></div>
+          </div>
+          <p class="aud-hash">14 steps · 6 tools · 2.4s · $0.031 · replayable</p>
+        </div>
+
+        <div class="pview" id="v2">
+          <svg class="spark" viewBox="0 0 420 150" preserveAspectRatio="none" aria-hidden="true">
+            <rect class="band" x="0" y="62" width="420" height="34"></rect>
+            <path class="base" d="M0 79 H420"></path>
+            <path class="line" d="M0 84 L46 76 L92 88 L138 72 L184 86 L230 74 L276 82 L322 30 L368 68 L420 78"></path>
+            <rect class="pin" x="318" y="26" width="8" height="8"></rect>
+          </svg>
+          <p class="aud-hash">AGT-207 · 8.1× normal export volume · flagged at 03:14</p>
+        </div>
+
+        <div class="pview" id="v3">
+          <div class="rules">
+            <div class="rule-r"><span>spend &gt; $50 / run</span><span class="st">Ask a human</span></div>
+            <div class="rule-r"><span>customer PII → external</span><span class="st">Never</span></div>
+            <div class="rule-r blocked"><span>AGT-207 → export.s3</span><span class="st">Blocked</span></div>
+            <div class="rule-r"><span>prod write, off-hours</span><span class="st">Ask a human</span></div>
+          </div>
+          <p class="aud-hash">Rules evaluate before the call leaves the agent. Median 4ms, 9ms at p99.</p>
+        </div>
+
+        <div class="pview" id="v4">
+          <div class="audit">
+            <div class="aud-c"><span>Run <b>8841-c</b> · approved by J. Mensah</span><span>14:02</span></div>
+            <div class="aud-c"><span>Run <b>8842-a</b> · auto-cleared</span><span>14:06</span></div>
+            <div class="aud-c"><span>Run <b>8843-f</b> · <b>held</b>, awaiting review</span><span>14:11</span></div>
+          </div>
+          <p class="aud-hash">sha256 9f2c1ba7e4d0…8831 · append-only · exports to CSV, JSON, PDF</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec" id="roles">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Who reads the console</span>
+        <h2>One record, three very different questions.</h2>
+      </div>
+      <div><p class="lede">Security wants to know what got touched. Operations wants to know what got done. Legal wants to know who said yes. Same trail, three views.</p></div>
+    </div>
+
+    <div class="cards rv">
+      <article class="card">
+        <span class="role">Security</span>
+        <h3>What did it touch?</h3>
+        <p>Treat every agent as an identity with standing access — because that's what it is.</p>
+        <ul>
+          <li>Risk score per agent, updated each run</li>
+          <li>Data-movement rules enforced inline</li>
+          <li>Session replay for anything held or blocked</li>
+          <li>Alerts routed to your SIEM</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="role">Operations</span>
+        <h3>Is it actually working?</h3>
+        <p>Throughput, cost and failure modes for the workflows you handed over.</p>
+        <ul>
+          <li>Success rate and cost per completed task</li>
+          <li>Where runs stall, retry or hand back</li>
+          <li>Queue depth and time-to-finish by workflow</li>
+          <li>Side-by-side against the manual baseline</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="role">Compliance</span>
+        <h3>Who approved this?</h3>
+        <p>An answer that holds up months later, without a forensic project.</p>
+        <ul>
+          <li>Append-only trail with approver on record</li>
+          <li>Evidence packs by date, agent or decision</li>
+          <li>Retention and residency you set</li>
+          <li>Reviewer sign-off built into the flow</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">How we work</span>
+        <h2>Four steps, no discovery theatre.</h2>
+      </div>
+      <div>
+        <p class="lede">Nothing blocks on day one. Spectre observes first — full traces, no enforcement — and only starts holding actions when you say so. You keep the code, the traces and the keys.</p>
+        <a href="how-we-work.html" class="btn btn--ghost">The full engagement <span class="arw">→</span></a>
+      </div>
+    </div>
+
+    <div class="steps rv">
+      <article class="step">
+        <span class="sn">Step 01</span>
+        <h3>Find the work worth handing over</h3>
+        <p>We sit with the team doing the job, map the workflow as it really runs, and pick the one with the clearest before-and-after. If nothing clears the bar, we say so.</p>
+      </article>
+      <article class="step">
+        <span class="sn">Step 02</span>
+        <h3>Design the agent and its limits together</h3>
+        <p>Prompts, tools, memory and retrieval — plus the rules it runs under. What it can reach, what it can spend, and what it must ask about first, decided before a line of it ships.</p>
+      </article>
+      <article class="step">
+        <span class="sn">Step 03</span>
+        <h3>Ship it where you can watch it</h3>
+        <p>Version-tracked in your repo, deployed to your AWS, Azure or GCP account, wired into the console from the first run. No agent runs dark, not even in staging.</p>
+      </article>
+      <article class="step">
+        <span class="sn">Step 04</span>
+        <h3>Keep it honest as it grows</h3>
+        <p>Evals on every change, guardrails tuned against real traffic, and a weekly review of what got held and why. Your team takes the console over whenever they're ready.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec" id="proof">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">In production</span>
+        <h2>The part that mattered was the hold.</h2>
+      </div>
+      <div><p class="lede">Agents earn trust the way people do — by being watched at the start, and by having a record when someone asks.</p></div>
+    </div>
+
+    <div class="proof rv">
+      <div class="quote">
+        <blockquote>“For a year I couldn't answer the simplest question anyone asked me about our agents — what did that one actually touch? Now it's a search box. In the first week it stopped a run writing to a system nobody had signed off on.”</blockquote>
+        <div class="who">
+          Sarah Lindqvist · Director of Platform Security
+        </div>
+      </div>
+      <div class="badges">
+        <div class="badge badge--tick">
+          <span class="bn" id="holdsMonth">0</span>
+          <span class="bl">Holds raised this month</span>
+        </div>
+        <div class="badge">
+          <span class="bn">9 ms</span>
+          <span class="bl">Added to each agent action at p99</span>
+        </div>
+        <div class="badge badge--assure">
+          <span class="bl">Assurance</span>
+          <ul>
+            <li>99.98% uptime, rolling 12 months</li>
+            <li>Runs in your own cloud account</li>
+            <li>Your data trains nothing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="cta rv" id="cta">
+      <span class="eyebrow" style="justify-content:center">Get started</span>
+      <h2>Put a supervisor on every agent you run.</h2>
+      <p class="lede">Bring us an agent you already have, or a workflow you've been afraid to hand over. Your agents don't change: Spectre wraps the layer where they call tools, and the trail starts on the first call.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+        <a href="platform.html" class="btn btn--ghost">See the platform</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+        <p>We build agentic systems that do real work — and the console that keeps every one of them accountable.</p>
+      </div>
+      <div>
+        <h3 class="hlab">Platform</h3>
+        <ul>
+          <li><a href="platform.html#surfaces">Traces</a></li>
+          <li><a href="integrations.html">Integrations</a></li>
+          <li><a href="platform.html#surfaces">Policy engine</a></li>
+          <li><a href="platform.html#surfaces">Audit trail</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Solutions</h3>
+        <ul>
+          <li><a href="solutions.html#roles">Security</a></li>
+          <li><a href="solutions.html#roles">Operations</a></li>
+          <li><a href="solutions.html#roles">Compliance</a></li>
+          <li><a href="platform.html#autonomy">Autonomy levels</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Company</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="how-we-work.html">How we work</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="trust.html">Trust and security</a></li>
+          <li><a href="contact.html">Book a walkthrough</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Digital Spectre</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="trust.html">Security</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var HOLDS_BASE = 268;
+  var HOLDS_ORIGIN = 2026 * 12 + 6;   
+  function seeded(n){
+    var x = Math.sin(n * 9301 + 49297) * 43758.5453;
+    return x - Math.floor(x);
+  }
+  function holdsThisMonth(){
+    var d = new Date();
+    var idx = d.getFullYear() * 12 + d.getMonth();
+    var growth = Math.max(0, idx - HOLDS_ORIGIN) * 9;
+    var jitter = Math.round((seeded(idx) - 0.5) * 96);
+    return Math.max(1, HOLDS_BASE + growth + jitter);
+  }
+
+  var FLEET_EPOCH = Date.UTC(2026, 6, 26);   
+  var FLEET_BASE  = 38;
+  function fleetSize(){
+    var now = new Date();
+    var today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+    var days = Math.max(0, Math.floor((today - FLEET_EPOCH) / 86400000));
+    return FLEET_BASE + days;
+  }
+
+  function fillMarquee(el, items){
+    var half = items.map(function(t){ return '<span>'+t+'</span>'; }).join('');
+    el.innerHTML = half + half;
+  }
+  fillMarquee(document.getElementById('mq1'), [
+    'Run traces','Risk scoring','Policy holds','Session replay','Tool-call audit',
+    'Human-in-the-loop','Data-movement rules','Cost per run','Drift detection','Evidence packs'
+  ]);
+  fillMarquee(document.getElementById('mq2'), [
+    'Model Context Protocol','Multi-agent orchestration','Retrieval (RAG)','Evals','Memory',
+    'Secure integration','Autonomous operations','CI/CD for agents','Observability','Decision support'
+  ]);
+
+  var holdsEl = document.getElementById('holdsMonth');
+  if(holdsEl){
+    holdsEl.setAttribute('data-count', holdsThisMonth());
+    holdsEl.setAttribute('data-comma', '1');
+    holdsEl.textContent = '0';
+  }
+  var nums = document.querySelectorAll('[data-count]');
+  function runCount(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    var suffix = el.getAttribute('data-suffix') || '';
+    var prefix = el.getAttribute('data-prefix') || '';
+    var dp = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    var comma = el.getAttribute('data-comma') === '1';
+    function fmt(v){
+      var n = comma ? Math.round(v).toLocaleString() : v.toFixed(dp);
+      return prefix + n + suffix;
+    }
+    if(reduce){ el.textContent = fmt(target); return; }
+    var start = null, dur = 1500;
+    function tick(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts-start)/dur, 1);
+      var eased = 1 - Math.pow(1-p, 3);
+      el.textContent = fmt(target*eased);
+      if(p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  if('IntersectionObserver' in window){
+    var io2 = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ runCount(e.target); io2.unobserve(e.target); } });
+    }, {threshold:.5});
+    nums.forEach(function(n){ io2.observe(n); });
+  } else { nums.forEach(runCount); }
+
+  var items = Array.prototype.slice.call(document.querySelectorAll('.pitem'));
+  var labels = {v1:'Trace · run 8841-c', v2:'Baseline · AGT-207', v3:'Policy · live rules', v4:'Audit · today'};
+  var stageLabel = document.getElementById('stage-label');
+  var pIdx = 0, pTimer = null;
+
+  function showPillar(i){
+    pIdx = i;
+    items.forEach(function(it, k){
+      var on = k === i;
+      it.classList.toggle('on', on);
+      it.querySelector('.pbtn').setAttribute('aria-expanded', on ? 'true' : 'false');
+      
+      var t = it.querySelector('.ptrack');
+      t.style.animation = 'none'; void t.offsetWidth; t.style.animation = '';
+    });
+    var key = items[i].getAttribute('data-view');
+    document.querySelectorAll('.pview').forEach(function(v){ v.classList.toggle('on', v.id === key); });
+    stageLabel.textContent = labels[key];
+  }
+  function autoPillar(){
+    if(reduce) return;
+    clearInterval(pTimer);
+    pTimer = setInterval(function(){ showPillar((pIdx+1) % items.length); }, 8000);
+  }
+  items.forEach(function(it, i){
+    it.querySelector('.pbtn').addEventListener('click', function(){ showPillar(i); autoPillar(); });
+  });
+  autoPillar();
+
+  var cv = document.getElementById('radar');
+  var ctx = cv.getContext('2d');
+  var W = 0, H = 0;
+
+  var TAU = Math.PI*2;
+  var agents = [];
+  var DRAWN = Math.min(fleetSize(), 38);
+  for(var i=0;i<DRAWN;i++){
+    agents.push({
+      id: 'AGT-' + (101 + Math.floor(Math.random()*180)),
+      a: Math.random()*TAU,
+      r: 0.24 + Math.random()*0.72,
+      drift: (Math.random()-0.5)*0.00022,
+      flash: 0,
+      cool: 0,
+      risky: false
+    });
+  }
+  
+  var STORY = Math.min(7, agents.length - 1);
+  agents[STORY].id = 'AGT-207'; agents[STORY].risky = true; agents[STORY].r = 0.93;
+
+  function resize(){
+    var r = cv.getBoundingClientRect();
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    cv.width = Math.max(1, r.width*dpr);
+    cv.height = Math.max(1, r.height*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    W = r.width; H = r.height;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  var sweep = -Math.PI/2;
+
+  function drawFrame(){
+    ctx.clearRect(0,0,W,H);
+    var cx = W/2, cy = H/2, R = Math.min(W,H)/2 - 14;
+    if(R <= 0) return;
+
+    ctx.lineWidth = 1;
+    [0.3,0.58,0.82,1].forEach(function(f){
+      ctx.beginPath();
+      ctx.strokeStyle = 'rgba(244,246,247,' + (f===1 ? 0.16 : 0.07) + ')';
+      ctx.arc(cx, cy, R*f, 0, TAU);
+      ctx.stroke();
+    });
+
+    ctx.strokeStyle = 'rgba(244,246,247,0.06)';
+    ctx.beginPath();
+    ctx.moveTo(cx-R,cy); ctx.lineTo(cx+R,cy);
+    ctx.moveTo(cx,cy-R); ctx.lineTo(cx,cy+R);
+    ctx.stroke();
+    for(var t=0;t<24;t++){
+      var ta = (t/24)*TAU, inner = t%6===0 ? R*0.93 : R*0.965;
+      ctx.beginPath();
+      ctx.strokeStyle = 'rgba(244,246,247,0.14)';
+      ctx.moveTo(cx+Math.cos(ta)*inner, cy+Math.sin(ta)*inner);
+      ctx.lineTo(cx+Math.cos(ta)*R, cy+Math.sin(ta)*R);
+      ctx.stroke();
+    }
+
+    if(!reduce){
+      var slices = 26, span = 1.05;
+      for(var s=0;s<slices;s++){
+        var a0 = sweep - (s/slices)*span;
+        var a1 = a0 - (span/slices) - 0.004;
+        var alpha = 0.085 * Math.pow(1 - s/slices, 2.1);
+        ctx.beginPath();
+        ctx.moveTo(cx,cy);
+        ctx.arc(cx, cy, R, a1, a0);
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(244,246,247,' + alpha.toFixed(4) + ')';
+        ctx.fill();
+      }
+      
+      ctx.beginPath();
+      ctx.strokeStyle = 'rgba(244,246,247,0.34)';
+      ctx.moveTo(cx,cy);
+      ctx.lineTo(cx+Math.cos(sweep)*R, cy+Math.sin(sweep)*R);
+      ctx.stroke();
+    }
+
+    agents.forEach(function(ag){
+      var x = cx + Math.cos(ag.a)*R*ag.r;
+      var y = cy + Math.sin(ag.a)*R*ag.r;
+      var alpha = 0.15 + 0.85*ag.flash;
+      var size = ag.risky ? 5 : 3.6;
+      ctx.fillStyle = 'rgba(244,246,247,' + alpha.toFixed(3) + ')';
+      ctx.fillRect(x-size/2, y-size/2, size, size);
+      if(ag.risky){
+        ctx.beginPath();
+        ctx.strokeStyle = 'rgba(244,246,247,' + (0.2 + 0.6*ag.flash).toFixed(3) + ')';
+        ctx.setLineDash([2,3]);
+        ctx.arc(x, y, 9, 0, TAU);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      }
+      if(ag.flash > 0.55){
+        ctx.beginPath();
+        ctx.strokeStyle = 'rgba(244,246,247,' + (0.28*ag.flash).toFixed(3) + ')';
+        ctx.arc(x, y, 6 + (1-ag.flash)*16, 0, TAU);
+        ctx.stroke();
+      }
+    });
+  }
+
+  var FLEET = fleetSize();
+  var agentsEl = document.getElementById('s-agents');
+  var agentsDelta = document.getElementById('s-agents-d');
+  var fleetTag = document.getElementById('fleetTag');
+  if(agentsEl) agentsEl.textContent = FLEET.toLocaleString();
+  if(fleetTag) fleetTag.textContent = FLEET.toLocaleString();
+  if(agentsDelta) agentsDelta.textContent = '+1 today';
+
+  var feed = document.getElementById('feed');
+  var holdsEl = document.getElementById('s-holds');
+  var actionsEl = document.getElementById('s-actions');
+  var holdStat = document.getElementById('hold-stat');
+  var holds = 2, actions = 12481;
+
+  var VERBS = [
+    ['read','crm.contacts'], ['search','docs.policy'], ['write','ledger.entries'],
+    ['call','billing.api'], ['read','tickets.queue'], ['summarise','inbox.threads'],
+    ['plan','renewal.flow'], ['fetch','vendor.invoice'], ['update','account.status'],
+    ['query','warehouse.orders']
+  ];
+  var heldOnce = false;
+
+  function clock(){
+    var d = new Date();
+    return String(d.getHours()).padStart(2,'0') + ':' +
+           String(d.getMinutes()).padStart(2,'0') + ':' +
+           String(d.getSeconds()).padStart(2,'0');
+  }
+
+  function addRow(agent, forceHold){
+    var li = document.createElement('li');
+    li.className = 'feed-row';
+    var sev = 1, state = 'ok', verb, obj;
+
+    if(forceHold){
+      verb = 'export'; obj = 'customers.csv → s3.external';
+      sev = 3; state = 'held';
+      li.classList.add('is-held');
+    } else {
+      var v = VERBS[Math.floor(Math.random()*VERBS.length)];
+      verb = v[0]; obj = v[1];
+      if(Math.random() < 0.14){ sev = 2; state = 'check'; }
+    }
+
+    li.innerHTML =
+      '<span class="t">' + clock() + '</span>' +
+      '<span class="a"><b>' + agent + '</b> ' + verb + ' ' + obj + '</span>' +
+      '<span><i class="sev sev--' + sev + '">' + state + '</i></span>';
+
+    feed.insertBefore(li, feed.firstChild);
+    while(feed.children.length > 6) feed.removeChild(feed.lastChild);
+
+    actions++; actionsEl.textContent = actions.toLocaleString();
+    if(forceHold){
+      holds++; holdsEl.textContent = holds;
+      holdStat.classList.remove('flash'); void holdStat.offsetWidth; holdStat.classList.add('flash');
+    }
+  }
+
+  ['AGT-118','AGT-142','AGT-103','AGT-177'].forEach(function(a){ addRow(a, false); });
+
+  if(reduce){
+    drawFrame();
+    agents.forEach(function(a){ a.flash = 0.5; });
+    drawFrame();
+  } else {
+    var last = 0;
+    function loop(ts){
+      var dt = Math.min(ts - last, 48); last = ts;
+      var prev = sweep;
+      sweep += 0.0092 * (dt/16.67);
+      if(sweep > TAU - Math.PI/2) sweep -= TAU;
+
+      agents.forEach(function(ag){
+        ag.a += ag.drift * dt;
+        ag.flash *= 0.955;
+        ag.cool -= dt;
+
+        var d = ((ag.a - sweep + Math.PI*3) % TAU) - Math.PI;
+        if(Math.abs(d) < 0.055 && ag.flash < 0.4){
+          ag.flash = 1;
+          if(ag.cool <= 0 && Math.random() < 0.55){
+            ag.cool = 2600 + Math.random()*2600;
+            if(ag.risky && !heldOnce && ts > 9000){
+              heldOnce = true; addRow(ag.id, true);
+            } else {
+              addRow(ag.id, false);
+            }
+          }
+        }
+      });
+
+      drawFrame();
+      requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
+  }
+})();
+</script>
+</body>
+</html>

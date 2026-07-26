@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-fbAqGfo8+PcEcRb6gc4Hg3L7c/Co0Jb8T6L6n4H7vpw='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08090A">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+<title>By sector — Digital Spectre</title>
+  <link rel="canonical" href="https://www.digitalspectre.com/sectors.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Digital Spectre">
+  <meta property="og:title" content="By sector — Digital Spectre">
+  <meta property="og:description" content="The platform is the same everywhere. What changes is which obligation your auditor opens with, and what an unlogged agent action costs you.">
+  <meta property="og:url" content="https://www.digitalspectre.com/sectors.html">
+  <meta property="og:image" content="https://www.digitalspectre.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="By sector — Digital Spectre">
+  <meta name="twitter:description" content="The platform is the same everywhere. What changes is which obligation your auditor opens with, and what an unlogged agent action costs you.">
+  <meta name="twitter:image" content="https://www.digitalspectre.com/og-image.png">
+<meta name="description" content="The platform is the same everywhere. What changes is which obligation your auditor opens with, and what an unlogged agent action costs you.">
+<link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+<style>
+
+.phead h1{font-size:clamp(36px,6.2vw,70px);max-width:15ch;margin:0 0 24px}
+
+@keyframes grain{0%{transform:translate(0,0)}17%{transform:translate(-3%,-2%)}
+  34%{transform:translate(2%,-4%)}51%{transform:translate(-2%,3%)}
+  68%{transform:translate(3%,1%)}85%{transform:translate(-1%,-3%)}100%{transform:translate(0,0)}}
+.nav-links a:hover::after,.nav-links a.here::after{width:100%}
+.nav-links a.here{color:var(--phosphor)}
+@media(min-width:900px){.head{grid-template-columns:1.15fr .85fr;align-items:end;gap:48px}}
+.cmp{border:1px solid var(--ash);background:var(--carbon);border-radius:3px;overflow:hidden}
+.cmp-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 14px;
+  border-bottom:1px solid var(--ash);background:var(--slate);font-family:var(--font-mono);
+  font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--smoke)}
+.cmp-bar b{color:var(--phosphor);font-weight:500}
+.tbl{display:grid;gap:1px;background:var(--ash)}
+@media(min-width:900px){
+  
+  .tbl{grid-template-columns:170px repeat(4,1fr);grid-template-rows:repeat(6,auto);
+       grid-auto-flow:column}
+}
+.cel{background:var(--carbon);padding:14px 15px}
+.cel.hd{background:var(--slate)}
+.cel.hd b{font-family:var(--font-display);font-weight:800;font-size:16px;letter-spacing:-.025em;
+  color:var(--phosphor);display:block;line-height:1.15}
+.cel.hd span{font-family:var(--font-mono);font-size:8px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--smoke);display:block;margin-top:7px}
+.cel.rh{background:var(--slate);font-family:var(--font-mono);font-size:8.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--smoke);line-height:1.5;display:flex;align-items:center}
+.cel .v{font-size:13px;color:var(--vapor);line-height:1.5;display:block}
+.cel .v b{color:var(--phosphor);font-weight:500}
+.cel .rl{font-family:var(--font-mono);font-size:8px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--smoke);display:block;margin-bottom:7px}
+@media(min-width:900px){
+  .cel .rl{display:none}
+  .cel.corner{background:var(--slate)}
+}
+@media(max-width:899px){
+  .cel.rh,.cel.corner{display:none}
+  .cel.hd{margin-top:0}
+  .tbl{grid-template-columns:1fr}
+}
+.sectors{display:grid;gap:1px;background:var(--ash);margin-left:calc(-1 * var(--rowpad));
+  margin-right:calc(-1 * var(--rowpad));border-top:1px solid var(--ash);border-bottom:1px solid var(--ash)}
+.sect{background:var(--void);display:grid;gap:26px;padding:clamp(32px,3.8vw,54px) var(--rowpad);
+  transition:background .4s;scroll-margin-top:90px}
+@media(min-width:940px){.sect{grid-template-columns:56px 1.02fr 1fr;gap:36px;align-items:start}}
+.sect:hover{background:var(--carbon)}
+.sect .sx{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;color:var(--smoke);padding-top:6px}
+.sect h3{margin-bottom:14px;max-width:16ch}
+.sect .ask{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--smoke);display:block;margin-bottom:14px}
+.sect p{font-size:14.5px;margin:0 0 16px;max-width:48ch}
+.sect p:last-child{margin:0}
+.cols{display:grid;gap:22px}
+@media(min-width:620px){.cols{grid-template-columns:1fr 1fr}}
+.cols .hlab{line-height:1.02;max-width:none;font-family:var(--font-mono);font-size:9px;font-weight:500;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--smoke);margin:0 0 12px}
+.cols ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.cols li{font-size:13px;color:var(--vapor);display:flex;gap:10px;align-items:flex-start;line-height:1.5}
+.cols li::before{content:"";width:5px;height:5px;background:var(--w28);flex:0 0 auto;
+  margin-top:7px;transform:rotate(45deg)}
+.same{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+@media(min-width:640px){.same{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.same{grid-template-columns:repeat(4,1fr)}}
+.sm{background:var(--carbon);padding:22px 20px}
+.sm b{font-family:var(--font-display);font-weight:800;font-size:16px;letter-spacing:-.025em;
+  color:var(--phosphor);display:block;margin-bottom:9px}
+.sm span{font-size:13px;color:var(--smoke);line-height:1.5;display:block}
+.cta>*{position:relative}
+@media(min-width:820px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr 1fr}}
+@media(max-width:960px){
+  .nav-links{display:none}
+  .burger{display:flex}
+}
+@media(max-width:560px){ .nav-cta .btn{padding:9px 14px;font-size:12.5px} }
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .field::after{display:none}
+}
+</style>
+</head>
+<body>
+<div class="field" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="index.html" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+    <nav class="nav-links">
+      <a href="platform.html">Platform</a>
+      <a href="solutions.html" class="here">Solutions</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="how-we-work.html">How we work</a>
+      <a href="trust.html">Trust</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+      <button class="burger" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="phead">
+  <div class="wrap">
+    <span class="crumb"><a href="solutions.html">Solutions</a> / By sector</span>
+    <h1>Same platform. Different opening question.</h1>
+    <p class="lede">What changes between these four isn't the product. It's which obligation your auditor raises first, how long you're expected to keep the record, and what an unlogged agent action ends up costing you.</p>
+  </div>
+</section>
+
+<section class="sec" id="compare">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Side by side</span>
+        <h2>Find your column.</h2>
+      </div>
+      <div><p class="lede">The row that catches most people out is the last one — where holds actually fire in practice, which is rarely where teams expect before they've watched a month of traffic.</p></div>
+    </div>
+
+    <div class="cmp rv">
+      <div class="cmp-bar"><span>Cross-sector view <b>/ four columns</b></span><span>Indicative</span></div>
+      <div class="tbl" id="tbl"></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec" id="detail">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">In detail</span>
+        <h2>What we see in each.</h2>
+      </div>
+      <div><p class="lede">Drawn from deployments rather than desk research. Where we've only seen one or two examples, we say so rather than generalising from them.</p></div>
+    </div>
+
+    <div class="sectors rv">
+
+      <article class="sect" id="financial">
+        <span class="sx">01</span>
+        <div>
+          <span class="ask">Financial services</span>
+          <h3>The accountable human has to be nameable</h3>
+          <p>Most financial regulation was written assuming a person made the decision. An agent doesn't remove that expectation, it just makes it harder to evidence — which is the entire problem Spectre exists to solve.</p>
+          <p class="dim">Operational resilience rules also pull third-party dependencies into scope, so the enforcement path being self-hostable tends to matter more here than anywhere else.</p>
+        </div>
+        <div class="cols">
+          <div>
+            <h3 class="hlab">Agents we see</h3>
+            <ul>
+              <li>KYC and onboarding document review</li>
+              <li>Reconciliation and exception handling</li>
+              <li>Client reporting and renewal operations</li>
+              <li>First-pass triage on surveillance alerts</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="hlab">Where holds fire</h3>
+            <ul>
+              <li>Client data crossing the account boundary</li>
+              <li>Anything that could initiate a payment</li>
+              <li>Bulk export ahead of a reporting deadline</li>
+              <li>Off-hours writes to books and records</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="sect" id="healthcare">
+        <span class="sx">02</span>
+        <div>
+          <span class="ask">Healthcare</span>
+          <h3>Every access to a record is a question you'll be asked</h3>
+          <p>The standard is minimum necessary access, evidenced per access rather than per policy. An agent reading a thousand records to summarise one is a compliance problem even when nothing leaves the building.</p>
+          <p class="dim">Healthcare also carries the highest breach cost of any sector, which changes how a board weighs the cost of supervision against the cost of not having it.</p>
+        </div>
+        <div class="cols">
+          <div>
+            <h3 class="hlab">Agents we see</h3>
+            <ul>
+              <li>Prior authorisation and claims preparation</li>
+              <li>Clinical documentation drafting</li>
+              <li>Coding and billing review</li>
+              <li>Patient correspondence triage</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="hlab">Where holds fire</h3>
+            <ul>
+              <li>Identifiers in outbound communication</li>
+              <li>Record reads far above the task's need</li>
+              <li>Anything reaching a non-covered system</li>
+              <li>Retention windows about to be breached</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="sect" id="public">
+        <span class="sx">03</span>
+        <div>
+          <span class="ask">Public sector</span>
+          <h3>Records obligations that predate autonomous software</h3>
+          <p>Records management and transparency duties were written for filing cabinets and still apply. They don't have an exemption for a decision an agent made at three in the morning, and freedom-of-information requests reach agent activity like anything else.</p>
+          <p class="dim">Procurement scrutiny of automated decision-making is tightening across most jurisdictions, so being able to show the decision path matters as much as the outcome.</p>
+        </div>
+        <div class="cols">
+          <div>
+            <h3 class="hlab">Agents we see</h3>
+            <ul>
+              <li>Case triage and routing</li>
+              <li>Information request response drafting</li>
+              <li>Records classification and retention</li>
+              <li>Correspondence handling at volume</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="hlab">Where holds fire</h3>
+            <ul>
+              <li>Decisions affecting an individual, unreviewed</li>
+              <li>Records disposal without sign-off</li>
+              <li>Actions with no named accountable officer</li>
+              <li>Anything leaving sovereign infrastructure</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="sect" id="technology">
+        <span class="sx">04</span>
+        <div>
+          <span class="ask">Technology</span>
+          <h3>Your regulator is your customers' auditors</h3>
+          <p>The pressure here rarely comes from a regulator. It arrives as a security questionnaire from a large customer asking what your agents can reach in the environment holding their data — and that question is getting more specific every quarter.</p>
+          <p class="dim">This sector has the fastest agent adoption, the deepest production access, and usually the least governance around either. It's where we see the most surprising first month.</p>
+        </div>
+        <div class="cols">
+          <div>
+            <h3 class="hlab">Agents we see</h3>
+            <ul>
+              <li>Code review and dependency triage</li>
+              <li>Incident response and on-call assistance</li>
+              <li>Customer support at first line</li>
+              <li>Data pipeline and infrastructure operations</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="hlab">Where holds fire</h3>
+            <ul>
+              <li>Writes to production without review</li>
+              <li>Credential and secret access</li>
+              <li>Customer data pulled into development</li>
+              <li>Infrastructure changes outside a window</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Constant</span>
+        <h2>What doesn't change.</h2>
+      </div>
+      <div><p class="lede">Sector pages usually imply four different products. There's one, and these four properties hold in all of them.</p></div>
+    </div>
+
+    <div class="same rv">
+      <div class="sm"><b>One trail</b><span>Same capture, same schema, same replay. The sector only changes which report you pull off it.</span></div>
+      <div class="sm"><b>Your cloud</b><span>Enforcement runs in your own account everywhere, which is what makes residency a setting rather than a migration.</span></div>
+      <div class="sm"><b>Retention you set</b><span>Thirty days to ten years per workspace. We don't hold an opinion about your obligations.</span></div>
+      <div class="sm"><b>Observe first</b><span>Nothing blocks until you say so, whichever sector you're in and whatever the pressure to move fast.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="cta rv" id="cta">
+      <span class="eyebrow" style="justify-content:center">Get started</span>
+      <h2>Bring the obligation you're least sure about.</h2>
+      <p class="lede">If we can't tell you honestly whether Spectre helps with it, we'll say that instead of talking around it.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+        <a href="trust.html" class="btn btn--ghost">Read the trust page</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="index.html" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+        <p>We build agentic systems that do real work — and the console that keeps every one of them accountable.</p>
+      </div>
+      <div>
+        <h3 class="hlab">Platform</h3>
+        <ul>
+          <li><a href="platform.html#surfaces">Traces</a></li>
+          <li><a href="integrations.html">Integrations</a></li>
+          <li><a href="platform.html#surfaces">Policy engine</a></li>
+          <li><a href="platform.html#surfaces">Audit trail</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Solutions</h3>
+        <ul>
+          <li><a href="solutions.html#roles">Security</a></li>
+          <li><a href="solutions.html#roles">Operations</a></li>
+          <li><a href="solutions.html#roles">Compliance</a></li>
+          <li><a href="sectors.html">By sector</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Company</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="how-we-work.html">How we work</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="trust.html">Trust and security</a></li>
+          <li><a href="contact.html">Book a walkthrough</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Digital Spectre</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="trust.html">Security</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+(function(){
+"use strict";
+var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+var COLS = [
+  { key:'financial',  name:'Financial services', sub:'Banking · insurance · markets' },
+  { key:'healthcare', name:'Healthcare',         sub:'Providers · payers · life sciences' },
+  { key:'public',     name:'Public sector',      sub:'Central · local · agencies' },
+  { key:'technology', name:'Technology',         sub:'SaaS · platforms · infrastructure' }
+];
+
+var ROWS = [
+  { label:'Pressure comes from', v:{
+      financial:'A regulator, continuously',
+      healthcare:'A regulator, plus breach economics',
+      public:'Statutory records duties and transparency',
+      technology:'<b>Your customers\u2019 auditors</b>, via questionnaires' } },
+  { label:'Retention expected', v:{
+      financial:'Commonly five to seven years',
+      healthcare:'Commonly six years or more',
+      public:'Often indefinite for records of decisions',
+      technology:'Whatever your largest contract says' } },
+  { label:'Residency', v:{
+      financial:'In-region, frequently in-country',
+      healthcare:'In-country, tightly',
+      public:'<b>Sovereign</b>, non-negotiable',
+      technology:'Inherited from your customers' } },
+  { label:'The awkward question', v:{
+      financial:'Who was accountable for this decision?',
+      healthcare:'Why did it read that many records?',
+      public:'Can you show the decision path?',
+      technology:'What can it reach in our environment?' } },
+  { label:'Where holds actually fire', v:{
+      financial:'Payment paths and client data egress',
+      healthcare:'Identifiers leaving, and over-broad reads',
+      public:'Unreviewed decisions about a person',
+      technology:'<b>Production writes and secrets</b>' } }
+];
+
+var tbl = document.getElementById('tbl');
+
+var html = '<div class="cel hd corner"></div>';
+ROWS.forEach(function(r){ html += '<div class="cel rh">' + r.label + '</div>'; });
+
+COLS.forEach(function(c){
+  html += '<div class="cel hd"><b>' + c.name + '</b><span>' + c.sub + '</span></div>';
+  ROWS.forEach(function(r){
+    html += '<div class="cel"><span class="rl">' + r.label + '</span>' +
+            '<span class="v">' + r.v[c.key] + '</span></div>';
+  });
+});
+tbl.innerHTML = html;
+})();
+</script>
+</body>
+</html>

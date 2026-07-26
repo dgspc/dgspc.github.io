@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-zZWTbwgIbDy38sz7KNgksJtKnz4707eqTc8PfraURCI='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08090A">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+<title>Book a walkthrough — Digital Spectre</title>
+  <link rel="canonical" href="https://www.digitalspectre.com/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Digital Spectre">
+  <meta property="og:title" content="Book a walkthrough — Digital Spectre">
+  <meta property="og:description" content="Tell us who you are and what you run, and the page will tell you exactly what the call covers and who you'll meet — before you book it.">
+  <meta property="og:url" content="https://www.digitalspectre.com/contact.html">
+  <meta property="og:image" content="https://www.digitalspectre.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Book a walkthrough — Digital Spectre">
+  <meta name="twitter:description" content="Tell us who you are and what you run, and the page will tell you exactly what the call covers and who you'll meet — before you book it.">
+  <meta name="twitter:image" content="https://www.digitalspectre.com/og-image.png">
+<meta name="description" content="Tell us who you are and what you run, and the page will tell you exactly what the call covers and who you'll meet — before you book it.">
+<link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+<style>
+
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:2px; font-size:14px;font-weight:600;letter-spacing:-.01em; transition:transform .35s var(--ease),background .3s,border-color .3s,opacity .3s}
+.phead{padding:clamp(56px,8vw,96px) 0 clamp(34px,4vw,52px)}
+.phead .lede{max-width:56ch}
+.phead h1{font-size:clamp(38px,6.6vw,72px);max-width:14ch;margin:0 0 22px}
+
+@keyframes grain{0%{transform:translate(0,0)}17%{transform:translate(-3%,-2%)}
+  34%{transform:translate(2%,-4%)}51%{transform:translate(-2%,3%)}
+  68%{transform:translate(3%,1%)}85%{transform:translate(-1%,-3%)}100%{transform:translate(0,0)}}
+.nav-links a:hover::after,.nav-links a.here::after{width:100%}
+.nav-links a.here{color:var(--phosphor)}
+@media(min-width:900px){.head{grid-template-columns:1.15fr .85fr;align-items:end;gap:48px}}
+.book{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash);border-radius:3px;overflow:hidden}
+@media(min-width:940px){.book{grid-template-columns:1.05fr .95fr}}
+.form{background:var(--carbon);padding:clamp(24px,3vw,38px)}
+.form-h{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--smoke);display:block;margin-bottom:24px}
+.fields{display:grid;gap:18px}
+@media(min-width:600px){.pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}}
+.f{display:grid;gap:8px}
+.f label{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--smoke)}
+.f label .req{color:var(--w55)}
+.f input,.f select,.f textarea{
+  background:var(--void);border:1px solid var(--ash);color:var(--phosphor);
+  font-family:var(--font-body);font-size:14.5px;line-height:1.4;padding:12px 13px;
+  border-radius:2px;width:100%;transition:border-color .3s,background .3s;appearance:none}
+.f textarea{resize:vertical;min-height:88px;font-family:var(--font-body)}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--w55);background:var(--slate);outline:none}
+.f input::placeholder,.f textarea::placeholder{color:var(--smoke)}
+.f select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23878F96' stroke-width='1.4'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;cursor:pointer}
+.f select option{background:var(--carbon);color:var(--phosphor)}
+.f.bad input,.f.bad select{border-color:var(--phosphor)}
+.f .err{font-family:var(--font-mono);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--phosphor);display:none}
+.f.bad .err{display:block}
+.form-foot{margin-top:26px;display:grid;gap:14px}
+.form-foot .btn{width:100%;justify-content:center}
+.form-note{font-family:var(--font-mono);font-size:8.5px;letter-spacing:.07em;color:var(--smoke);line-height:1.7}
+.brief{background:var(--slate);padding:clamp(24px,3vw,38px);display:flex;flex-direction:column}
+.brief-h{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--smoke);display:block;margin-bottom:8px}
+.brief .brief-t{letter-spacing:-.02em;line-height:1.16;margin-bottom:24px;font-size:clamp(19px,2.3vw,26px)}
+.brief-rows{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash);flex:1;align-content:start}
+.brow{background:var(--carbon);padding:15px 16px}
+.brow .bk{font-family:var(--font-mono);font-size:8.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--smoke);display:block;margin-bottom:7px}
+.brow .bv{font-size:14px;color:var(--vapor);line-height:1.5;display:block}
+.brow .bv b{color:var(--phosphor);font-weight:500}
+.brow.upd{animation:pulse .5s var(--ease)}
+@keyframes pulse{0%{background:var(--slate)}100%{background:var(--carbon)}}
+.brief-foot{margin-top:18px;font-family:var(--font-mono);font-size:8.5px;letter-spacing:.07em;
+  color:var(--smoke);line-height:1.75}
+.brief-foot b{color:var(--vapor);font-weight:500}
+.sent{background:var(--carbon);padding:clamp(28px,4vw,52px);display:none;
+  grid-column:1/-1;text-align:center}
+.sent.on{display:block;animation:fadein .5s var(--ease) both}
+@keyframes fadein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.sent .mark{width:34px;height:34px;margin:0 auto 20px;position:relative}
+.sent .mark i{position:absolute;background:var(--phosphor);display:block}
+.sent .mark i:first-child{width:18px;height:18px;right:0;top:0;opacity:.32}
+.sent .mark i:last-child{width:18px;height:18px;left:0;bottom:0}
+.sent .sent-t{letter-spacing:-.02em;line-height:1.16;margin-bottom:14px;font-size:clamp(21px,2.6vw,29px)}
+.sent p{font-size:14.5px;max-width:46ch;margin:0 auto 8px;color:var(--vapor)}
+.sent .ref{font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;color:var(--smoke);
+  margin-top:22px;display:block}
+.next{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+@media(min-width:820px){.next{grid-template-columns:repeat(3,1fr)}}
+.nx{background:var(--carbon);padding:26px 22px;position:relative;overflow:hidden}
+.nx::after{content:"";position:absolute;top:0;left:-100%;width:100%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--phosphor),transparent);transition:left .8s var(--ease)}
+.nx:hover::after{left:100%}
+.nx .nn{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--smoke);display:block;margin-bottom:18px}
+.nx b{font-family:var(--font-display);font-weight:800;font-size:17px;letter-spacing:-.025em;
+  color:var(--phosphor);display:block;margin-bottom:10px}
+.nx span{font-size:13.5px;color:var(--smoke);line-height:1.55;display:block}
+.other{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+@media(min-width:760px){.other{grid-template-columns:repeat(3,1fr)}}
+.ot{background:var(--carbon);padding:24px 22px}
+.ot b{font-family:var(--font-display);font-weight:800;font-size:16px;letter-spacing:-.025em;
+  color:var(--phosphor);display:block;margin-bottom:9px}
+.ot span{font-size:13px;color:var(--smoke);line-height:1.5;display:block;margin-bottom:12px}
+.ot a{font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;color:var(--vapor);
+  border-bottom:1px solid var(--w28);padding-bottom:2px;transition:color .3s,border-color .3s}
+.ot a:hover{color:var(--phosphor);border-color:var(--phosphor)}
+@media(min-width:820px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr 1fr}}
+@media(max-width:960px){
+  .nav-links{display:none}
+  .burger{display:flex}
+}
+@media(max-width:560px){
+  .nav-cta .btn{padding:9px 14px;font-size:12.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .field::after{display:none}
+}
+</style>
+</head>
+<body>
+<div class="field" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="index.html" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+    <nav class="nav-links">
+      <a href="platform.html">Platform</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="how-we-work.html">How we work</a>
+      <a href="trust.html">Trust</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#book" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+      <button class="burger" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="phead">
+  <div class="wrap">
+    <span class="crumb"><a href="index.html">Home</a> / Book a walkthrough</span>
+    <h1>You'll know what the call covers before you book it.</h1>
+    <p class="lede">Tell us who you are and what you're running. The panel on the right fills in as you go — who you'll meet, what we'll show you, and what we'd need from you on the day.</p>
+  </div>
+</section>
+
+<section class="sec" id="book" style="padding-top:0">
+  <div class="wrap">
+    <div class="book rv" id="bookGrid">
+
+      <div class="form" id="formPane">
+        <span class="form-h">Your details</span>
+
+        <div class="fields">
+          <div class="pair">
+            <div class="f" data-req><label for="fName">Name <span class="req">*</span></label>
+              <input id="fName" type="text" autocomplete="name" placeholder="Sam Okafor">
+              <span class="err">Required</span></div>
+            <div class="f" data-req data-email><label for="fEmail">Work email <span class="req">*</span></label>
+              <input id="fEmail" type="email" autocomplete="email" placeholder="sam@example.com">
+              <span class="err">Enter a valid work email</span></div>
+          </div>
+
+          <div class="f" data-req><label for="fCo">Company <span class="req">*</span></label>
+            <input id="fCo" type="text" autocomplete="organization" placeholder="Company name">
+            <span class="err">Required</span></div>
+
+          <div class="pair">
+            <div class="f"><label for="fRole">Your team</label>
+              <select id="fRole">
+                <option value="sec">Security</option>
+                <option value="eng">Engineering</option>
+                <option value="ops">Operations</option>
+                <option value="comp">Compliance or legal</option>
+                <option value="exec">Exec or other</option>
+              </select></div>
+            <div class="f"><label for="fScale">Agents in production</label>
+              <select id="fScale">
+                <option value="none">None yet</option>
+                <option value="few" selected>1 – 10</option>
+                <option value="mid">11 – 50</option>
+                <option value="many">More than 50</option>
+              </select></div>
+          </div>
+
+          <div class="f"><label for="fCtx">What's prompting this?</label>
+            <textarea id="fCtx" placeholder="An incident, an audit, a workflow you're about to hand over — whatever it actually is."></textarea></div>
+        </div>
+
+        <div class="form-foot">
+          <button class="btn btn--solid" id="submit">Request the walkthrough <span class="arw">→</span></button>
+          <p class="form-note">One reply from a person, not a sequence. We don't add you to a newsletter and we don't pass your details to anyone.</p>
+        </div>
+      </div>
+
+      <aside class="brief" id="briefPane">
+        <span class="brief-h">Your walkthrough</span>
+        <h2 class="brief-t" id="briefTitle">A working session, not a demo</h2>
+        <div class="brief-rows">
+          <div class="brow"><span class="bk">Who you'll meet</span><span class="bv" id="bWho"></span></div>
+          <div class="brow"><span class="bk">What we'll show you</span><span class="bv" id="bShow"></span></div>
+          <div class="brow"><span class="bk">What we'd need</span><span class="bv" id="bNeed"></span></div>
+          <div class="brow"><span class="bk">Length</span><span class="bv" id="bLen"></span></div>
+        </div>
+        <p class="brief-foot">No slides. If we can't show you something running inside the first ten minutes, <b>tell us and we'll end the call</b>.</p>
+      </aside>
+
+      <div class="sent" id="sent">
+        <div class="mark"><i></i><i></i></div>
+        <h2 class="sent-t">We've got it.</h2>
+        <p>A person will reply within one business day with two or three times, and the brief you just built attached so nobody has to repeat it.</p>
+        <p class="dim">If it's urgent, reply to that email and say so — it moves.</p>
+        <span class="ref" id="sentRef"></span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">After you send it</span>
+        <h2>Three steps, no sequence of emails.</h2>
+      </div>
+      <div><p class="lede">The most common reason people don't fill in a form like this is not knowing how much follow-up they've just signed up for. Here's all of it.</p></div>
+    </div>
+
+    <div class="next rv">
+      <div class="nx"><span class="nn">01 · Within one business day</span><b>A reply from a person</b><span>Two or three times to choose from, and the name of who you'll be speaking to. If we're not the right fit, we say that instead.</span></div>
+      <div class="nx"><span class="nn">02 · The call itself</span><b>Something running</b><span>We'll show the console on real traffic — ours if you have nothing to instrument yet, yours if you do. You can ask us to stop at any point.</span></div>
+      <div class="nx"><span class="nn">03 · Same day</span><b>Written follow-up</b><span>What we covered, what we couldn't answer, and what it would cost you. Then nothing until you come back to us.</span></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Other reasons to write</span>
+        <h2>Not everything needs a call.</h2>
+      </div>
+      <div><p class="lede">Three things we'd rather handle over email than make you sit through a meeting for.</p></div>
+    </div>
+
+    <div class="other rv">
+      <div class="ot"><b>Security questionnaire</b><span>Send it before a call rather than after. You'll get it back completed, with the gaps marked as gaps rather than glossed.</span><a href="mailto:contact@digitalspectre.com?subject=Security%20questionnaire">contact@digitalspectre.com</a></div>
+      <div class="ot"><b>Reporting a vulnerability</b><span>Send whatever you have, however rough. Acknowledged within one business day, and we won't pursue anyone acting in good faith.</span><a href="trust.html">Read the disclosure policy</a></div>
+      <div class="ot"><b>Just want the numbers</b><span>Pricing is published in full, including the volume bands and what we refuse to charge for. No form in the way.</span><a href="pricing.html">See pricing</a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="index.html" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+        <p>We build agentic systems that do real work — and the console that keeps every one of them accountable.</p>
+      </div>
+      <div>
+        <h3 class="hlab">Platform</h3>
+        <ul>
+          <li><a href="platform.html#surfaces">Traces</a></li>
+          <li><a href="integrations.html">Integrations</a></li>
+          <li><a href="platform.html#surfaces">Policy engine</a></li>
+          <li><a href="platform.html#surfaces">Audit trail</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Solutions</h3>
+        <ul>
+          <li><a href="solutions.html#roles">Security</a></li>
+          <li><a href="solutions.html#roles">Operations</a></li>
+          <li><a href="solutions.html#roles">Compliance</a></li>
+          <li><a href="platform.html#autonomy">Autonomy levels</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Company</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="how-we-work.html">How we work</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="trust.html">Trust and security</a></li>
+          <li><a href="contact.html">Book a walkthrough</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Digital Spectre</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="trust.html">Security</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+(function(){
+"use strict";
+var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+var WHO = {
+  sec:  'A security engineer, plus whoever wrote the policy engine.',
+  eng:  'An engineer who has put agents into production, not a solutions consultant.',
+  ops:  'Someone who has run the operations side of a handover.',
+  comp: 'Our compliance lead and an engineer, so nothing gets answered twice.',
+  exec: 'Whoever can answer the question you actually have. Tell us and we\u2019ll pick.'
+};
+var SHOW = {
+  none: 'We start with <b>your workflow, not our product</b>. Half the call is working out what would be worth handing over first.',
+  few:  'We instrument <b>one of your existing agents</b> and replay a real run, step by step.',
+  mid:  'Fleet view across the estate — risk scoring, drift, and <b>where your policy gaps are</b>.',
+  many: 'Estate-level governance: residency, retention, and the <b>self-hosted enforcement path</b>.'
+};
+var NEED = {
+  none: 'Nothing. Bring the workflow everyone agrees is a mess.',
+  few:  'Read access to one non-critical agent, or a trace file if that\u2019s easier.',
+  mid:  'A rough count of agents and which systems they reach.',
+  many: 'Someone who can speak to your cloud and identity setup.'
+};
+var LEN = { none:'40 minutes', few:'40 minutes', mid:'45 minutes', many:'An hour, and usually a second session' };
+var TITLE = {
+  none: 'A workflow session, not a demo',
+  few:  'Your agent, on screen, in your first ten minutes',
+  mid:  'A look at your whole fleet at once',
+  many: 'An estate and governance review'
+};
+
+var role = document.getElementById('fRole');
+var scale = document.getElementById('fScale');
+var out = { bWho:document.getElementById('bWho'), bShow:document.getElementById('bShow'),
+            bNeed:document.getElementById('bNeed'), bLen:document.getElementById('bLen') };
+var briefTitle = document.getElementById('briefTitle');
+
+function set(el, html){
+  if(el.innerHTML === html) return;
+  el.innerHTML = html;
+  var row = el.closest('.brow');
+  if(row && !reduce){ row.classList.remove('upd'); void row.offsetWidth; row.classList.add('upd'); }
+}
+function paint(){
+  var r = role.value, s = scale.value;
+  set(out.bWho, WHO[r]); set(out.bShow, SHOW[s]);
+  set(out.bNeed, NEED[s]); set(out.bLen, LEN[s]);
+  briefTitle.textContent = TITLE[s];
+}
+role.addEventListener('change', paint);
+scale.addEventListener('change', paint);
+paint();
+
+function valid(f){
+  var input = f.querySelector('input');
+  var v = input.value.trim();
+  if(f.hasAttribute('data-email')) return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+  return v.length > 0;
+}
+function collect(){
+  return {
+    name: document.getElementById('fName').value.trim(),
+    email: document.getElementById('fEmail').value.trim(),
+    company: document.getElementById('fCo').value.trim(),
+    team: role.value,
+    agentsInProduction: scale.value,
+    context: document.getElementById('fCtx').value.trim(),
+    brief: { who: WHO[role.value], show: SHOW[scale.value],
+             need: NEED[scale.value], length: LEN[scale.value] }
+  };
+}
+
+document.querySelectorAll('.f[data-req] input').forEach(function(i){
+  i.addEventListener('input', function(){ i.closest('.f').classList.remove('bad'); });
+});
+
+document.getElementById('submit').addEventListener('click', function(){
+  var fields = Array.prototype.slice.call(document.querySelectorAll('.f[data-req]'));
+  var firstBad = null;
+  fields.forEach(function(f){
+    var ok = valid(f);
+    f.classList.toggle('bad', !ok);
+    if(!ok && !firstBad) firstBad = f;
+  });
+  if(firstBad){ firstBad.querySelector('input').focus(); return; }
+
+  var payload = collect();
+
+  var ref = 'DS-' + Date.now().toString(36).toUpperCase().slice(-6);
+  document.getElementById('sentRef').textContent = 'Reference ' + ref;
+  document.getElementById('formPane').style.display = 'none';
+  document.getElementById('briefPane').style.display = 'none';
+  document.getElementById('sent').classList.add('on');
+  document.getElementById('book').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block:'center' });
+});
+})();
+</script>
+</body>
+</html>

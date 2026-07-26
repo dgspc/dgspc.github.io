@@ -1,0 +1,8 @@
+# Digital Spectre
+User-agent: *
+Allow: /
+
+# privacy.html and terms.html carry a noindex tag while they are drafts.
+# Remove that tag after legal sign-off and add them to sitemap.xml.
+
+Sitemap: https://www.digitalspectre.com/sitemap.xml

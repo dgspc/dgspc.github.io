@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-V/jJVNtD+2+j+JBR78DIKTsb8Ow3eRoSO4FRZ0mYkjI='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08090A">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+<title>Integrations — Digital Spectre</title>
+  <link rel="canonical" href="https://www.digitalspectre.com/integrations.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Digital Spectre">
+  <meta property="og:title" content="Integrations — Digital Spectre">
+  <meta property="og:description" content="Most of this list needs no setup at all. Spectre watches the tool-call layer, so anything your agents already call is already visible. The real connectors are the ones that send findings out.">
+  <meta property="og:url" content="https://www.digitalspectre.com/integrations.html">
+  <meta property="og:image" content="https://www.digitalspectre.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Integrations — Digital Spectre">
+  <meta name="twitter:description" content="Most of this list needs no setup at all. Spectre watches the tool-call layer, so anything your agents already call is already visible. The real connectors are the ones that send findings out.">
+  <meta name="twitter:image" content="https://www.digitalspectre.com/og-image.png">
+<meta name="description" content="Most of this list needs no setup at all. Spectre watches the tool-call layer, so anything your agents already call is already visible. The real connectors are the ones that send findings out.">
+<link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+<style>
+
+.phead h1{font-size:clamp(36px,6.2vw,70px);max-width:15ch;margin:0 0 24px}
+
+@keyframes grain{0%{transform:translate(0,0)}17%{transform:translate(-3%,-2%)}
+  34%{transform:translate(2%,-4%)}51%{transform:translate(-2%,3%)}
+  68%{transform:translate(3%,1%)}85%{transform:translate(-1%,-3%)}100%{transform:translate(0,0)}}
+.nav-links a:hover::after,.nav-links a.here::after{width:100%}
+.nav-links a.here{color:var(--phosphor)}
+@media(min-width:900px){.head{grid-template-columns:1.15fr .85fr;align-items:end;gap:48px}}
+.split{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+@media(min-width:840px){.split{grid-template-columns:1fr 1fr}}
+.cls{background:var(--carbon);padding:clamp(24px,3vw,38px)}
+.cls .tag{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--smoke);display:inline-flex;align-items:center;gap:9px;margin-bottom:20px}
+.cls .tag i{width:14px;height:8px;display:block;border:1px solid var(--w28);font-style:normal}
+.cls .tag i.watched{background-image:repeating-linear-gradient(45deg,var(--w28) 0 2px,transparent 2px 5px)}
+.cls .tag i.conn{background:var(--phosphor);border-color:var(--phosphor)}
+.cls h3{margin-bottom:14px;max-width:20ch}
+.cls p{font-size:14.5px;margin:0 0 14px;max-width:46ch}
+.cls p:last-child{margin:0;color:var(--smoke);font-size:13px}
+.cls .count{font-family:var(--font-display);font-weight:800;font-size:clamp(30px,4vw,42px);
+  letter-spacing:-.04em;color:var(--phosphor);display:block;line-height:1;margin-bottom:16px}
+.idx{border:1px solid var(--ash);background:var(--carbon);border-radius:3px;overflow:hidden}
+.idx-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  padding:11px 14px;border-bottom:1px solid var(--ash);background:var(--slate);
+  font-family:var(--font-mono);font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--smoke)}
+.idx-bar b{color:var(--phosphor);font-weight:500}
+.cats{display:flex;flex-wrap:wrap;gap:1px;background:var(--ash);border-bottom:1px solid var(--ash)}
+.cat{background:var(--carbon);padding:12px 15px;font-family:var(--font-mono);font-size:9px;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--smoke);flex:1 1 auto;
+  transition:background .3s,color .3s;white-space:nowrap}
+.cat:hover{color:var(--vapor)}
+.cat.on{background:var(--phosphor);color:var(--void);font-weight:500}
+.grid{display:grid;gap:1px;background:var(--ash)}
+@media(min-width:560px){.grid{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.grid{grid-template-columns:repeat(3,1fr)}}
+.item{background:var(--carbon);padding:16px 17px;display:flex;flex-direction:column;gap:7px;
+  animation:pop .4s var(--ease) both;transition:background .35s}
+.item:hover{background:var(--slate)}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.item .nm{font-family:var(--font-body);font-size:14.5px;font-weight:600;color:var(--phosphor);
+  letter-spacing:-.01em;display:flex;align-items:center;gap:9px}
+.item .nm i{width:12px;height:7px;display:block;border:1px solid var(--w28);flex:0 0 auto;font-style:normal}
+.item .nm i.watched{background-image:repeating-linear-gradient(45deg,var(--w28) 0 2px,transparent 2px 5px)}
+.item .nm i.conn{background:var(--phosphor);border-color:var(--phosphor)}
+.item .ds{font-family:var(--font-mono);font-size:9px;letter-spacing:.05em;color:var(--smoke);line-height:1.55}
+.idx-foot{padding:14px;border-top:1px solid var(--ash);font-family:var(--font-mono);font-size:9px;
+  letter-spacing:.06em;color:var(--smoke);line-height:1.75}
+.idx-foot b{color:var(--vapor);font-weight:500}
+.hatch{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+@media(min-width:760px){.hatch{grid-template-columns:repeat(3,1fr)}}
+.hx{background:var(--carbon);padding:24px 22px}
+.hx b{font-family:var(--font-display);font-weight:800;font-size:16.5px;letter-spacing:-.025em;
+  color:var(--phosphor);display:block;margin-bottom:10px}
+.hx span{font-size:13.5px;color:var(--smoke);line-height:1.55;display:block}
+.cta>*{position:relative}
+@media(min-width:820px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr 1fr}}
+@media(max-width:960px){
+  .nav-links{display:none}
+  .burger{display:flex}
+}
+@media(max-width:560px){
+  .nav-cta .btn{padding:9px 14px;font-size:12.5px}
+  .cat{flex:1 1 100%;text-align:left}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .field::after{display:none}
+}
+@media (pointer:coarse),(max-width:960px){.cat{min-height:44px}}
+</style>
+</head>
+<body>
+<div class="field" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="index.html" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+    <nav class="nav-links">
+      <a href="platform.html">Platform</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="how-we-work.html">How we work</a>
+      <a href="trust.html">Trust</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+      <button class="burger" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="phead">
+  <div class="wrap">
+    <span class="crumb"><a href="platform.html">Platform</a> / Integrations</span>
+    <h1>Most of this list isn't an integration.</h1>
+    <p class="lede">Spectre sits on the layer where agents call tools, so anything an agent already reaches — a database, a model, a framework, an API — is visible the moment you point it through. There's nothing to install at either end.</p>
+  </div>
+</section>
+
+<section class="sec" id="classes">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Two kinds of entry</span>
+        <h2>Watched, or wired.</h2>
+      </div>
+      <div><p class="lede">Worth separating, because vendors pad integration pages with things that required no work. Here's which is which.</p></div>
+    </div>
+
+    <div class="split rv">
+      <div class="cls">
+        <span class="tag"><i class="watched"></i> Watched</span>
+        <span class="count" id="cWatched">0</span>
+        <h3>Nothing to set up</h3>
+        <p>Frameworks, model providers, databases, warehouses, SaaS APIs. Your agent already calls these, and a call is a call — Spectre traces and scores it without knowing or caring what's on the other end.</p>
+        <p>Which is why this list can keep growing without us shipping anything.</p>
+      </div>
+      <div class="cls">
+        <span class="tag"><i class="conn"></i> Connector</span>
+        <span class="count" id="cConn">0</span>
+        <h3>A real integration, built and maintained</h3>
+        <p>Everywhere findings need to go <em>out</em> — your SIEM, your on-call rota, your identity provider, your ticket queue. These have schemas, auth and failure modes we own.</p>
+        <p>If something you need isn't here, it's a conversation rather than a roadmap request.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec" id="index">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">The index</span>
+        <h2>What we see in the wild.</h2>
+      </div>
+      <div><p class="lede">Named because customers run them, not because we've certified them. If yours is missing it almost certainly still works — tell us and we'll add it.</p></div>
+    </div>
+
+    <div class="idx rv" id="idx">
+      <div class="idx-bar">
+        <span>Directory <b id="idxCount">—</b></span>
+        <span id="idxCat">All categories</span>
+      </div>
+
+      <div class="cats" id="cats"></div>
+      <div class="grid" id="grid"></div>
+
+      <p class="idx-foot">Anything marked <b>watched</b> needs no configuration beyond routing your agent's calls through Spectre. Anything marked <b>connector</b> takes credentials and about ten minutes.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Not listed</span>
+        <h2>Three ways round a missing name.</h2>
+      </div>
+      <div><p class="lede">Nobody should have to wait on a vendor roadmap to get their own data out of a system they're paying for.</p></div>
+    </div>
+
+    <div class="hatch rv">
+      <div class="hx"><b>Webhooks</b><span>Every event, hold and score can fire a signed webhook at a URL you control. Retries with backoff, and a replay endpoint for anything you missed.</span></div>
+      <div class="hx"><b>The API</b><span>Everything the console does, the API does. Traces, rules, approvals and evidence packs are all readable and writable.</span></div>
+      <div class="hx"><b>Open telemetry</b><span>Traces export as OTLP, so anything already speaking that protocol receives them without a connector at all.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="cta rv" id="cta">
+      <span class="eyebrow" style="justify-content:center">Get started</span>
+      <h2>Bring the stack you actually have.</h2>
+      <p class="lede">Including the parts you'd rather not describe out loud. The awkward ones are usually where the interesting agent behaviour is hiding.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+        <a href="platform.html" class="btn btn--ghost">See the platform</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="index.html" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+        <p>We build agentic systems that do real work — and the console that keeps every one of them accountable.</p>
+      </div>
+      <div>
+        <h3 class="hlab">Platform</h3>
+        <ul>
+          <li><a href="platform.html#surfaces">Traces</a></li>
+          <li><a href="platform.html#surfaces">Policy engine</a></li>
+          <li><a href="platform.html#surfaces">Audit trail</a></li>
+          <li><a href="integrations.html">Integrations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Solutions</h3>
+        <ul>
+          <li><a href="solutions.html#roles">Security</a></li>
+          <li><a href="solutions.html#roles">Operations</a></li>
+          <li><a href="solutions.html#roles">Compliance</a></li>
+          <li><a href="platform.html#autonomy">Autonomy levels</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Company</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="how-we-work.html">How we work</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="trust.html">Trust and security</a></li>
+          <li><a href="contact.html">Book a walkthrough</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Digital Spectre</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="trust.html">Security</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+(function(){
+"use strict";
+var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+var CATS = [
+  { id:'all',   label:'Everything' },
+  { id:'agent', label:'Agent frameworks' },
+  { id:'model', label:'Model providers' },
+  { id:'data',  label:'Data and systems' },
+  { id:'siem',  label:'Security and SIEM' },
+  { id:'id',    label:'Identity' },
+  { id:'alert', label:'Alerting' },
+  { id:'ticket',label:'Ticketing' }
+];
+
+var ITEMS = [
+  
+  { n:'Model Context Protocol', c:'agent', k:'watched', d:'MCP servers and tools traced per call' },
+  { n:'LangChain / LangGraph',  c:'agent', k:'watched', d:'Chains, graphs and tool nodes' },
+  { n:'OpenAI Agents SDK',      c:'agent', k:'watched', d:'Handoffs and tool invocations' },
+  { n:'LlamaIndex',             c:'agent', k:'watched', d:'Retrieval and query engines' },
+  { n:'CrewAI',                 c:'agent', k:'watched', d:'Per-agent and per-task traces' },
+  { n:'AutoGen',                c:'agent', k:'watched', d:'Multi-agent conversation traces' },
+  { n:'Semantic Kernel',        c:'agent', k:'watched', d:'Plugins and planners' },
+  { n:'Pydantic AI',            c:'agent', k:'watched', d:'Typed tool calls and validation' },
+  { n:'Vercel AI SDK',          c:'agent', k:'watched', d:'Streaming and tool routing' },
+  { n:'Your own orchestration', c:'agent', k:'watched', d:'No framework required at all' },
+
+  { n:'Anthropic',       c:'model', k:'watched', d:'Tokens, cost and tool use per run' },
+  { n:'OpenAI',          c:'model', k:'watched', d:'Tokens, cost and tool use per run' },
+  { n:'Google Vertex AI',c:'model', k:'watched', d:'Including Gemini tool calling' },
+  { n:'AWS Bedrock',     c:'model', k:'watched', d:'Any hosted model on Bedrock' },
+  { n:'Azure OpenAI',    c:'model', k:'watched', d:'Regional deployments included' },
+  { n:'Mistral',         c:'model', k:'watched', d:'Hosted and self-managed' },
+  { n:'Self-hosted',     c:'model', k:'watched', d:'vLLM, Ollama, anything OpenAI-compatible' },
+
+  { n:'PostgreSQL',   c:'data', k:'watched', d:'Table and column-level reach' },
+  { n:'Snowflake',    c:'data', k:'watched', d:'Query volume and row counts' },
+  { n:'BigQuery',     c:'data', k:'watched', d:'Query volume and row counts' },
+  { n:'Databricks',   c:'data', k:'watched', d:'Jobs and warehouse queries' },
+  { n:'Amazon S3',    c:'data', k:'watched', d:'Reads, writes and egress destination' },
+  { n:'MongoDB',      c:'data', k:'watched', d:'Collections and document counts' },
+  { n:'Salesforce',   c:'data', k:'watched', d:'Objects and field-level reach' },
+  { n:'HubSpot',      c:'data', k:'watched', d:'Contacts, deals and notes' },
+  { n:'Stripe',       c:'data', k:'watched', d:'Spend caps enforceable per agent' },
+  { n:'Google Workspace', c:'data', k:'watched', d:'Drive, Gmail and Calendar reach' },
+
+  { n:'Splunk',              c:'siem', k:'conn', d:'Events and holds as HEC payloads' },
+  { n:'Datadog',             c:'siem', k:'conn', d:'Logs, metrics and OTLP traces' },
+  { n:'Elastic',             c:'siem', k:'conn', d:'ECS-shaped documents' },
+  { n:'Microsoft Sentinel',  c:'siem', k:'conn', d:'Custom tables via Log Analytics' },
+  { n:'Google SecOps',       c:'siem', k:'conn', d:'UDM-mapped detections' },
+  { n:'Panther',             c:'siem', k:'conn', d:'Streaming rules on agent events' },
+
+  { n:'Okta',            c:'id', k:'conn', d:'SSO, SCIM and agent identity mapping' },
+  { n:'Microsoft Entra', c:'id', k:'conn', d:'SSO, SCIM and conditional access' },
+  { n:'Google Workspace SSO', c:'id', k:'conn', d:'SAML and directory sync' },
+  { n:'Auth0',           c:'id', k:'conn', d:'SSO for the console' },
+
+  { n:'Slack',            c:'alert', k:'conn', d:'Approvals answerable in-channel' },
+  { n:'Microsoft Teams',  c:'alert', k:'conn', d:'Approvals answerable in-channel' },
+  { n:'PagerDuty',        c:'alert', k:'conn', d:'Severity-mapped incidents' },
+  { n:'Opsgenie',         c:'alert', k:'conn', d:'Severity-mapped alerts' },
+
+  { n:'Jira',        c:'ticket', k:'conn', d:'A ticket per hold, with the trace attached' },
+  { n:'ServiceNow',  c:'ticket', k:'conn', d:'Security incident records' },
+  { n:'Linear',      c:'ticket', k:'conn', d:'Issues from repeated policy blocks' },
+  { n:'Zendesk',     c:'ticket', k:'conn', d:'For agents working customer queues' }
+];
+
+var KIND = { watched:'Watched', conn:'Connector' };
+
+document.getElementById('cWatched').textContent = ITEMS.filter(function(i){ return i.k==='watched'; }).length;
+document.getElementById('cConn').textContent = ITEMS.filter(function(i){ return i.k==='conn'; }).length;
+
+var catsEl = document.getElementById('cats');
+var gridEl = document.getElementById('grid');
+var countEl = document.getElementById('idxCount');
+var catEl = document.getElementById('idxCat');
+var active = 'all';
+
+catsEl.innerHTML = CATS.map(function(c){
+  return '<button class="cat' + (c.id==='all'?' on':'') + '" data-cat="' + c.id + '">' + c.label + '</button>';
+}).join('');
+
+function render(){
+  var list = ITEMS.filter(function(i){ return active==='all' || i.c===active; });
+  gridEl.innerHTML = list.map(function(i, n){
+    var delay = reduce ? 0 : Math.min(n, 18) * 22;
+    return '<div class="item" style="animation-delay:' + delay + 'ms">' +
+             '<span class="nm"><i class="' + i.k + '" title="' + KIND[i.k] + '"></i>' + i.n + '</span>' +
+             '<span class="ds">' + i.d + '</span>' +
+           '</div>';
+  }).join('');
+  countEl.textContent = list.length + (active==='all' ? ' entries' : ' of ' + ITEMS.length);
+  catEl.textContent = CATS.filter(function(c){ return c.id===active; })[0].label;
+}
+
+catsEl.addEventListener('click', function(e){
+  var b = e.target.closest('.cat'); if(!b) return;
+  active = b.getAttribute('data-cat');
+  catsEl.querySelectorAll('.cat').forEach(function(x){ x.classList.toggle('on', x===b); });
+  render();
+});
+
+render();
+})();
+</script>
+</body>
+</html>

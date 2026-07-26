@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-tfDmUcBKmjOteTMMR63JQ+PwPQFhXSpaKWc2g50fxy8='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08090A">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+<title>Platform — Digital Spectre</title>
+  <link rel="canonical" href="https://www.digitalspectre.com/platform.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Digital Spectre">
+  <meta property="og:title" content="Platform — Digital Spectre">
+  <meta property="og:description" content="Four surfaces, one record. Traces on every step, risk scored against each agent's own baseline, policy enforced inline, and an audit trail that answers the question months later.">
+  <meta property="og:url" content="https://www.digitalspectre.com/platform.html">
+  <meta property="og:image" content="https://www.digitalspectre.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Platform — Digital Spectre">
+  <meta name="twitter:description" content="Four surfaces, one record. Traces on every step, risk scored against each agent's own baseline, policy enforced inline, and an audit trail that answers the question months later.">
+  <meta name="twitter:image" content="https://www.digitalspectre.com/og-image.png">
+<meta name="description" content="Four surfaces, one record. Traces on every step, risk scored against each agent's own baseline, policy enforced inline, and an audit trail that answers the question months later.">
+<link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+<style>
+
+.phead .lede{max-width:56ch}
+
+@keyframes grain{0%{transform:translate(0,0)}17%{transform:translate(-3%,-2%)}
+  34%{transform:translate(2%,-4%)}51%{transform:translate(-2%,3%)}
+  68%{transform:translate(3%,1%)}85%{transform:translate(-1%,-3%)}100%{transform:translate(0,0)}}
+.mono{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em}
+.nav-links a:hover::after,.nav-links a.here::after{width:100%}
+.nav-links a.here{color:var(--phosphor)}
+@media(min-width:900px){.head{grid-template-columns:1.15fr .85fr;align-items:end;gap:48px}}
+.ladder{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+.rung{background:var(--carbon);transition:background .4s}
+.rung.on{background:var(--slate)}
+.rung-btn{display:grid;width:100%;text-align:left;padding:20px clamp(16px,2.4vw,26px);gap:16px;
+  align-items:center;grid-template-columns:1fr}
+@media(min-width:800px){.rung-btn{grid-template-columns:44px 1.5fr 1fr;gap:26px}}
+.rung-lv{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.1em;color:var(--smoke);white-space:nowrap}
+.rung.on .rung-lv{color:var(--phosphor)}
+.rung-name{display:block}
+.rung-name b{font-family:var(--font-display);font-weight:800;font-size:clamp(17px,2vw,22px);
+  letter-spacing:-.025em;color:var(--smoke);display:block;transition:color .4s;line-height:1.1}
+.rung.on .rung-name b{color:var(--phosphor)}
+.rung-name i{font-style:normal;font-size:12.5px;color:var(--smoke);display:block;margin-top:5px}
+.meters{display:grid;gap:7px}
+.meter{display:grid;grid-template-columns:74px 1fr;gap:10px;align-items:center;
+  font-family:var(--font-mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--smoke)}
+.meter-t{height:5px;background:var(--w08);position:relative;overflow:hidden}
+.meter-t i{position:absolute;left:0;top:0;bottom:0;background:var(--w28);width:0;
+  transition:width .7s var(--ease)}
+.rung.on .meter-t i{background:var(--phosphor)}
+.meter-t.hatch i{background-image:repeating-linear-gradient(45deg,var(--void) 0 1px,transparent 1px 4px)}
+.rung-body{max-height:0;overflow:hidden;transition:max-height .6s var(--ease),opacity .4s;opacity:0}
+.rung.on .rung-body{max-height:460px;opacity:1}
+.rung-in{padding:0 clamp(16px,2.4vw,26px) 26px;display:grid;gap:24px}
+@media(min-width:800px){.rung-in{grid-template-columns:1fr 1fr;padding-left:calc(44px + 26px + 26px)}}
+.rung-in .hlab{line-height:1.02;max-width:none;font-family:var(--font-mono);font-size:9px;font-weight:500;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--smoke);margin:0 0 12px}
+.rung-in p{font-size:14px;margin:0;max-width:44ch}
+.rung-in ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.rung-in li{font-size:13.5px;color:var(--vapor);display:flex;gap:10px;align-items:flex-start;line-height:1.5}
+.rung-in li::before{content:"";width:5px;height:5px;background:var(--w55);flex:0 0 auto;
+  margin-top:8px;transform:rotate(45deg)}
+.ladder-src{margin-top:18px;font-family:var(--font-mono);font-size:9px;letter-spacing:.07em;
+  color:var(--smoke);line-height:1.8;max-width:78ch}
+.ladder-src b{color:var(--vapor);font-weight:500}
+.surf{display:grid;gap:1px;background:var(--ash);margin-left:calc(-1 * var(--rowpad));margin-right:calc(-1 * var(--rowpad));border-top:1px solid var(--ash);
+  border-bottom:1px solid var(--ash)}
+.surface{background:var(--void);display:grid;gap:22px;padding:clamp(30px,3.6vw,48px) var(--rowpad);
+  transition:background .4s}
+@media(min-width:900px){
+  .surface{grid-template-columns:52px 1.05fr 1fr;gap:34px;align-items:start}
+}
+.surface:hover{background:var(--carbon)}
+.surface .sx{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;color:var(--smoke);padding-top:6px}
+.surface h3{margin-bottom:12px;max-width:15ch}
+.surface p{font-size:14.5px;margin:0 0 16px;max-width:48ch}
+.surface ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.surface li{font-size:13px;color:var(--smoke);display:flex;gap:10px;align-items:flex-start;line-height:1.5}
+.surface li::before{content:"";width:5px;height:5px;background:var(--w28);flex:0 0 auto;
+  margin-top:7px;transform:rotate(45deg)}
+.spec{border:1px solid var(--ash);background:var(--carbon);padding:16px 17px;
+  font-family:var(--font-mono);font-size:9.5px;color:var(--smoke);display:grid;gap:9px;line-height:1.5}
+.spec div{display:flex;justify-content:space-between;gap:14px;padding-bottom:8px;
+  border-bottom:1px solid var(--w04)}
+.spec div:last-child{border-bottom:0;padding-bottom:0}
+.spec b{color:var(--phosphor);font-weight:500;text-align:right}
+.arch{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+@media(min-width:820px){.arch{grid-template-columns:repeat(3,1fr)}}
+.layer{background:var(--carbon);padding:clamp(22px,2.8vw,32px);position:relative;overflow:hidden}
+.layer::after{content:"";position:absolute;top:0;left:-100%;width:100%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--phosphor),transparent);transition:left .8s var(--ease)}
+.layer:hover::after{left:100%}
+.layer .lx{font-family:var(--font-mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--smoke);display:block;margin-bottom:18px}
+.layer h3{font-size:19px;margin-bottom:11px}
+.layer p{font-size:13.5px;margin:0;color:var(--vapor)}
+.nots{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+@media(min-width:760px){.nots{grid-template-columns:1fr 1fr}}
+.not{background:var(--carbon);padding:24px clamp(20px,2.6vw,28px)}
+.not b{font-family:var(--font-display);font-weight:800;font-size:16.5px;letter-spacing:-.02em;
+  color:var(--phosphor);display:block;margin-bottom:9px}
+.not span{font-size:13.5px;color:var(--smoke);line-height:1.55}
+.cta>*{position:relative}
+@media(min-width:820px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr 1fr}}
+@media(max-width:960px){
+  .nav-links{display:none}
+  .burger{display:flex}
+}
+@media(max-width:560px){
+  .nav-cta .btn{padding:9px 14px;font-size:12.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .field::after{display:none}
+}
+</style>
+</head>
+<body>
+<div class="field" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="index.html" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+    <nav class="nav-links">
+      <a href="platform.html" class="here">Platform</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="how-we-work.html">How we work</a>
+      <a href="trust.html">Trust</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+      <button class="burger" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="phead">
+  <div class="wrap">
+    <span class="crumb"><a href="index.html">Home</a> / Platform</span>
+    <h1>Four surfaces. One record.</h1>
+    <p class="lede">Every action an agent takes is captured as it happens, scored against that agent's own baseline, checked against your rules before it lands, and sealed somewhere an auditor can find it eighteen months later.</p>
+  </div>
+</section>
+
+<section class="sec" id="autonomy">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Governance that fits the agent</span>
+        <h2>Not every agent needs the same leash.</h2>
+      </div>
+      <div>
+        <p class="lede">Gartner's finding is that enterprises treat agent governance as binary — locked down or fully trusted — and that this is the root cause of failure. Over-restrict a simple agent and you slow delivery and push teams into shadow builds. Under-restrict an autonomous one and you inherit the risk.</p>
+        <p class="lede dim">Spectre governs by autonomy level. Same trail underneath, different weight of control on top.</p>
+      </div>
+    </div>
+
+    <div class="ladder rv" id="ladder">
+
+      <article class="rung on" data-autonomy="18" data-human="98" data-gov="22">
+        <button class="rung-btn" aria-expanded="true">
+          <span class="rung-lv">L1</span>
+          <span class="rung-name"><b>Observe</b><i>Reads, and tells one person what it found</i></span>
+          <span class="meters">
+            <span class="meter"><span>Agent reach</span><span class="meter-t"><i></i></span></span>
+            <span class="meter"><span>Human grip</span><span class="meter-t hatch"><i></i></span></span>
+            <span class="meter"><span>Controls</span><span class="meter-t"><i></i></span></span>
+          </span>
+        </button>
+        <div class="rung-body">
+          <div class="rung-in">
+            <div>
+              <h3 class="hlab">What the agent does</h3>
+              <p>Read-only access to sources you name, with output visible only to whoever asked. Summarising a document, retrieving a policy, explaining a block of code.</p>
+            </div>
+            <div>
+              <h3 class="hlab">What Spectre gives you</h3>
+              <ul>
+                <li>Every read logged with the source, the field and the requester</li>
+                <li>Scoped access enforced at the tool layer, not the prompt</li>
+                <li>Baseline built from the first runs, ready for the next level</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="rung" data-autonomy="36" data-human="82" data-gov="44">
+        <button class="rung-btn" aria-expanded="false">
+          <span class="rung-lv">L2</span>
+          <span class="rung-name"><b>Advise</b><i>Drafts the action, a person carries it out</i></span>
+          <span class="meters">
+            <span class="meter"><span>Agent reach</span><span class="meter-t"><i></i></span></span>
+            <span class="meter"><span>Human grip</span><span class="meter-t hatch"><i></i></span></span>
+            <span class="meter"><span>Controls</span><span class="meter-t"><i></i></span></span>
+          </span>
+        </button>
+        <div class="rung-body">
+          <div class="rung-in">
+            <div>
+              <h3 class="hlab">What the agent does</h3>
+              <p>Produces recommendations, drafts and proposed actions. Still no write access anywhere. The risk moves from data exposure to influence — a confident wrong answer that a tired reviewer waves through.</p>
+            </div>
+            <div>
+              <h3 class="hlab">What Spectre gives you</h3>
+              <ul>
+                <li>Accuracy and hallucination evals run against real traffic</li>
+                <li>Reliance tracking — how often its drafts go out unedited</li>
+                <li>Output quality scored per workflow, not per model</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="rung" data-autonomy="66" data-human="58" data-gov="74">
+        <button class="rung-btn" aria-expanded="false">
+          <span class="rung-lv">L3</span>
+          <span class="rung-name"><b>Act with approval</b><i>Writes, sends, changes — once a human says yes</i></span>
+          <span class="meters">
+            <span class="meter"><span>Agent reach</span><span class="meter-t"><i></i></span></span>
+            <span class="meter"><span>Human grip</span><span class="meter-t hatch"><i></i></span></span>
+            <span class="meter"><span>Controls</span><span class="meter-t"><i></i></span></span>
+          </span>
+        </button>
+        <div class="rung-body">
+          <div class="rung-in">
+            <div>
+              <h3 class="hlab">What the agent does</h3>
+              <p>Writes data, sends communications, changes configuration — but only after explicit approval, every time. Gartner's warning here is approval fatigue: under time pressure, review degrades into clicking yes, and you are left with a false sense of safety over a wider attack surface.</p>
+            </div>
+            <div>
+              <h3 class="hlab">What Spectre gives you</h3>
+              <ul>
+                <li>Approval queue with the reasons attached, not just the request</li>
+                <li>Fatigue signals — approval latency, batch-approve rate, who never says no</li>
+                <li>A named approver on the record for every action that landed</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="rung" data-autonomy="96" data-human="24" data-gov="100">
+        <button class="rung-btn" aria-expanded="false">
+          <span class="rung-lv">L4</span>
+          <span class="rung-name"><b>Act autonomously</b><i>Runs inside guardrails, humans review the exceptions</i></span>
+          <span class="meters">
+            <span class="meter"><span>Agent reach</span><span class="meter-t"><i></i></span></span>
+            <span class="meter"><span>Human grip</span><span class="meter-t hatch"><i></i></span></span>
+            <span class="meter"><span>Controls</span><span class="meter-t"><i></i></span></span>
+          </span>
+        </button>
+        <div class="rung-body">
+          <div class="rung-in">
+            <div>
+              <h3 class="hlab">What the agent does</h3>
+              <p>Executes on its own inside defined limits. People review exceptions, audit logs and aggregate outcomes rather than individual decisions — because the agent now acts faster than anyone can watch. Accountability still sits with you.</p>
+            </div>
+            <div>
+              <h3 class="hlab">What Spectre gives you</h3>
+              <ul>
+                <li>Circuit breakers that halt the agent on a threshold breach</li>
+                <li>Rollback to the last known-good state, per run</li>
+                <li>Continuous monitoring against baseline, with a named owner per agent</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="ladder-src rv">Autonomy levels after <b>Gartner</b>, "Applying Uniform Governance Across AI Agents Will Lead to Enterprise AI Agent Failure", May 2026. Gartner does not endorse any vendor, product or service described here.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec" id="surfaces">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">The four surfaces</span>
+        <h2>Capture, score, enforce, prove.</h2>
+      </div>
+      <div><p class="lede">They share one trail, so the team that ships an agent, the team that secures it and the team that has to explain it are reading the same record instead of arguing about three.</p></div>
+    </div>
+
+    <div class="surf rv">
+
+      <article class="surface">
+        <span class="sx">01</span>
+        <div>
+          <h3>Traces</h3>
+          <p>Every prompt, tool call, file touched, row read and dollar spent, captured as a structured trace. Scrub back through any run and watch the reasoning arrive in order.</p>
+          <ul>
+            <li>Step-level replay, including the calls that failed</li>
+            <li>Token and spend accounting per run and per workflow</li>
+            <li>Retained on your schedule, exported on your terms</li>
+          </ul>
+        </div>
+        <div class="spec">
+          <div><span>Capture point</span><b>Tool-call layer</b></div>
+          <div><span>Granularity</span><b>Per step</b></div>
+          <div><span>Overhead, p99</span><b>9 ms</b></div>
+          <div><span>Export</span><b>JSON · OTLP · CSV</b></div>
+        </div>
+      </article>
+
+      <article class="surface">
+        <span class="sx">02</span>
+        <div>
+          <h3>Behaviour and risk</h3>
+          <p>Spectre learns what an agent normally does over its first runs, then scores the distance from it. A new tool, an odd hour, ten times the usual data volume, a retry loop that will not quit.</p>
+          <ul>
+            <li>Per-agent baseline, not a global rule of thumb</li>
+            <li>Risk score updated each run, with the contributing factors listed</li>
+            <li>Drift alerts routed to your SIEM or on-call rota</li>
+          </ul>
+        </div>
+        <div class="spec">
+          <div><span>Baseline window</span><b>First 50 runs</b></div>
+          <div><span>Scoring</span><b>Per run</b></div>
+          <div><span>Signals</span><b>Tools · volume · timing · retries</b></div>
+          <div><span>Routing</span><b>SIEM · webhook · email</b></div>
+        </div>
+      </article>
+
+      <article class="surface">
+        <span class="sx">03</span>
+        <div>
+          <h3>Policy and control</h3>
+          <p>Rules evaluate before the call leaves the agent, so a blocked action never happens rather than getting cleaned up afterwards. Keep an agent out of a field, cap what it can spend, put a named human on anything above your line.</p>
+          <ul>
+            <li>Inline enforcement at median 4 ms, 9 ms at p99</li>
+            <li>Data-movement rules by field, destination and volume</li>
+            <li>Spend ceilings per run, per agent, per day</li>
+          </ul>
+        </div>
+        <div class="spec">
+          <div><span>Evaluation</span><b>Inline, pre-call</b></div>
+          <div><span>Median</span><b>4 ms</b></div>
+          <div><span>Failure mode</span><b>Configurable open or closed</b></div>
+          <div><span>Authoring</span><b>UI · YAML · API</b></div>
+        </div>
+      </article>
+
+      <article class="surface">
+        <span class="sx">04</span>
+        <div>
+          <h3>Governance and audit</h3>
+          <p>Every run written to an append-only trail with its approvals attached. Pull an evidence pack for a date, an agent or a single decision, mapped to whichever framework your auditor works from.</p>
+          <ul>
+            <li>Append-only, hash-chained, independently verifiable</li>
+            <li>Evidence packs by date range, agent or decision</li>
+            <li>Retention and residency set by you, per workspace</li>
+          </ul>
+        </div>
+        <div class="spec">
+          <div><span>Trail</span><b>Append-only, hash-chained</b></div>
+          <div><span>Replay</span><b>Every run</b></div>
+          <div><span>Residency</span><b>Your region</b></div>
+          <div><span>Packs</span><b>CSV · JSON · PDF</b></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec" id="architecture">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Where it sits</span>
+        <h2>Between your agents and everything they touch.</h2>
+      </div>
+      <div><p class="lede">Your agents don't change. Spectre wraps the layer where they call tools, which is the one place every action has to pass through regardless of the framework above it.</p><a href="integrations.html" class="btn btn--ghost">See what it connects to <span class="arw">→</span></a></div>
+    </div>
+
+    <div class="arch rv">
+      <div class="layer">
+        <span class="lx">Above</span>
+        <h3>Your agents, unchanged</h3>
+        <p>Whatever you build with — your own orchestration, a framework, MCP servers, a vendor's agent. Spectre doesn't care which, because it watches the calls, not the code that made them.</p>
+      </div>
+      <div class="layer">
+        <span class="lx">The layer</span>
+        <h3>Capture and enforcement</h3>
+        <p>Runs in your own cloud account. Every tool call passes through, gets traced and scored, and is checked against your rules before it goes out. Fail open or fail closed — your call.</p>
+      </div>
+      <div class="layer">
+        <span class="lx">Below</span>
+        <h3>Your systems, protected</h3>
+        <p>Databases, warehouses, CRMs, buckets, payment APIs, inboxes. Nothing new to install on any of them, and no endpoint agent on anybody's laptop.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Scope</span>
+        <h2>What Spectre isn't.</h2>
+      </div>
+      <div><p class="lede">Worth saying plainly, because half the evaluations we lose are ones where the fit was wrong from the start and nobody found out until week four.</p></div>
+    </div>
+
+    <div class="nots rv">
+      <div class="not"><b>Not a model provider</b><span>Bring your own. We have no opinion on which, and no incentive to sell you more tokens.</span></div>
+      <div class="not"><b>Not employee monitoring</b><span>Spectre watches software acting on your behalf. It doesn't record anyone's screen or keystrokes.</span></div>
+      <div class="not"><b>Not a replacement for your SIEM</b><span>It feeds yours. Agent risk becomes another signal in the place your team already looks.</span></div>
+      <div class="not"><b>Not an evaluation harness</b><span>We run evals on your agents in production, but we're not the place to benchmark models before you pick one.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="cta rv" id="cta">
+      <span class="eyebrow" style="justify-content:center">Get started</span>
+      <h2>Start at observe. Move up when you're ready.</h2>
+      <p class="lede">Bring an agent you already run. It goes in at Level 1, records everything, blocks nothing — and you decide when it earns the next rung.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+        <a href="how-we-work.html" class="btn btn--ghost">See how we work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="index.html" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+        <p>We build agentic systems that do real work — and the console that keeps every one of them accountable.</p>
+      </div>
+      <div>
+        <h3 class="hlab">Platform</h3>
+        <ul>
+          <li><a href="platform.html#surfaces">Traces</a></li>
+          <li><a href="integrations.html">Integrations</a></li>
+          <li><a href="platform.html#surfaces">Policy engine</a></li>
+          <li><a href="platform.html#surfaces">Audit trail</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Solutions</h3>
+        <ul>
+          <li><a href="solutions.html#roles">Security</a></li>
+          <li><a href="solutions.html#roles">Operations</a></li>
+          <li><a href="solutions.html#roles">Compliance</a></li>
+          <li><a href="platform.html#autonomy">Autonomy levels</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Company</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="how-we-work.html">How we work</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="trust.html">Trust and security</a></li>
+          <li><a href="contact.html">Book a walkthrough</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Digital Spectre</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="trust.html">Security</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+(function(){
+"use strict";
+var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+var rungs = Array.prototype.slice.call(document.querySelectorAll('.rung'));
+
+function paint(rung){
+  var vals = [
+    parseInt(rung.getAttribute('data-autonomy'), 10),
+    parseInt(rung.getAttribute('data-human'), 10),
+    parseInt(rung.getAttribute('data-gov'), 10)
+  ];
+  rung.querySelectorAll('.meter-t i').forEach(function(bar, i){
+    bar.style.width = vals[i] + '%';
+  });
+}
+
+function openRung(i){
+  rungs.forEach(function(r, k){
+    var on = k === i;
+    r.classList.toggle('on', on);
+    r.querySelector('.rung-btn').setAttribute('aria-expanded', on ? 'true' : 'false');
+  });
+}
+
+rungs.forEach(function(r, i){
+  r.querySelector('.rung-btn').addEventListener('click', function(){ openRung(i); });
+});
+
+var ladder = document.getElementById('ladder');
+if(!('IntersectionObserver' in window) || reduce){
+  rungs.forEach(paint);
+} else {
+  var lio = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      rungs.forEach(function(r, i){ setTimeout(function(){ paint(r); }, 140 * i); });
+      lio.unobserve(e.target);
+    });
+  }, {threshold:.25});
+  lio.observe(ladder);
+}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-1qDpesCZibc42xA/ogO+6jsYtRcePoSwEYmvB9V0vvI='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08090A">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+<title>Trust — Digital Spectre</title>
+  <link rel="canonical" href="https://www.digitalspectre.com/trust.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Digital Spectre">
+  <meta property="og:title" content="Trust — Digital Spectre">
+  <meta property="og:description" content="Where Spectre runs, what it stores, what happens when it fails, and how the numbers on the rest of this site are measured.">
+  <meta property="og:url" content="https://www.digitalspectre.com/trust.html">
+  <meta property="og:image" content="https://www.digitalspectre.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Trust — Digital Spectre">
+  <meta name="twitter:description" content="Where Spectre runs, what it stores, what happens when it fails, and how the numbers on the rest of this site are measured.">
+  <meta name="twitter:image" content="https://www.digitalspectre.com/og-image.png">
+<meta name="description" content="Where Spectre runs, what it stores, what happens when it fails, and how the numbers on the rest of this site are measured.">
+<link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+<style>
+
+@keyframes grain{0%{transform:translate(0,0)}17%{transform:translate(-3%,-2%)}
+  34%{transform:translate(2%,-4%)}51%{transform:translate(-2%,3%)}
+  68%{transform:translate(3%,1%)}85%{transform:translate(-1%,-3%)}100%{transform:translate(0,0)}}
+.nav-links a:hover::after,.nav-links a.here::after{width:100%}
+.nav-links a.here{color:var(--phosphor)}
+@media(min-width:900px){.head{grid-template-columns:1.15fr .85fr;align-items:end;gap:48px}}
+.fail{border:1px solid var(--ash);background:var(--carbon);border-radius:3px;overflow:hidden}
+.fail-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  padding:12px 14px;border-bottom:1px solid var(--ash);background:var(--slate);
+  font-family:var(--font-mono);font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--smoke)}
+.toggle{display:flex;border:1px solid var(--ash);background:var(--void)}
+.toggle button{padding:8px 15px;font-family:var(--font-mono);font-size:9px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--smoke);transition:background .3s,color .3s}
+.toggle button.on{background:var(--phosphor);color:var(--void);font-weight:500}
+.toggle button:not(.on):hover{color:var(--vapor)}
+.fmx{display:grid;gap:1px;background:var(--ash)}
+.fmx-h,.fmx-r{display:grid;background:var(--carbon);gap:1px}
+@media(min-width:800px){
+  .fmx-h,.fmx-r{grid-template-columns:1.25fr 1fr 1fr 1fr;background:var(--ash)}
+}
+.fmx-h{background:var(--slate)}
+.fmx-h span{background:var(--slate);padding:11px 14px;font-family:var(--font-mono);font-size:8.5px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--smoke)}
+.fmx-r > div{background:var(--carbon);padding:13px 14px}
+.fmx-r .lab{font-family:var(--font-mono);font-size:10px;color:var(--phosphor);line-height:1.45}
+.fmx-r .cell{font-family:var(--font-mono);font-size:9.5px;color:var(--vapor);line-height:1.5}
+.fmx-r .cell::before{content:attr(data-h) " ";color:var(--smoke);font-size:8px;
+  letter-spacing:.11em;text-transform:uppercase;display:block;margin-bottom:5px}
+@media(min-width:800px){.fmx-r .cell::before{display:none}}
+.fmx-r .cell.stop{background:var(--slate)}
+.fmx-r .cell.stop b{color:var(--phosphor);font-weight:500}
+.fmx-r.swap .cell{animation:cellin .45s var(--ease) both}
+@keyframes cellin{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+.fail-note{padding:14px;border-top:1px solid var(--ash);font-family:var(--font-mono);
+  font-size:9px;letter-spacing:.06em;color:var(--smoke);line-height:1.75}
+.fail-note b{color:var(--vapor);font-weight:500}
+.split{display:grid;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+@media(min-width:820px){.split{grid-template-columns:1fr 1fr}}
+.col{background:var(--carbon);padding:clamp(24px,3vw,36px)}
+.col h3{margin-bottom:6px}
+.col .sub{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--smoke);display:block;margin-bottom:22px}
+.col ul{list-style:none;margin:0;padding:0;display:grid;gap:13px}
+.col li{font-size:14px;color:var(--vapor);display:flex;gap:11px;align-items:flex-start;line-height:1.5}
+.col li::before{content:"";width:6px;height:6px;background:var(--w55);flex:0 0 auto;margin-top:7px;transform:rotate(45deg)}
+.col li span{display:block;font-size:12.5px;color:var(--smoke);margin-top:3px}
+.col--never li::before{background:transparent;border:1px solid var(--w28)}
+.col--never li{color:var(--smoke)}
+.col--never li b{color:var(--vapor);font-weight:500}
+.facts{display:grid;gap:1px;background:var(--ash);margin-left:calc(-1 * var(--rowpad));margin-right:calc(-1 * var(--rowpad));border-top:1px solid var(--ash);border-bottom:1px solid var(--ash)}
+.fact{background:var(--void);display:grid;gap:14px;padding:clamp(24px,2.8vw,36px) var(--rowpad);transition:background .4s}
+@media(min-width:860px){
+  .fact{grid-template-columns:210px 1fr;gap:36px;align-items:start}
+}
+.fact:hover{background:var(--carbon)}
+.fact .fk{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--smoke);padding-top:3px}
+.fact p{font-size:14.5px;margin:0;max-width:62ch}
+.fact p + p{margin-top:12px}
+.fact b{color:var(--phosphor);font-weight:500}
+.fact .num{font-family:var(--font-display);font-weight:800;font-size:clamp(24px,3vw,34px);
+  letter-spacing:-.035em;color:var(--phosphor);display:block;line-height:1;margin-bottom:10px}
+.cta>*{position:relative}
+@media(min-width:820px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr 1fr}}
+@media(max-width:960px){
+  .nav-links{display:none}
+  .burger{display:flex}
+}
+@media(max-width:560px){
+  .nav-cta .btn{padding:9px 14px;font-size:12.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .field::after{display:none}
+}
+@media (pointer:coarse),(max-width:960px){.toggle button{min-height:44px}}
+</style>
+</head>
+<body>
+<div class="field" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="index.html" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+    <nav class="nav-links">
+      <a href="platform.html">Platform</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="how-we-work.html">How we work</a>
+      <a href="trust.html" class="here">Trust</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+      <button class="burger" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="phead">
+  <div class="wrap">
+    <span class="crumb"><a href="index.html">Home</a> / Trust</span>
+    <h1>The awkward questions, answered first.</h1>
+    <p class="lede">We sit in the path of every tool call your agents make. That earns you a straight answer about where we run, what we keep, what happens when we fail, and how the numbers on the rest of this site were measured.</p>
+  </div>
+</section>
+
+<section class="sec" id="failure">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">When we fail</span>
+        <h2>Our outage shouldn't become your outage.</h2>
+      </div>
+      <div>
+        <p class="lede">Anything that enforces inline is a new dependency in your critical path. Pretending otherwise is how vendors lose security reviews.</p>
+        <p class="lede dim">So the behaviour is yours to choose, per workspace and per rule. Here is exactly what happens either way.</p>
+      </div>
+    </div>
+
+    <div class="fail rv" id="fail">
+      <div class="fail-bar">
+        <span>Degradation behaviour <b style="color:var(--phosphor);font-weight:500">/ your choice</b></span>
+        <div class="toggle" id="toggle">
+          <button class="on" data-mode="open">Fail open</button>
+          <button data-mode="closed">Fail closed</button>
+        </div>
+      </div>
+
+      <div class="fmx" id="fmx">
+        <div class="fmx-h">
+          <span>Scenario</span><span>Your agents</span><span>Enforcement</span><span>The trail</span>
+        </div>
+      </div>
+
+      <p class="fail-note">Most teams run <b>fail open</b> on read paths and <b>fail closed</b> on anything touching money, PII or production writes. The setting is per rule, not per account, so you don't have to pick one posture for everything.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec" id="data">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Data handling</span>
+        <h2>What we keep, and what we refuse to.</h2>
+      </div>
+      <div><p class="lede">Payload capture is off by default. Turning it on is a deliberate, logged decision that a named administrator has to make, per workspace.</p></div>
+    </div>
+
+    <div class="split rv">
+      <div class="col">
+        <h3>What Spectre stores</h3>
+        <span class="sub">By default, on every run</span>
+        <ul>
+          <li>Tool and function names, with their arguments' shape<span>Which fields were reached, not what was in them</span></li>
+          <li>Timestamps, durations, token counts and spend</li>
+          <li>Policy decisions, and the rule that produced each one</li>
+          <li>Approver identity and the reason recorded at the time</li>
+          <li>Risk scores and the signals that moved them</li>
+          <li>Content hashes, so you can prove a payload didn't change<span>The hash, not the payload</span></li>
+        </ul>
+      </div>
+      <div class="col col--never">
+        <h3>What it never stores</h3>
+        <span class="sub">Not configurable, not on request</span>
+        <ul>
+          <li><b>Screen recordings or keystrokes.</b> Spectre watches software, not people. There is no endpoint agent and nowhere for one to go.</li>
+          <li><b>Your model weights or fine-tunes.</b> We never receive them.</li>
+          <li><b>Your credentials or secrets.</b> Tool auth stays in your account; we see that a call was authorised, not what authorised it.</li>
+          <li><b>Anything used for training.</b> Not ours, not a third party's, not aggregated, not anonymised.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec" id="facts">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">The numbers, and how we got them</span>
+        <h2>Every figure on this site, with its method.</h2>
+      </div>
+      <div><p class="lede">A performance claim without a methodology is a marketing claim. These are the definitions we'll be held to.</p></div>
+    </div>
+
+    <div class="facts rv">
+
+      <article class="fact">
+        <span class="fk">Added latency</span>
+        <div>
+          <span class="num">4 ms median · 9 ms p99</span>
+          <p>Measured at the enforcement layer: the time between an agent emitting a tool call and that call being released or held. It <b>excludes</b> network time to your own systems, because that isn't ours to claim.</p>
+          <p class="dim">Rolling 30 days, every production workspace, all rule types pooled. Not a benchmark run on our own hardware.</p>
+        </div>
+      </article>
+
+      <article class="fact">
+        <span class="fk">Availability</span>
+        <div>
+          <span class="num">99.98%</span>
+          <p>Rolling twelve months on the <b>enforcement path</b> — the component your agents actually depend on. Scheduled maintenance is <b>included</b>, not excluded, because an agent blocked during a maintenance window is still blocked.</p>
+          <p class="dim">The console and reporting layer are measured separately and don't sit in your critical path.</p>
+        </div>
+      </article>
+
+      <article class="fact">
+        <span class="fk">Baseline window</span>
+        <div>
+          <span class="num">First 50 runs</span>
+          <p>Risk scoring holds fire until an agent has 50 completed runs behind it. Before that you get traces and your own rules, but no drift score — a baseline from six runs is noise wearing a number's clothes.</p>
+        </div>
+      </article>
+
+      <article class="fact">
+        <span class="fk">Trail retention</span>
+        <div>
+          <span class="num">Yours to set</span>
+          <p>Default 24 months, configurable from 30 days to 10 years per workspace, in the region you pick. Deletion is real deletion, propagated to backups within 35 days.</p>
+          <p class="dim">The hash chain survives payload deletion, so an expired record can still be proven not to have been altered.</p>
+        </div>
+      </article>
+
+      <article class="fact">
+        <span class="fk">Who at Spectre can see your data</span>
+        <div>
+          <span class="num">Nobody, by default</span>
+          <p>Support access is off until you grant it, scoped to a workspace, time-boxed, and written to <b>your</b> audit trail rather than only ours. You can watch us look.</p>
+        </div>
+      </article>
+
+      <article class="fact">
+        <span class="fk">Continuity</span>
+        <div>
+          <span class="num">Your trail outlives us</span>
+          <p>The evidence Spectre holds is exactly the evidence you'd need if Spectre stopped existing. So it streams to <b>your own bucket</b> as it is written — continuously, not on request — and the hash chain can be verified with a published tool that needs no Spectre account to run.</p>
+          <p class="dim">On termination: 90 days of full console access, then a final export. The enforcement layer can be self-hosted, so a lapsed contract never stops your agents.</p>
+        </div>
+      </article>
+
+      <article class="fact">
+        <span class="fk">Independent testing</span>
+        <div>
+          <span class="num">Annual, third-party</span>
+          <p>A penetration test each year across the enforcement path, the console and the public API, run by a firm with no other relationship to us. The summary is available under NDA and includes <b>what they found</b>, not only that they looked.</p>
+          <p class="dim">Each report names the firm, the dates and the time taken to close every finding. A summary that omits the findings isn't a summary.</p>
+        </div>
+      </article>
+
+      <article class="fact">
+        <span class="fk">Sub-processors</span>
+        <div>
+          <span class="num">Three</span>
+          <p>Cloud infrastructure for the control plane, transactional email, and error monitoring with payloads scrubbed before they leave your boundary. Enforcement runs in <b>your</b> account, so the component sitting closest to your data isn't on this list at all.</p>
+          <p class="dim">Thirty days' written notice before we add a fourth, and a documented right to object. Current list with legal entities and regions on request.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Reporting something</span>
+        <h2>Found a hole? Tell us badly and early.</h2>
+      </div>
+      <div>
+        <p class="lede">Write to <a href="mailto:contact@digitalspectre.com?subject=Security%20disclosure" style="color:var(--phosphor);font-weight:500;border-bottom:1px solid var(--w28)">contact@digitalspectre.com</a> with whatever you have. A half-formed report today beats a polished one next month.</p>
+        <p class="lede dim">We acknowledge within one business day, keep you updated while it's open, and won't pursue anyone acting in good faith.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="cta rv" id="cta">
+      <span class="eyebrow" style="justify-content:center">Get started</span>
+      <h2>Send us your security questionnaire.</h2>
+      <p class="lede">We'd rather answer it before a call than during one. Send it over and you'll get it back completed, with the gaps marked as gaps.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn--solid">Book a walkthrough <span class="arw">→</span></a>
+        <a href="platform.html" class="btn btn--ghost">See the platform</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="index.html" class="brand"><svg class="brand-mark" viewBox="0 0 96 100" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="0,0 20,0 0,16"/><path d="M32.76,15L56,15L96,43.57L96,55.4C96,61 94.6,68 92.74,72.1L23.34,22.53Z"/><polygon points="0,30 66.5,77.5 57.12,85 33.7,85 0,60.93"/><polygon points="0,85 21,100 0,100"/></svg>Digital Spectre</a>
+        <p>We build agentic systems that do real work — and the console that keeps every one of them accountable.</p>
+      </div>
+      <div>
+        <h3 class="hlab">Platform</h3>
+        <ul>
+          <li><a href="platform.html#surfaces">Traces</a></li>
+          <li><a href="integrations.html">Integrations</a></li>
+          <li><a href="platform.html#surfaces">Policy engine</a></li>
+          <li><a href="platform.html#surfaces">Audit trail</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Solutions</h3>
+        <ul>
+          <li><a href="solutions.html#roles">Security</a></li>
+          <li><a href="solutions.html#roles">Operations</a></li>
+          <li><a href="solutions.html#roles">Compliance</a></li>
+          <li><a href="platform.html#autonomy">Autonomy levels</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="hlab">Company</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="how-we-work.html">How we work</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="trust.html">Trust and security</a></li>
+          <li><a href="contact.html">Book a walkthrough</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Digital Spectre</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="trust.html">Security</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+(function(){
+"use strict";
+var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+var SCENARIOS = [
+  { s: 'Policy check exceeds its latency budget',
+    open:   ['Call proceeds', 'Skipped for that call', 'Recorded, flagged unenforced'],
+    closed: ['Call held', 'Enforced by default-deny', 'Recorded as held'],
+    stopOpen: [], stopClosed: [0] },
+
+  { s: 'Spectre region degraded',
+    open:   ['Keep running', 'Cached rules still apply', 'Buffered locally, backfilled'],
+    closed: ['Gated calls held', 'Cached rules still apply', 'Buffered locally, backfilled'],
+    stopOpen: [], stopClosed: [0] },
+
+  { s: 'Full Spectre outage',
+    open:   ['Unaffected', 'Suspended', 'Buffered at the edge, up to 72h'],
+    closed: ['Gated calls held, rest continue', 'Everything gated is held', 'Buffered at the edge, up to 72h'],
+    stopOpen: [], stopClosed: [0, 1] },
+
+  { s: 'Your network partitioned from us',
+    open:   ['Unaffected', 'Last-known rules apply locally', 'Queued, sent on reconnect'],
+    closed: ['Gated calls held', 'Last-known rules apply locally', 'Queued, sent on reconnect'],
+    stopOpen: [], stopClosed: [0] }
+];
+var HEADS = ['Your agents', 'Enforcement', 'The trail'];
+
+var fmx = document.getElementById('fmx');
+var mode = 'open';
+
+function render(animate){
+  fmx.querySelectorAll('.fmx-r').forEach(function(n){ n.remove(); });
+  SCENARIOS.forEach(function(sc){
+    var cells = sc[mode];
+    var stop = mode === 'open' ? sc.stopOpen : sc.stopClosed;
+    var row = document.createElement('div');
+    row.className = 'fmx-r' + (animate ? ' swap' : '');
+    var html = '<div class="lab">' + sc.s + '</div>';
+    cells.forEach(function(c, i){
+      var isStop = stop.indexOf(i) !== -1;
+      html += '<div class="cell' + (isStop ? ' stop' : '') + '" data-h="' + HEADS[i] + '">' +
+              (isStop ? '<b>' + c + '</b>' : c) + '</div>';
+    });
+    row.innerHTML = html;
+    fmx.appendChild(row);
+  });
+}
+
+document.getElementById('toggle').addEventListener('click', function(e){
+  var b = e.target.closest('button'); if(!b) return;
+  mode = b.getAttribute('data-mode');
+  this.querySelectorAll('button').forEach(function(x){ x.classList.toggle('on', x === b); });
+  render(!reduce);
+});
+
+render(false);
+})();
+</script>
+</body>
+</html>
